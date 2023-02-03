@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8323d665444a04b898f1e257f0f850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPos: {x: 9, y: -3}
-  RemovePos: {x: -10, y: -3}
+  SpawnPos: {x: 9, y: 5}
+  RemovePos: {x: -12, y: 5}
+  _note: {fileID: 5517431603809463338}
 --- !u!61 &5517431603809463336
 BoxCollider2D:
   m_ObjectHideFlags: 0

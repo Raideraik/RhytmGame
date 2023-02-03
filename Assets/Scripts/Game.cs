@@ -26,6 +26,7 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 120;
         Time.timeScale = 0;
         _screen.gameObject.SetActive(true);
         _screen.OpenStart();

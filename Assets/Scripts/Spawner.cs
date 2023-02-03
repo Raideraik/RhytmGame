@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Spawner : MonoBehaviour
+public class Spawner : ObjectPool
 {
     public event UnityAction OnFinish;
 
-    [SerializeField] private Song _song;
-    [SerializeField] private float _beatsShownInAdvance;
     [SerializeField] private NoteMover _template;
     [SerializeField] private bool _createMode;
-    [SerializeField] private Transform _container;
 
     private List<float> _newNote = new List<float>();
 
+    private Song _song;
+    private int _beatsShownInAdvance;
     private float _songPosition;
     private float _songPosInBeats;
     private float _secPerBeat;
@@ -34,6 +33,8 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        _beatsShownInAdvance = _song.BeatsShownInAdvance;
+        Initialize(_template);
     }
 
     private void Update()
@@ -62,13 +63,14 @@ public class Spawner : MonoBehaviour
             {
                 if (_song.Notes[_nextIndex] < _songPosInBeats + _beatsShownInAdvance)
                 {
-
-                    NoteMover note = Instantiate(_template, _container);
-
-                    note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
-                    note.SetSpawner(this);
-
-                    _nextIndex++;
+                    if (TryGetObject(out NoteMover note))
+                    {
+                        note.gameObject.SetActive(true);
+                        note.UpdateCollor();
+                        note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
+                        note.SetSpawner(this);
+                        _nextIndex++;
+                    }
                 }
             }
             else
@@ -94,5 +96,10 @@ public class Spawner : MonoBehaviour
         _dsptimesong = (float)AudioSettings.dspTime;
         _audioSource.clip = _song.Clip;
         _audioSource.Play();
+    }
+
+    public void SetSong(Song song)
+    {
+        _song = song;
     }
 }

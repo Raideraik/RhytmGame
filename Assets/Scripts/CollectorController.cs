@@ -2,11 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CollectorController : MonoBehaviour
 {
+    public event UnityAction OnCollected;
+    public event UnityAction OnWrong;
+
     [SerializeField] private NoteCollector _noteCollector;
+    [SerializeField] private DeadZone _deadZone;
     [SerializeField] private Button _button;
     [SerializeField] private Collor _color;
     [SerializeField] private KeyCode _keyCode;
@@ -18,19 +23,26 @@ public class CollectorController : MonoBehaviour
     {
         _noteCollector.OnTriggetEnter += OnCanPress;
         _noteCollector.OnTriggerExit += OnTirggerExit;
+        _deadZone.OnDeadZone += Fail;
         _button.onClick.AddListener(OnCollect);
     }
     private void OnDisable()
     {
         _noteCollector.OnTriggetEnter -= OnCanPress;
         _noteCollector.OnTriggerExit -= OnTirggerExit;
+        _deadZone.OnDeadZone -= Fail;
         _button.onClick.RemoveListener(OnCollect);
     }
     private void OnCollect()
     {
         if (_canBePressed)
         {
+            OnCollected?.Invoke();
             _note.gameObject.SetActive(false);
+        }
+        else
+        {
+            Fail();
         }
     }
     private void OnCanPress(Note note)
@@ -47,9 +59,14 @@ public class CollectorController : MonoBehaviour
         _note = null;
     }
 
+    private void Fail()
+    {
+        OnWrong?.Invoke();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(_keyCode) && _canBePressed)
+        if (Input.GetKeyDown(_keyCode))
         {
             OnCollect();
             //_score++;
