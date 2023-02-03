@@ -22,7 +22,7 @@ public class NoteMover : MonoBehaviour
         transform.position = Vector2.Lerp(
             SpawnPos,
             RemovePos,
-          (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - _spawner.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()
+          (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()
         //(_spawner.GetBeatsShownInAdvance() - (_spawner.GetSongPosInBeats() - beatOfThisNote)) / _spawner.GetBeatsShownInAdvance()
         );
     }

@@ -45,7 +45,9 @@ public class Game : MonoBehaviour
     private void StartGame()
     {
         Time.timeScale = 1;
+        AudioFlow.Instance.StartFlow();
         _spawner.StartGame();
+       
     }
 
     private void OnGameOver()

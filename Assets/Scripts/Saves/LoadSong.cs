@@ -12,7 +12,7 @@ public class LoadSong : MonoBehaviour
         {
             if (_songs[i].Id == PlayerPrefs.GetInt("ChoosedSong", 0))
             {
-                _spawner.SetSong(_songs[i]);
+                AudioFlow.Instance.SetSong(_songs[i]);
             }
         }
     }

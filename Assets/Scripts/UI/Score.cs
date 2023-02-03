@@ -48,7 +48,7 @@ public class Score : MonoBehaviour
         if (_scoreAddedTimes >= _scoreNeededToAddTimes[_index] && _index < _scoreNeededToAddTimes.Length - 1)
         {
             _index++;
-            _animator.Play(_animatonsNames[_index]);
+           // _animator.Play(_animatonsNames[_index]);
         }
     }
 
