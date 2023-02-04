@@ -8,10 +8,10 @@ public class Spawner : ObjectPool
     public event UnityAction OnFinish;
 
     [SerializeField] private NoteMover _template;
-    [SerializeField] private bool _createMode;
+    [SerializeField] private float _timeBeforeEnd;
 
     private Song _song;
-    private int _beatsShownInAdvance;
+    private float _beatsShownInAdvance;
 
     private int _nextIndex = 0;
     private bool _isPlaying;
@@ -36,27 +36,25 @@ public class Spawner : ObjectPool
         if (!_isPlaying)
             return;
 
-        if (!_createMode)
+        if (_nextIndex < _song.Notes.Length)
         {
-            if (_nextIndex < _song.Notes.Length)
+            if (_song.Notes[_nextIndex] < AudioFlow.Instance.GetSongPosInBeats() + _beatsShownInAdvance)
             {
-                if (_song.Notes[_nextIndex] < AudioFlow.Instance.GetSongPosInBeats() + _beatsShownInAdvance)
+                if (TryGetObject(out NoteMover note))
                 {
-                    if (TryGetObject(out NoteMover note))
-                    {
-                        note.gameObject.SetActive(true);
-                        note.UpdateCollor();
-                        note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
-                        note.SetSpawner(this);
-                        _nextIndex++;
-                    }
+                    note.gameObject.SetActive(true);
+                    note.UpdateCollor();
+                    note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
+                    note.SetSpawner(this);
+                    _nextIndex++;
                 }
             }
-            else
-            {
-                OnFinish?.Invoke();
-            }
         }
+        else
+        {
+            StartCoroutine(OnSongFinish());
+        }
+
     }
     public float GetBeatsShownInAdvance()
     {
@@ -67,6 +65,12 @@ public class Spawner : ObjectPool
     public void StartGame()
     {
         _isPlaying = true;
+    }
+
+    private IEnumerator OnSongFinish()
+    {
+        yield return new WaitForSeconds(_timeBeforeEnd);
+        OnFinish?.Invoke();
     }
 
 }

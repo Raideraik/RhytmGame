@@ -8,14 +8,14 @@ public class Song : ScriptableObject
     [SerializeField] private float[] _notes;
     [SerializeField] private float _bpm;
     [SerializeField] private AudioClip _clip;
-    [SerializeField] private int _beatsShownInAdvance;
+    [SerializeField] private float _beatsShownInAdvance;
     [SerializeField] private int _id;
     public float[] Notes => _notes;
     public float Bpm => _bpm;
 
     public AudioClip Clip => _clip;
 
-    public int BeatsShownInAdvance => _beatsShownInAdvance;
+    public float BeatsShownInAdvance => _beatsShownInAdvance;
 
     public int Id => _id;
 

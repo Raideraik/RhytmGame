@@ -15,6 +15,7 @@ public class CollectorController : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Collor _color;
     [SerializeField] private KeyCode _keyCode;
+    [SerializeField] private ParticleSystem _effect;
     private bool _canBePressed;
     private Note _note;
     //private float _score;
@@ -39,6 +40,7 @@ public class CollectorController : MonoBehaviour
         {
             OnCollected?.Invoke();
             _note.gameObject.SetActive(false);
+            VisualEffects.Instance.PlayEffect(_effect);
         }
         else
         {
