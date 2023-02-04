@@ -1,8 +1,9 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualEffects : MonoBehaviour
+public class VisualEffects : MonoCache
 {
     public static VisualEffects Instance { get; private set; }
     private void Awake()

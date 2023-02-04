@@ -1,9 +1,10 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class AudioFlow : MonoBehaviour
+public class AudioFlow : MonoCache
 {
     public static AudioFlow Instance { get; private set; }
 
@@ -25,11 +26,8 @@ public class AudioFlow : MonoBehaviour
         Instance = this;
 
         _audioSource = GetComponent<AudioSource>();
-
     }
-
-
-    private void Update()
+    protected override void Run()
     {
         _songPosition = (float)(AudioSettings.dspTime - _dsptimesong);
         _songPosInBeats = _songPosition / _secPerBeat;
@@ -49,7 +47,6 @@ public class AudioFlow : MonoBehaviour
     {
         _song = song;
     }
-
     public void StartFlow()
     {
         _secPerBeat = 60f / _song.Bpm;
@@ -58,6 +55,4 @@ public class AudioFlow : MonoBehaviour
         _audioSource.clip = _song.Clip;
         _audioSource.Play();
     }
-
-
 }

@@ -6154,6 +6154,7 @@ MonoBehaviour:
   - {fileID: 1577801163}
   _scoreNeededToAddTimes: 010000000800000011000000
   _scoreMultiplier: 010000000200000003000000
+  _spawner: {fileID: 553230943}
 --- !u!1 &866107234
 GameObject:
   m_ObjectHideFlags: 0

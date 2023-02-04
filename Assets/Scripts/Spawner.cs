@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Spawner : ObjectPool
 {
     public event UnityAction OnFinish;
+    public event UnityAction<string> OnFinishSave;
 
     [SerializeField] private NoteMover _template;
     [SerializeField] private float _timeBeforeEnd;
@@ -17,14 +18,6 @@ public class Spawner : ObjectPool
 
     private int _nextIndex = 0;
     private bool _isPlaying;
-    /*
-    private void Start()
-    {
-        _secPerBeat = 60f / _song.Bpm;
-        _dsptimesong = (float)AudioSettings.dspTime;
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = _song.Clip;
-    }*/
 
     private void Start()
     {
@@ -33,7 +26,7 @@ public class Spawner : ObjectPool
         Initialize(_template);
     }
 
-    private void Update()
+    protected override void Run()
     {
         if (!_isPlaying)
             return;
@@ -46,7 +39,6 @@ public class Spawner : ObjectPool
                 {
                     note.gameObject.SetActive(true);
                     note.SetPositions(_spawnPosition, _removePosition);
-                  //  note.UpdateCollor();
                     note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
                     note.SetSpawner(this);
                     _nextIndex++;
@@ -63,17 +55,15 @@ public class Spawner : ObjectPool
     {
         return _beatsShownInAdvance;
     }
-
-
     public void StartGame()
     {
         _isPlaying = true;
     }
-
     private IEnumerator OnSongFinish()
     {
         yield return new WaitForSeconds(_timeBeforeEnd);
         OnFinish?.Invoke();
+        OnFinishSave?.Invoke(_song.SongName);
     }
 
 }

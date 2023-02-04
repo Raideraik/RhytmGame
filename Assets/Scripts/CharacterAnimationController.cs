@@ -1,21 +1,22 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAnimationController : MonoBehaviour
+public class CharacterAnimationController : MonoCache
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private CollectorController[] _collectorControllers;
 
     [SerializeField] private string[] _animationNames;
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         for (int i = 0; i < _collectorControllers.Length; i++)
         {
             _collectorControllers[i].OnWrong += OnWrongNoteCollected;
         }
     }
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         for (int i = 0; i < _collectorControllers.Length; i++)
         {

@@ -72,6 +72,8 @@ MonoBehaviour:
   - 60.522636
   - 61.50397
   _bpm: 40
-  _clip: {fileID: 8300000, guid: bd938c4f08e4a3f46818b217234b30b3, type: 3}
   _beatsShownInAdvance: 2
+  _neededScore: 116
+  _clip: {fileID: 8300000, guid: bd938c4f08e4a3f46818b217234b30b3, type: 3}
   _id: 2
+  _songName: Persona 5 - Groovy

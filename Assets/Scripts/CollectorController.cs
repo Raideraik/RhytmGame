@@ -1,3 +1,4 @@
+using NTC.Global.Cache;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class CollectorController : MonoBehaviour
+public class CollectorController : MonoCache
 {
     public event UnityAction OnCollected;
     public event UnityAction OnWrong;
@@ -16,18 +17,17 @@ public class CollectorController : MonoBehaviour
     [SerializeField] private Collor _color;
     [SerializeField] private KeyCode _keyCode;
     [SerializeField] private ParticleSystem _effect;
+
     private bool _canBePressed;
     private Note _note;
-    //private float _score;
-
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         _noteCollector.OnTriggetEnter += OnCanPress;
         _noteCollector.OnTriggerExit += OnTirggerExit;
         _deadZone.OnDeadZone += Fail;
         _button.onClick.AddListener(OnCollect);
     }
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         _noteCollector.OnTriggetEnter -= OnCanPress;
         _noteCollector.OnTriggerExit -= OnTirggerExit;
@@ -39,7 +39,6 @@ public class CollectorController : MonoBehaviour
         if (_canBePressed)
         {
             OnCollected?.Invoke();
-            // _note.gameObject.SetActive(false);
             _note.ResetNote();
             VisualEffects.Instance.PlayEffect(_effect);
         }
@@ -61,19 +60,15 @@ public class CollectorController : MonoBehaviour
         _canBePressed = false;
         _note = null;
     }
-
     private void Fail()
     {
         OnWrong?.Invoke();
     }
-
-    private void Update()
+    protected override void Run()
     {
         if (Input.GetKeyDown(_keyCode))
         {
             OnCollect();
-            //_score++;
-            //Debug.Log(_score);
         }
     }
 }

@@ -1,9 +1,10 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class NoteCollector : MonoBehaviour
+public class NoteCollector : MonoCache
 {
     public event UnityAction<Note> OnTriggetEnter;
     public event UnityAction OnTriggerExit;

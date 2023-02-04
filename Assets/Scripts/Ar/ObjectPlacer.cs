@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using NTC.Global.Cache;
+
 
 [RequireComponent(typeof(ARRaycastManager))]
-public class ObjectPlacer : MonoBehaviour
+public class ObjectPlacer : MonoCache
 {
     [SerializeField] private GameObject _marker;
     [SerializeField] private GameObject _character;
@@ -20,10 +22,8 @@ public class ObjectPlacer : MonoBehaviour
         _manager = GetComponent<ARRaycastManager>();
         _marker.SetActive(false);
     }
-
-    private void Update()
+    protected override void Run()
     {
-
         _manager.Raycast(new Vector2(UnityEngine.Screen.width / 2, UnityEngine.Screen.height / 2), _hits, TrackableType.Planes);
 
         if (_hits.Count > 0)

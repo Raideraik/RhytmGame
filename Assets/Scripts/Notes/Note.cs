@@ -1,3 +1,4 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public enum Collor
     Blue,
     Yellow
 }
-public class Note : MonoBehaviour
+public class Note : MonoCache
 {
     private Collor _color;
     private SpriteRenderer _spriteRenderer;

@@ -1,10 +1,11 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Screen : MonoBehaviour
+public class Screen : MonoCache
 {
 
     public event UnityAction StartButtonClick;
@@ -12,13 +13,13 @@ public class Screen : MonoBehaviour
 
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _reStartButton;
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         _startButton.onClick.AddListener(StartGame);
         _reStartButton.onClick.AddListener(RestartGame);
     }
 
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         _startButton.onClick.RemoveListener(StartGame);
         _reStartButton.onClick.RemoveListener(RestartGame);

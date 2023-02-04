@@ -1,8 +1,9 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadSong : MonoBehaviour
+public class LoadSong : MonoCache
 {
     [SerializeField] private Song[] _songs;
     [SerializeField] private Spawner _spawner;

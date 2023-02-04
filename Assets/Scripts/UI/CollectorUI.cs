@@ -1,34 +1,30 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CollectorUI : MonoBehaviour
+public class CollectorUI : MonoCache
 {
     [SerializeField] private TMP_Text _phraseText;
     [SerializeField] private CollectorController[] _collector;
 
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         for (int i = 0; i < _collector.Length; i++)
         {
             _collector[i].OnCollected += OnCollected;
             _collector[i].OnWrong += OnWrong;
         }
-
     }
-
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         for (int i = 0; i < _collector.Length; i++)
         {
-
             _collector[i].OnCollected -= OnCollected;
             _collector[i].OnWrong -= OnWrong;
         }
-
     }
-
     private void OnCollected()
     {
         _phraseText.color = Color.green;

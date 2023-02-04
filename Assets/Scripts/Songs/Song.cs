@@ -7,17 +7,19 @@ public class Song : ScriptableObject
 {
     [SerializeField] private float[] _notes;
     [SerializeField] private float _bpm;
-    [SerializeField] private AudioClip _clip;
     [SerializeField] private float _beatsShownInAdvance;
+    [SerializeField] private AudioClip _clip;
     [SerializeField] private int _id;
+    [SerializeField] private int _neededScore;
+    [SerializeField] private string _songName;
     public float[] Notes => _notes;
     public float Bpm => _bpm;
-
-    public AudioClip Clip => _clip;
-
     public float BeatsShownInAdvance => _beatsShownInAdvance;
-
+    public int NeededScore => _neededScore;
+    public AudioClip Clip => _clip;
     public int Id => _id;
+
+    public string SongName => _songName;
 
     public void SetNotes(float[] notes)
     {

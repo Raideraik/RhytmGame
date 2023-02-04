@@ -1,28 +1,28 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour
+public class Game : MonoCache
 {
     [SerializeField] private Screen _screen;
     [SerializeField] private Spawner _spawner;
 
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         _screen.StartButtonClick += OnStartButtonClicked;
         _screen.RestartButtonClick += OnExitButtonClicked;
         _spawner.OnFinish += OnGameOver;
     }
 
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         _screen.StartButtonClick -= OnStartButtonClicked;
         _screen.RestartButtonClick -= OnExitButtonClicked;
         _spawner.OnFinish -= OnGameOver;
     }
-
 
     private void Start()
     {

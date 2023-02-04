@@ -1,9 +1,10 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Note))]
-public class NoteMover : MonoBehaviour
+public class NoteMover : MonoCache
 {
     [SerializeField] private Note _note;
 
@@ -16,8 +17,7 @@ public class NoteMover : MonoBehaviour
     {
         ResetPosition();
     }
-
-    private void Update()
+    protected override void Run()
     {
         transform.position = Vector3.Lerp(
             _spawnPos.position,
@@ -26,7 +26,6 @@ public class NoteMover : MonoBehaviour
         //(_spawner.GetBeatsShownInAdvance() - (_spawner.GetSongPosInBeats() - beatOfThisNote)) / _spawner.GetBeatsShownInAdvance()
         );
     }
-
     public void SetSpawner(Spawner spawner)
     {
         _spawner = spawner;
@@ -35,10 +34,6 @@ public class NoteMover : MonoBehaviour
     {
         beatOfThisNote = beat;
     }
-    public void UpdateCollor()
-    {
-    }
-
     public void SetPositions(Transform spawn, Transform remove)
     {
         _spawnPos = spawn;

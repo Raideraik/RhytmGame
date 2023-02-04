@@ -1,9 +1,10 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class Score : MonoCache
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _scoreMultiplierText;
@@ -12,32 +13,37 @@ public class Score : MonoBehaviour
     [SerializeField] private int[] _scoreNeededToAddTimes;
     [SerializeField] private int[] _scoreMultiplier;
 
+    [SerializeField] private Spawner _spawner;
 
     private int _index = 0;
     private int _score;
     private int _scoreAddedTimes;
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         for (int i = 0; i < _collector.Length; i++)
         {
             _collector[i].OnCollected += AddScore;
             _collector[i].OnWrong += ResetMultiplier;
         }
-    }
 
-    private void OnDisable()
+        _spawner.OnFinishSave += SaveScore;
+    }
+    protected override void OnDisabled()
     {
         for (int i = 0; i < _collector.Length; i++)
         {
             _collector[i].OnCollected -= AddScore;
             _collector[i].OnWrong -= ResetMultiplier;
         }
+        _spawner.OnFinishSave -= SaveScore;
 
     }
-
+    private void SaveScore(string name)
+    {
+        PlayerPrefs.SetInt(name + "_Score", _score);
+    }
     private void AddScore()
     {
-
         _score += _scoreMultiplier[_index];
         _scoreText.text = _score.ToString();
         _scoreAddedTimes++;
