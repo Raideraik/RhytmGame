@@ -29,16 +29,4 @@ public class ObjectPool : MonoBehaviour
         return result != null;
     }
 
-    public void ResetPool()
-    {
-        foreach (var item in _pool)
-        {
-            item.gameObject.SetActive(false);
-        }
-    }
-
-    public List<NoteMover> GetPool()
-    {
-        return _pool;
-    }
 }

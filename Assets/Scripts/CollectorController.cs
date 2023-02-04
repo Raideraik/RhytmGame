@@ -39,7 +39,8 @@ public class CollectorController : MonoBehaviour
         if (_canBePressed)
         {
             OnCollected?.Invoke();
-            _note.gameObject.SetActive(false);
+            // _note.gameObject.SetActive(false);
+            _note.ResetNote();
             VisualEffects.Instance.PlayEffect(_effect);
         }
         else

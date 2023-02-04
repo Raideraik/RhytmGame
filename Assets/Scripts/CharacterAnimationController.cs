@@ -22,7 +22,10 @@ public class CharacterAnimationController : MonoBehaviour
             _collectorControllers[i].OnWrong -= OnWrongNoteCollected;
         }
     }
-
+    private void Awake()
+    {
+        _collectorControllers = FindObjectsOfType<CollectorController>();
+    }
     private void Start()
     {
         StartCoroutine(PlayNewAnimation());

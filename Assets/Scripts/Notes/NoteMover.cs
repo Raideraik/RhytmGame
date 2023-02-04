@@ -5,23 +5,23 @@ using UnityEngine;
 [RequireComponent(typeof(Note))]
 public class NoteMover : MonoBehaviour
 {
-    [SerializeField] private Vector2 SpawnPos;
-    [SerializeField] private Vector2 RemovePos;
     [SerializeField] private Note _note;
 
+    private Transform _spawnPos;
+    private Transform _removePos;
     private Spawner _spawner;
     private float beatOfThisNote;
 
-    private void OnDisable()
+    private void Start()
     {
-        transform.position = SpawnPos;
+        ResetPosition();
     }
 
     private void Update()
     {
-        transform.position = Vector2.Lerp(
-            SpawnPos,
-            RemovePos,
+        transform.position = Vector3.Lerp(
+            _spawnPos.position,
+            _removePos.position,
           (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()
         //(_spawner.GetBeatsShownInAdvance() - (_spawner.GetSongPosInBeats() - beatOfThisNote)) / _spawner.GetBeatsShownInAdvance()
         );
@@ -37,6 +37,17 @@ public class NoteMover : MonoBehaviour
     }
     public void UpdateCollor()
     {
+    }
+
+    public void SetPositions(Transform spawn, Transform remove)
+    {
+        _spawnPos = spawn;
+        _removePos = remove;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = _spawnPos.position;
         _note.SetColor();
     }
 }

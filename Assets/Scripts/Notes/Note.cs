@@ -18,9 +18,11 @@ public class Note : MonoBehaviour
     [SerializeField] private Sprite _blueNoteSprite;
     [SerializeField] private Sprite _yellowNoteSprite;
 
+    private NoteMover _mover;
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _mover = GetComponent<NoteMover>();
        // SetColor();
     }
 
@@ -49,5 +51,11 @@ public class Note : MonoBehaviour
     public Collor GetColor()
     {
         return _color;
+    }
+
+    public void ResetNote() 
+    {
+        _mover.ResetPosition();
+        gameObject.SetActive(false);
     }
 }
