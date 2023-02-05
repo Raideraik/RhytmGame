@@ -33,7 +33,7 @@ public class ObjectPlacer : MonoCache
         }
     }
 
-    public void UpdatePlacemenetPose()
+    public void InstalCharacter()
     {
         Instantiate(_character, _hits[0].pose.position, _character.transform.rotation);
     }
