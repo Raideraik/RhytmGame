@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9333d07e644fdd49ba7d5bf7509cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5ed9399ac02c34985ec2c8e4139fe3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9333d07e644fdd49ba7d5bf7509cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5ed9399ac02c34985ec2c8e4139fe3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9333d07e644fdd49ba7d5bf7509cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5ed9399ac02c34985ec2c8e4139fe3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9333d07e644fdd49ba7d5bf7509cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5ed9399ac02c34985ec2c8e4139fe3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -587,7 +587,7 @@ MonoBehaviour:
   - {fileID: 4113973149759222104}
   - {fileID: 2813508261149610958}
   - {fileID: 3154892529282201705}
-  _starSprite: {fileID: 21300000, guid: 50685afd3e659e84586c2fa2877630b1, type: 3}
+  _starSprite: {fileID: 21300000, guid: 1ad9eece113587a4fbf04dbf707c3d47, type: 3}
   _songName: {fileID: 6779122605834441815}
 --- !u!1 &6779122605834441813
 GameObject:
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9333d07e644fdd49ba7d5bf7509cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5ed9399ac02c34985ec2c8e4139fe3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
