@@ -15,6 +15,7 @@ public class AudioFlow : MonoCache
     private AudioSource _audioSource;
 
     private Song _song;
+    private bool _isPlaying = true;
     private void Awake()
     {
         if (Instance != null)
@@ -29,6 +30,9 @@ public class AudioFlow : MonoCache
     }
     protected override void Run()
     {
+        if (!_isPlaying)
+            return;
+
         _songPosition = (float)(AudioSettings.dspTime - _dsptimesong);
         _songPosInBeats = _songPosition / _secPerBeat;
     }
@@ -38,7 +42,7 @@ public class AudioFlow : MonoCache
         return _songPosInBeats;
     }
 
-    public Song GetSong() 
+    public Song GetSong()
     {
         return _song;
     }
@@ -54,5 +58,18 @@ public class AudioFlow : MonoCache
 
         _audioSource.clip = _song.Clip;
         _audioSource.Play();
+    }
+
+    public void PauseFlow()
+    {
+        _isPlaying = false;
+        _audioSource.Pause();
+    }
+
+    public void ContinueFlow()
+    {
+        _isPlaying = true;
+        _audioSource.Play();
+        _dsptimesong = (float)AudioSettings.dspTime - _songPosition;
     }
 }

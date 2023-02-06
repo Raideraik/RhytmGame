@@ -6,7 +6,6 @@ using UnityEngine;
 public class LoadSong : MonoCache
 {
     [SerializeField] private Song[] _songs;
-    [SerializeField] private Spawner _spawner;
     private void Start()
     {
         for (int i = 0; i < _songs.Length; i++)

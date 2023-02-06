@@ -11,7 +11,7 @@ using NTC.Global.Cache;
 public class ObjectPlacer : MonoCache
 {
     [SerializeField] private GameObject _marker;
-    [SerializeField] private GameObject _character;
+    [SerializeField] private LoadSkin _character;
 
     private ARRaycastManager _manager;
     private GameObject _installedObject;
@@ -19,7 +19,7 @@ public class ObjectPlacer : MonoCache
 
     private void Start()
     {
-        _manager = GetComponent<ARRaycastManager>();
+        _manager = Get<ARRaycastManager>();
         _marker.SetActive(false);
     }
     protected override void Run()
@@ -35,7 +35,7 @@ public class ObjectPlacer : MonoCache
 
     public void InstalCharacter()
     {
-        Instantiate(_character, _hits[0].pose.position, _character.transform.rotation);
+        Instantiate(_character.GetChoosedSkin().GetPrefab(), _hits[0].pose.position, _character.GetChoosedSkin().GetPrefab().transform.rotation);
     }
 
 }

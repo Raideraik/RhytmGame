@@ -10,7 +10,10 @@ public class Game : MonoCache
     [SerializeField] private MenuScreen _screen;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private ObjectPlacer _objectPlacer;
-    [SerializeField] private GameObject _character;
+    [SerializeField] private Transform _characterSpawnPoint;
+
+    private LoadSkin _loadSkin;
+
 
     protected override void OnEnabled()
     {
@@ -30,7 +33,7 @@ public class Game : MonoCache
 
     private void Start()
     {
-        Application.targetFrameRate = 120;
+        _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
         _screen.gameObject.SetActive(true);
 
@@ -49,7 +52,7 @@ public class Game : MonoCache
     {
         _screen.gameObject.SetActive(false);
         StartGame();
-        _character.SetActive(true);
+        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
     }
     private void OnExitButtonClicked()
     {

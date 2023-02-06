@@ -42,6 +42,7 @@ public class Spawner : ObjectPool
                     note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
                     note.SetSpawner(this);
                     _nextIndex++;
+
                 }
             }
         }
@@ -49,7 +50,6 @@ public class Spawner : ObjectPool
         {
             StartCoroutine(OnSongFinish());
         }
-
     }
     public float GetBeatsShownInAdvance()
     {

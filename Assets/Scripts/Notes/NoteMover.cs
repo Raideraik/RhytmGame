@@ -19,7 +19,7 @@ public class NoteMover : MonoCache
     }
     protected override void Run()
     {
-        transform.position = Vector3.Lerp(
+        transform.position = Vector2.Lerp(
             _spawnPos.position,
             _removePos.position,
           (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()

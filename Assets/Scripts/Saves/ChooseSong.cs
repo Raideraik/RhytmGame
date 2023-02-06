@@ -14,7 +14,7 @@ public class ChooseSong : MonoCache
     [SerializeField] private TMP_Text _songName;
 
     private Song _song;
-    private int _score;
+    // private int _score;
     protected override void OnEnabled()
     {
         _button.onClick.AddListener(ChooseLevel);
@@ -27,7 +27,7 @@ public class ChooseSong : MonoCache
 
     private void Start()
     {
-        _score = PlayerPrefs.GetInt(_song.SongName + "_Score", 0);
+        //_score = PlayerPrefs.GetInt(_song.SongName + "_Score", 0);
         SetStars();
         _songName.text = _song.SongName;
     }
@@ -42,7 +42,7 @@ public class ChooseSong : MonoCache
     {
         int stars = 0;
 
-        float percentage = _song.NeededScore * _score / 100f;
+        float percentage = _song.NeededScore * MainMenuScore.Instance.GetSongScore(_song) / 100f;
         if (percentage >= 90)
         {
             stars = 5;

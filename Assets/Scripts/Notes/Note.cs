@@ -2,6 +2,8 @@ using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum Collor
 {
     Red,
@@ -12,7 +14,7 @@ public enum Collor
 public class Note : MonoCache
 {
     private Collor _color;
-    private SpriteRenderer _spriteRenderer;
+    private Image _spriteRenderer;
 
     [SerializeField] private Sprite _redNoteSprite;
     [SerializeField] private Sprite _greenNoteSprite;
@@ -22,7 +24,7 @@ public class Note : MonoCache
     private NoteMover _mover;
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<Image>();
         _mover = GetComponent<NoteMover>();
        // SetColor();
     }

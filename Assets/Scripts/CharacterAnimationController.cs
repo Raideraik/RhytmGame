@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class CharacterAnimationController : MonoCache
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private CollectorController[] _collectorControllers;
 
     [SerializeField] private string[] _animationNames;
+    private CollectorController[] _collectorControllers;
+    private Animator _animator;
     protected override void OnEnabled()
     {
         for (int i = 0; i < _collectorControllers.Length; i++)
@@ -26,10 +26,12 @@ public class CharacterAnimationController : MonoCache
     private void Awake()
     {
         _collectorControllers = FindObjectsOfType<CollectorController>();
+        _animator = Get<Animator>();
     }
     private void Start()
     {
         StartCoroutine(PlayNewAnimation());
+
     }
 
     private void OnWrongNoteCollected()
