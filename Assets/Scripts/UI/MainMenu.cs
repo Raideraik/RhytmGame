@@ -16,6 +16,7 @@ public class MainMenu : MonoCache
         _startButton.onClick.AddListener(ShowLevelScreen);
         _shopButton.onClick.AddListener(ShowShopScreen);
         _settingsButton.onClick.AddListener(ShowSettingsScreen);
+        _exitButton.onClick.AddListener(ExitGame);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -30,6 +31,7 @@ public class MainMenu : MonoCache
         _startButton.onClick.RemoveListener(ShowLevelScreen);
         _shopButton.onClick.RemoveListener(ShowShopScreen);
         _settingsButton.onClick.RemoveListener(ShowSettingsScreen);
+        _exitButton.onClick.RemoveListener(ExitGame);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -61,5 +63,10 @@ public class MainMenu : MonoCache
     {
         _buttonsScreen.SetActive(false);
         _settingsScreen.SetActive(true);
+    }
+
+    private void ExitGame()
+    {
+        Application.Quit();
     }
 }

@@ -144,8 +144,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a52338ac387b7384f8c9793238435da8, type: 2}
+  m_sharedMaterial: {fileID: 8976234856281986920, guid: a52338ac387b7384f8c9793238435da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 56
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -276,9 +276,6 @@ MonoBehaviour:
   _buyButton: {fileID: 7600597927549456720}
   _picture: {fileID: 2856095630442024081}
   _buttonText: {fileID: 8513234267263870296}
-  _errorClip: {fileID: 0}
-  _buyClip: {fileID: 0}
-  _chooseClip: {fileID: 0}
 --- !u!114 &6031983874816344896
 MonoBehaviour:
   m_ObjectHideFlags: 0

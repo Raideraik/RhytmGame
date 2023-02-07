@@ -17,6 +17,7 @@ public class CollectorController : MonoCache
     [SerializeField] private Collor _color;
     [SerializeField] private KeyCode _keyCode;
     [SerializeField] private ParticleSystem _effect;
+    [SerializeField] private AudioClip _missClip, _hitClip;
 
     private bool _canBePressed;
     private Note _note;
@@ -41,9 +42,11 @@ public class CollectorController : MonoCache
             OnCollected?.Invoke();
             _note.ResetNote();
             VisualEffects.Instance.PlayEffect(_effect);
+            AudioMusic.Instance.PlayClip(_hitClip);
         }
         else
         {
+            AudioMusic.Instance.PlayClip(_missClip);
             Fail();
         }
     }
