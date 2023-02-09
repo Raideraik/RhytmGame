@@ -19,6 +19,7 @@ public class NoteMover : MonoCache
     }
     protected override void Run()
     {
+
         transform.position = Vector2.Lerp(
             _spawnPos.position,
             _removePos.position,

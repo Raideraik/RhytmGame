@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoCache
 {
-    [SerializeField] private MenuScreen _screen;
+    [SerializeField] private StartScreen _startScreen;
+    [SerializeField] private GameOverScreen _gameoverScreen;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private ObjectPlacer _objectPlacer;
     [SerializeField] private Transform _characterSpawnPoint;
@@ -17,17 +18,17 @@ public class Game : MonoCache
 
     protected override void OnEnabled()
     {
-        _screen.StartButtonClick += OnStartButtonClicked;
-        _screen.RestartButtonClick += OnExitButtonClicked;
-        _screen.SpawnCharacterButtonClikck += OnSpawnCharacterButtonClicked;
+        _startScreen.StartButtonClick += OnStartButtonClicked;
+        _gameoverScreen.ExitButtonClick += OnExitButtonClicked;
+        _startScreen.SpawnCharacterButtonClikck += OnSpawnCharacterButtonClicked;
         _spawner.OnFinish += OnGameOver;
     }
 
     protected override void OnDisabled()
     {
-        _screen.StartButtonClick -= OnStartButtonClicked;
-        _screen.RestartButtonClick -= OnExitButtonClicked;
-        _screen.SpawnCharacterButtonClikck -= OnSpawnCharacterButtonClicked;
+        _startScreen.StartButtonClick -= OnStartButtonClicked;
+        _gameoverScreen.ExitButtonClick -= OnExitButtonClicked;
+        _startScreen.SpawnCharacterButtonClikck -= OnSpawnCharacterButtonClicked;
         _spawner.OnFinish -= OnGameOver;
     }
 
@@ -35,22 +36,22 @@ public class Game : MonoCache
     {
         _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
-        _screen.gameObject.SetActive(true);
+        _startScreen.gameObject.SetActive(true);
 
-        _screen.OpenStart();
+        _startScreen.OpenStart();
     }
 
     private void OnSpawnCharacterButtonClicked()
     {
         _objectPlacer.InstalCharacter();
         StartGame();
-        _screen.gameObject.SetActive(false);
+        _startScreen.gameObject.SetActive(false);
 
     }
 
     private void OnStartButtonClicked()
     {
-        _screen.gameObject.SetActive(false);
+        _startScreen.gameObject.SetActive(false);
         StartGame();
         Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
     }
@@ -71,7 +72,7 @@ public class Game : MonoCache
     private void OnGameOver()
     {
         Time.timeScale = 0;
-        _screen.gameObject.SetActive(true);
-        _screen.OpenRestart();
+        _gameoverScreen.gameObject.SetActive(true);
+        _gameoverScreen.OpenGameOverScreen();
     }
 }

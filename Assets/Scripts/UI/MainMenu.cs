@@ -49,24 +49,28 @@ public class MainMenu : MonoCache
 
     private void ShowLevelScreen()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         _buttonsScreen.SetActive(false);
         _levelChooseScreen.SetActive(true);
     }
 
     private void ShowShopScreen()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         _buttonsScreen.SetActive(false);
         _shopScreen.SetActive(true);
     }
 
     private void ShowSettingsScreen()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         _buttonsScreen.SetActive(false);
         _settingsScreen.SetActive(true);
     }
 
     private void ExitGame()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         Application.Quit();
     }
 }

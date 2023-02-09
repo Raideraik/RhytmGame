@@ -34,6 +34,7 @@ public class ChooseSong : MonoCache
 
     private void ChooseLevel()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         PlayerPrefs.SetInt("ChoosedSong", _song.Id);
         SceneManager.LoadSceneAsync(1);
     }
@@ -42,7 +43,11 @@ public class ChooseSong : MonoCache
     {
         int stars = 0;
 
-        float percentage = _song.NeededScore * MainMenuScore.Instance.GetSongScore(_song) / 100f;
+        float percentage = 0;
+        percentage += MainMenuScore.Instance.GetSongScore(_song);
+        percentage /= _song.NeededScore;
+        percentage *= 100f;
+
         if (percentage >= 90)
         {
             stars = 5;

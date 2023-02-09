@@ -28,12 +28,14 @@ public class Pause : MonoCache
 
     private void PauseGame()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         _pauseMenu.SetActive(true);
         Time.timeScale = 0;
         AudioFlow.Instance.PauseFlow();
     }
     private void ContinueGame()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         _pauseMenu.SetActive(false);
         Time.timeScale = 1;
         AudioFlow.Instance.ContinueFlow();
@@ -41,6 +43,7 @@ public class Pause : MonoCache
 
     private void ReturnToMainMenu()
     {
+        AudioEffectsControll.Instance.PlayButtonClip();
         SceneManager.LoadSceneAsync(0);
     }
 }

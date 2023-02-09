@@ -40,7 +40,10 @@ public class Score : MonoCache
     }
     private void SaveScore(string name)
     {
-        PlayerPrefs.SetInt(name + "_Score", _score);
+        if (PlayerPrefs.GetInt(name + "_Score", 0) < _score)
+            PlayerPrefs.SetInt(name + "_Score", _score);
+
+        Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
     }
     private void AddScore()
     {
@@ -60,6 +63,10 @@ public class Score : MonoCache
         _scoreAddedTimes = 0;
         _index = 0;
         _scoreMultiplierText.text = _scoreMultiplier[_index].ToString();
+    }
 
+    public int GetScore()
+    {
+        return _score;
     }
 }
