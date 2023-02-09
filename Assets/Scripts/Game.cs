@@ -34,6 +34,7 @@ public class Game : MonoCache
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
         _startScreen.gameObject.SetActive(true);
