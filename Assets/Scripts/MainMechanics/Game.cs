@@ -34,7 +34,6 @@ public class Game : MonoCache
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
         _startScreen.gameObject.SetActive(true);
@@ -63,7 +62,7 @@ public class Game : MonoCache
 
     private void StartGame()
     {
-
+        Application.targetFrameRate = 60;
         Time.timeScale = 1;
         AudioFlow.Instance.StartFlow();
         _spawner.StartGame();

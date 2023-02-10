@@ -8,8 +8,8 @@ public class CameraDebug : MonoBehaviour
 {
     public int avgFrameRate;
 
-    [SerializeField] private Camera _arCamera;
     [SerializeField] private TMP_Text _text;
+
     private void Update()
     {
         //_text.text = Application.targetFrameRate.ToString();
