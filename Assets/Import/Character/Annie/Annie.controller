@@ -33,43 +33,43 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6893077974219095548}
-    m_Position: {x: 150, y: 290, z: 0}
+    m_Position: {x: 140, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6047943679853943845}
     m_Position: {x: 340, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 502665565650800333}
-    m_Position: {x: 680, y: 280, z: 0}
+    m_Position: {x: 660, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1519579241462840082}
-    m_Position: {x: 980, y: 860, z: 0}
+    m_Position: {x: 880, y: 770, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4151517387695486660}
-    m_Position: {x: -190, y: 600, z: 0}
+    m_Position: {x: -60, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3810298136981620742}
-    m_Position: {x: 280, y: 890, z: 0}
+    m_Position: {x: 280, y: 900, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5430608640228882404}
-    m_Position: {x: 990, y: 420, z: 0}
+    m_Position: {x: 820, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7853368473412523793}
-    m_Position: {x: 540, y: 590, z: 0}
+    m_Position: {x: 390, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9080239002925191490}
-    m_Position: {x: 1227.7617, y: 651.4491, z: 0}
+    m_Position: {x: 930, y: 570, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8920622028924041066}
-    m_Position: {x: 470, y: 190, z: 0}
+    m_Position: {x: 390, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7549161884461533246}
-    m_Position: {x: 614.39856, y: 891.6473, z: 0}
+    m_Position: {x: 670, y: 900, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1968212944749259140}
-    m_Position: {x: -60, y: 440, z: 0}
+    m_Position: {x: -20, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4280308013055963828}
-    m_Position: {x: 20, y: 850, z: 0}
+    m_Position: {x: 20, y: 780, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
