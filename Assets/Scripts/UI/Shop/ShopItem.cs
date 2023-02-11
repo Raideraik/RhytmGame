@@ -46,6 +46,7 @@ public class ShopItem : MonoBehaviour
         else if (!IsBuyed() && MainMenuScore.Instance.TrySell(_playerSkin.GetPrice()))
         {
             _buttonText.text = "Choose";
+            _playerSkin.BuySkin();
             PlayerPrefs.SetInt(_playerSkin.GetID().ToString(), 1);
             AudioEffectsControll.Instance.PlayHitClip();
         }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Shibahu
   m_EditorClassIdentifier: 
   _id: 7
-  _price: 0
+  _price: 700
   _picture: {fileID: -2053597539, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
   _prefab: {fileID: 6452348391671489252, guid: bce83cfd8e097964abe5ed4980cb5f99, type: 3}

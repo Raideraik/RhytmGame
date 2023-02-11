@@ -9,6 +9,7 @@ public class PlayerSkin : ScriptableObject
     [SerializeField] private int _price;
     [SerializeField] private Sprite _picture;
     [SerializeField] private GameObject _prefab;
+    [SerializeField] private bool _isBuyed = false;
 
     public int GetID()
     {
@@ -23,8 +24,18 @@ public class PlayerSkin : ScriptableObject
         return _picture;
     }
 
-    public GameObject GetPrefab() 
+    public GameObject GetPrefab()
     {
         return _prefab;
+    }
+
+    public bool IsBuyed()
+    {
+        return _isBuyed;
+    }
+
+    public void BuySkin()
+    {
+        _isBuyed = true;
     }
 }

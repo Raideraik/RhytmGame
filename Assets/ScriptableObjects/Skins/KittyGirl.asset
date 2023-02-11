@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: KittyGirl
   m_EditorClassIdentifier: 
   _id: 5
-  _price: 0
+  _price: 500
   _picture: {fileID: 1012745600, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
   _prefab: {fileID: 5356584363816070049, guid: 5c077efab0875844dbcdb4b78227e74a, type: 3}

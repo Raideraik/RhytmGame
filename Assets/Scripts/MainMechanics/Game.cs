@@ -10,7 +10,6 @@ public class Game : MonoCache
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private GameOverScreen _gameoverScreen;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] private ObjectPlacer _objectPlacer;
     [SerializeField] private Transform _characterSpawnPoint;
 
     private LoadSkin _loadSkin;
@@ -20,7 +19,6 @@ public class Game : MonoCache
     {
         _startScreen.StartButtonClick += OnStartButtonClicked;
         _gameoverScreen.ExitButtonClick += OnExitButtonClicked;
-        _startScreen.SpawnCharacterButtonClikck += OnSpawnCharacterButtonClicked;
         _spawner.OnFinish += OnGameOver;
     }
 
@@ -28,25 +26,17 @@ public class Game : MonoCache
     {
         _startScreen.StartButtonClick -= OnStartButtonClicked;
         _gameoverScreen.ExitButtonClick -= OnExitButtonClicked;
-        _startScreen.SpawnCharacterButtonClikck -= OnSpawnCharacterButtonClicked;
         _spawner.OnFinish -= OnGameOver;
     }
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
+
         _startScreen.gameObject.SetActive(true);
-
         _startScreen.OpenStart();
-    }
-
-    private void OnSpawnCharacterButtonClicked()
-    {
-        _objectPlacer.InstalCharacter();
-        StartGame();
-        _startScreen.gameObject.SetActive(false);
-
     }
 
     private void OnStartButtonClicked()
@@ -62,7 +52,6 @@ public class Game : MonoCache
 
     private void StartGame()
     {
-        Application.targetFrameRate = 60;
         Time.timeScale = 1;
         AudioFlow.Instance.StartFlow();
         _spawner.StartGame();
