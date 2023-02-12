@@ -1985,7 +1985,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: -2003520043, guid: 1f68d140a8feba548a843a3fe4a81d3f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 8a32f5f3224d0064699dad9fdf5b40ca, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 39dbc88902c98064aba467da87a169a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ced0feba80e881046a7a5dd6f37e4d2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3928,7 +3928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203bc2786f3d3c74591ada9fc9131f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _song: {fileID: 11400000, guid: 0b3df6e715efe2c4f89c8fe19e994f88, type: 2}
+  _song: {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
 --- !u!114 &1746150091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4215,7 +4215,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886879269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
