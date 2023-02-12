@@ -560,7 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443463994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b000cd7312889f04198b3370c5922c63, type: 3}
   m_Name: 
@@ -601,6 +601,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 63831af3f54d1db448940410d41a59e0, type: 2}
   - {fileID: 11400000, guid: d2708e81e51e4734ab1c951a180bdcb2, type: 2}
   - {fileID: 11400000, guid: 227f0c961077ea041bcb86dfb60aa175, type: 2}
+  - {fileID: 11400000, guid: 622defd728025ac4ab66eb6b5b25783b, type: 2}
 --- !u!1 &512863942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,12 +3920,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746150087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203bc2786f3d3c74591ada9fc9131f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _song: {fileID: 11400000, guid: d84f196fbd219334187997b646633cbc, type: 2}
+  _song: {fileID: 11400000, guid: 31f775f79045a28409e472e81af72061, type: 2}
 --- !u!114 &1746150091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3932,7 +3933,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746150087}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b2621041eff1e4db3900fc606142d6, type: 3}
   m_Name: 
