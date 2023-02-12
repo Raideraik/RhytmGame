@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class CharacterAnimationController : MonoCache
 {
-
-    [SerializeField] private string[] _animationNames;
     private CollectorController[] _collectorControllers;
     private Animator _animator;
     protected override void OnEnabled()
@@ -28,21 +26,9 @@ public class CharacterAnimationController : MonoCache
         _collectorControllers = FindObjectsOfType<CollectorController>();
         _animator = Get<Animator>();
     }
-    private void Start()
-    {
-        StartCoroutine(PlayNewAnimation());
-
-    }
-
     private void OnWrongNoteCollected()
     {
         _animator.Play("Wrong");
-        StartCoroutine(PlayNewAnimation());
     }
 
-    private IEnumerator PlayNewAnimation()
-    {
-        yield return new WaitForSeconds(3);
-        _animator.Play(_animationNames[Random.Range(0, _animationNames.Length)]);
-    }
 }

@@ -11,6 +11,7 @@ public class Spawner : ObjectPool
     [SerializeField] private NoteMover _template;
     [SerializeField] private float _timeBeforeEnd;
     [SerializeField] private Transform _spawnPosition;
+    [SerializeField] private Transform _finishPosition;
     [SerializeField] private Transform _removePosition;
 
     private Song _song;
@@ -38,7 +39,7 @@ public class Spawner : ObjectPool
                 if (TryGetObject(out NoteMover note))
                 {
                     note.gameObject.SetActive(true);
-                    note.SetPositions(_spawnPosition, _removePosition);
+                    note.SetPositions(_spawnPosition, _finishPosition,_removePosition);
                     note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
                     note.SetSpawner(this);
                     _nextIndex++;

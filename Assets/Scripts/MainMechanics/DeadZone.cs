@@ -9,7 +9,10 @@ public class DeadZone : MonoCache
     public event UnityAction OnDeadZone;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.SetActive(false);
-        OnDeadZone?.Invoke();
+        if (collision.TryGetComponent(out Note note))
+        {
+            note.ResetNote();
+            OnDeadZone?.Invoke();
+        }
     }
 }
