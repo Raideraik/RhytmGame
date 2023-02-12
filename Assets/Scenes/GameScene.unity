@@ -560,7 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443463994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b000cd7312889f04198b3370c5922c63, type: 3}
   m_Name: 
@@ -2016,7 +2016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -847440443, guid: 1f68d140a8feba548a843a3fe4a81d3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39dbc88902c98064aba467da87a169a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3920,12 +3920,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746150087}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203bc2786f3d3c74591ada9fc9131f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _song: {fileID: 11400000, guid: 910d7a171868b314d830e30d37767a26, type: 2}
+  _song: {fileID: 11400000, guid: ba5e81fe1c3504b4681a26d33de6ec52, type: 2}
 --- !u!114 &1746150091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746150087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b2621041eff1e4db3900fc606142d6, type: 3}
   m_Name: 
@@ -3981,7 +3981,7 @@ GameObject:
   - component: {fileID: 1804231233}
   - component: {fileID: 1804231237}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4128,7 +4128,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856735611}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 3e5d3807fe2572c4f90e4c99fe5fc0d5, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0475fe923a04a7146a8adefcba8f8519, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -5171,6 +5171,7 @@ GameObject:
   - component: {fileID: 2093484060}
   - component: {fileID: 2093484059}
   - component: {fileID: 2093484058}
+  - component: {fileID: 2093484062}
   m_Layer: 0
   m_Name: BackGroundCanvas
   m_TagString: Untagged
@@ -5261,6 +5262,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2093484062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093484057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c1397968590b842a67d5d4bc96c47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _videoPlayer: {fileID: 1856735613}
+  _videoClips:
+  - {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  - {fileID: 32900000, guid: 0475fe923a04a7146a8adefcba8f8519, type: 3}
 --- !u!1001 &1402852669241264155
 PrefabInstance:
   m_ObjectHideFlags: 0
