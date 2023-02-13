@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Annie
   m_EditorClassIdentifier: 
   _id: 3
-  _price: 300
-  _picture: {fileID: -914055133, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
+  _price: 900
+  _picture: {fileID: -1283796381, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 3492896734716303032, guid: 3a46bde7a804e2f41b13575a90f99ac7, type: 3}
+  _isBuyed: 0

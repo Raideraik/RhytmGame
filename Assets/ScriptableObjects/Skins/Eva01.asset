@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Eva01
   m_EditorClassIdentifier: 
   _id: 8
-  _price: 1000
-  _picture: {fileID: 21300000, guid: 372e7b39fc8f34549ac25d8757965a2c, type: 3}
+  _price: 2000
+  _picture: {fileID: -1198390411, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 5167553429630573581, guid: cf0f71463d5fe2f4a9dca48c80a70826, type: 3}
   _isBuyed: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2B
   m_EditorClassIdentifier: 
   _id: 1
-  _price: 100
-  _picture: {fileID: 1297301932, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
+  _price: 500
+  _picture: {fileID: 1858266369, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 1796181684587396371, guid: 154163a926068d9469f61d395e4e63b0, type: 3}
+  _isBuyed: 0

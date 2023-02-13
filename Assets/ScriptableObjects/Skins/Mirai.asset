@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mirai
   m_EditorClassIdentifier: 
   _id: 6
-  _price: 600
-  _picture: {fileID: -1204578037, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
+  _price: 1200
+  _picture: {fileID: -544598019, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 7485635561298539430, guid: d09aff13f2d18df4cb4fb87918efe97c, type: 3}
+  _isBuyed: 0

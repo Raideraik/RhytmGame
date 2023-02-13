@@ -6594,8 +6594,8 @@ Transform:
   m_GameObject: {fileID: 6452348391671489252}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 419396055982509415}
   - {fileID: 6149729061066190289}
@@ -6635,19 +6635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationNames:
-  - Belly
-  - Macarena
-  - Chicken
-  - Gang
-  - Booty
-  - Dancing
-  - Flair
-  - Rumba
-  - Running
-  - Snake
-  - Swing
-  - Twerk
 --- !u!1 &6496287491303088611
 GameObject:
   m_ObjectHideFlags: 0
