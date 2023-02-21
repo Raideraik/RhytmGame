@@ -2569,7 +2569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isScreenLandscape: 1
-  _pipeline: {fileID: 0}
+  _pipeline: {fileID: 11400000, guid: 3f8cff5a139c8d44fb3e33875fd38b09, type: 2}
 --- !u!1 &1593576334
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class Score : MonoCache
         if (PlayerPrefs.GetInt(name + "_Score", 0) < _score)
             PlayerPrefs.SetInt(name + "_Score", _score);
 
-        Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
+       // Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
     }
     private void AddScore()
     {

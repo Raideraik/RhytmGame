@@ -3910,7 +3910,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1746150092}
   - component: {fileID: 1746150091}
-  - component: {fileID: 1746150090}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -3918,19 +3917,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1746150090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746150087}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 203bc2786f3d3c74591ada9fc9131f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _song: {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
 --- !u!114 &1746150091
 MonoBehaviour:
   m_ObjectHideFlags: 0

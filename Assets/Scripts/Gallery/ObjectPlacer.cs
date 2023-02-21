@@ -21,16 +21,11 @@ public class ObjectPlacer : MonoCache
     private void Start()
     {
         _arRaycasyManager = Get<ARRaycastManager>();
-        _container.SetActive(false);
+        //_container.SetActive(false);
     }
     protected override void Run()
     {
         UpdatePlacemenetPose();
-
-        if (Input.touchCount == 2)
-        {
-            SetObject();
-        }
     }
 
     private void UpdatePlacemenetPose()
@@ -55,10 +50,10 @@ public class ObjectPlacer : MonoCache
 
         Vector3 cameraForward = _camera.transform.forward;
         Vector3 cameraRotation = new Vector3(cameraForward.x, 0, cameraForward.z);
-        _objectPlace.rotation = Quaternion.Euler(cameraForward);
+        _objectPlace.rotation = Quaternion.Euler(cameraRotation);
     }
 
-    private void SetObject()
+    public void SetObject()
     {
         _installedObject.transform.parent = _container.transform;
         _installedObject = null;

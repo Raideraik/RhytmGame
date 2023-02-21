@@ -26,6 +26,18 @@ public class CharacterAnimationController : MonoCache
         _collectorControllers = FindObjectsOfType<CollectorController>();
         _animator = Get<Animator>();
     }
+
+    private void Start()
+    {
+        if (Screen.orientation == ScreenOrientation.Portrait)
+        {
+            _animator.SetBool("IsGallery", true);
+        }
+        else
+        {
+            _animator.SetBool("IsGallery", false);
+        }
+    }
     private void OnWrongNoteCollected()
     {
         _animator.Play("Wrong");
