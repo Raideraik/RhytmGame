@@ -1613,6 +1613,8 @@ GameObject:
   - component: {fileID: 7556336959872320528}
   - component: {fileID: 4484930721162829418}
   - component: {fileID: 4484930721162829419}
+  - component: {fileID: -5232086045104051540}
+  - component: {fileID: -2577642396245717133}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1669,19 +1671,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationNames:
-  - Belly
-  - Macarena
-  - Chicken
-  - Gang
-  - Booty
-  - Dancing
-  - Flair
-  - Rumba
-  - Running
-  - Snake
-  - Swing
-  - Twerk
+--- !u!114 &-5232086045104051540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176011852880027306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &-2577642396245717133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176011852880027306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 4484930721162829418}
 --- !u!1 &7780947405289839143
 GameObject:
   m_ObjectHideFlags: 0
