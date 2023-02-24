@@ -1,6 +1,7 @@
 using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,7 +44,11 @@ public class Game : MonoCache
     {
         _startScreen.gameObject.SetActive(false);
         StartGame();
-        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+        GameObject spawnedObject = Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+        NetworkObject networkObject =
+            spawnedObject.GetComponent<NetworkObject>();
+        networkObject.Spawn(true);
+        //  StartCoroutine(SpawnCharacter(spawnedObject));
     }
     private void OnExitButtonClicked()
     {
@@ -64,4 +69,11 @@ public class Game : MonoCache
         _gameoverScreen.gameObject.SetActive(true);
         _gameoverScreen.OpenGameOverScreen();
     }
+
+    private IEnumerator SpawnCharacter(GameObject spawnedObject)
+    {
+        yield return new WaitForSeconds(5);
+        
+    }
+
 }
