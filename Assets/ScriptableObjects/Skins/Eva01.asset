@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 8
   _price: 2000
+  _networkId: 8
   _picture: {fileID: -1198390411, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 5167553429630573581, guid: cf0f71463d5fe2f4a9dca48c80a70826, type: 3}
+  _gamePlayPrefab: {fileID: -3685966012629783143, guid: cf0f71463d5fe2f4a9dca48c80a70826, type: 3}
   _isBuyed: 0
+  _displayName: Eva01

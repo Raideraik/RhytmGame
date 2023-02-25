@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Network/Lobby.unity
     guid: 9535eb24fbae7c14e80b68eb609549b4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CoopGameScene.unity
     guid: 024755c4ed0231743ae1ec4978488b35
   - enabled: 0

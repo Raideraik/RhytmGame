@@ -13,7 +13,7 @@ public class Game : MonoCache
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Transform _characterSpawnPoint;
 
-    private LoadSkin _loadSkin;
+   // private LoadSkin _loadSkin;
 
 
     protected override void OnEnabled()
@@ -33,21 +33,20 @@ public class Game : MonoCache
     private void Start()
     {
         Application.targetFrameRate = 60;
-        _loadSkin = Get<LoadSkin>();
+       // _loadSkin = Get<LoadSkin>();
         Time.timeScale = 0;
+        StartGame();
 
-        _startScreen.gameObject.SetActive(true);
-        _startScreen.OpenStart();
+        //_startScreen.gameObject.SetActive(true);
+        //_startScreen.OpenStart();
     }
 
     private void OnStartButtonClicked()
     {
         _startScreen.gameObject.SetActive(false);
-        StartGame();
-        GameObject spawnedObject = Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
-        NetworkObject networkObject =
-            spawnedObject.GetComponent<NetworkObject>();
-        networkObject.Spawn(true);
+        //StartGame();
+         //Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+
         //  StartCoroutine(SpawnCharacter(spawnedObject));
     }
     private void OnExitButtonClicked()

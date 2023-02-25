@@ -2,11 +2,12 @@ using NTC.Global.Cache;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class CollectorController : MonoCache
+public class CollectorController : NetworkBehaviour
 {
     public event UnityAction OnCollected;
     public event UnityAction OnWrong;
@@ -19,14 +20,14 @@ public class CollectorController : MonoCache
 
     private bool _canBePressed;
     private Note _note;
-    protected override void OnEnabled()
+    private void OnEnable()
     {
         _noteCollector.OnTriggetEnter += OnCanPress;
         _noteCollector.OnTriggerExit += OnTirggerExit;
         _deadZone.OnDeadZone += Fail;
         _button.onClick.AddListener(OnCollect);
     }
-    protected override void OnDisabled()
+    private void OnDisable()
     {
         _noteCollector.OnTriggetEnter -= OnCanPress;
         _noteCollector.OnTriggerExit -= OnTirggerExit;
@@ -64,7 +65,7 @@ public class CollectorController : MonoCache
     {
         OnWrong?.Invoke();
     }
-    protected override void Run()
+    private void Update()
     {
         if (Input.GetKeyDown(_keyCode))
         {

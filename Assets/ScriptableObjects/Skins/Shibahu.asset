@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 7
   _price: 1500
+  _networkId: 7
   _picture: {fileID: 21300000, guid: 2220404216c3b754f8459bf0dc99aeaf, type: 3}
   _prefab: {fileID: 6452348391671489252, guid: bce83cfd8e097964abe5ed4980cb5f99, type: 3}
+  _gamePlayPrefab: {fileID: -520614035490285769, guid: bce83cfd8e097964abe5ed4980cb5f99, type: 3}
   _isBuyed: 0
+  _displayName: Shinbahu

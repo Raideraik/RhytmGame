@@ -17,5 +17,6 @@ MonoBehaviour:
   _networkId: 2
   _picture: {fileID: 1547592494, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 1831801531170967879, guid: ed635998d687002489cecd441d50ee60, type: 3}
+  _gamePlayPrefab: {fileID: 7147539329797562086, guid: ed635998d687002489cecd441d50ee60, type: 3}
   _isBuyed: 0
   _displayName: AnimeBoy

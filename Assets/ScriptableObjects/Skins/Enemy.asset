@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 4
   _price: 3000
+  _networkId: 4
   _picture: {fileID: -1160064456, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 7176011852880027306, guid: 5f611388413e1734788519261d9f5969, type: 3}
+  _gamePlayPrefab: {fileID: -5232086045104051540, guid: 5f611388413e1734788519261d9f5969, type: 3}
   _isBuyed: 0
+  _displayName: Enemy

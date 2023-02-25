@@ -6,7 +6,7 @@ using UnityEngine;
 public class LoadSong : MonoCache
 {
     [SerializeField] private Song[] _songs;
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < _songs.Length; i++)
         {

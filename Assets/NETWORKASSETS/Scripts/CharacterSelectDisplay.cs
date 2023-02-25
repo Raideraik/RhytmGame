@@ -138,6 +138,18 @@ public class CharacterSelectDisplay : NetworkBehaviour
                 );
 
         }
+
+        foreach (var player in _players)
+        {
+            if (!player.IsLockedIn) { return; }
+        }
+
+        foreach (var player in _players)
+        {
+            ServerManager.Instance.SetCharacter(player.ClientId, player.CharacterId);
+        }
+
+        ServerManager.Instance.StartGame();
     }
 
     [ServerRpc(RequireOwnership = false)]

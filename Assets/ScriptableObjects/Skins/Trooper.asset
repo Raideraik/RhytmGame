@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _price: 0
+  _networkId: 9
   _picture: {fileID: -765612581, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 485764403921350658, guid: a364053c551b4f7499445512af1d3479, type: 3}
+  _gamePlayPrefab: {fileID: -6856223554244109730, guid: a364053c551b4f7499445512af1d3479, type: 3}
   _isBuyed: 1
+  _displayName: Trooper

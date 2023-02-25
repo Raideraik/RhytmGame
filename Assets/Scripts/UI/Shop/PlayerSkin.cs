@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Skin", menuName = "CreatePlayerSkin", order = 1)]
@@ -10,12 +11,14 @@ public class PlayerSkin : ScriptableObject
     [SerializeField] private int _networkId = -1;
     [SerializeField] private Sprite _picture;
     [SerializeField] private GameObject _prefab;
+    [SerializeField] private NetworkObject _gamePlayPrefab;
     [SerializeField] private bool _isBuyed = false;
     [SerializeField] private string _displayName = "New DisplayName";
 
     public int NetworkId => _networkId;
     public string DisplayName => _displayName;
 
+    public NetworkObject GamePlayPrefab => _gamePlayPrefab;
 
     public int GetID()
     {

@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 3
   _price: 900
+  _networkId: 3
   _picture: {fileID: -1283796381, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 3492896734716303032, guid: 3a46bde7a804e2f41b13575a90f99ac7, type: 3}
+  _gamePlayPrefab: {fileID: -4194496446461240934, guid: 3a46bde7a804e2f41b13575a90f99ac7, type: 3}
   _isBuyed: 0
+  _displayName: Annie
