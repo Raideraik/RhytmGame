@@ -6,25 +6,25 @@ using UnityEngine.Rendering;
 public class ScreenPipelineOptions : MonoBehaviour
 {
     [SerializeField] private bool _isScreenLandscape;
-    // [SerializeField] private RenderPipelineAsset _pipeline;
     private void Start()
     {
-        Screen.orientation = ScreenOrientation.AutoRotation;
 
-        if (_isScreenLandscape)
+        switch (_isScreenLandscape)
         {
-            Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = true;
-            Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = false;
-            /*if (GraphicsSettings.renderPipelineAsset != _pipeline)
-            {
-                GraphicsSettings.renderPipelineAsset = _pipeline;
-            }*/
-        }
-        else
-        {
-            Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = false;
-            Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = true;
+            case true:
+                Screen.orientation = ScreenOrientation.LandscapeLeft;
+                Screen.orientation = ScreenOrientation.AutoRotation;
 
+                Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = true;
+                Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = false;
+                break;
+            case false:
+                Screen.orientation = ScreenOrientation.Portrait;
+                Screen.orientation = ScreenOrientation.AutoRotation;
+
+                Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = false;
+                Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = true;
+                break;
         }
     }
 }

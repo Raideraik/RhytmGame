@@ -424,19 +424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationNames:
-  - Belly
-  - Macarena
-  - Chicken
-  - Gang
-  - Booty
-  - Dancing
-  - Flair
-  - Rumba
-  - Running
-  - Snake
-  - Swing
-  - Twerk
 --- !u!1 &1809849336252312907
 GameObject:
   m_ObjectHideFlags: 0

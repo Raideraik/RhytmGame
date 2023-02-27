@@ -8,7 +8,8 @@ public class Score : MonoCache
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _scoreMultiplierText;
-    [SerializeField] private CollectorController[] _collector;
+    //[SerializeField] private CollectorController[] _collector;
+    //[SerializeField] private ControllersHandler _controllersHandler;
 
     [SerializeField] private int[] _scoreNeededToAddTimes;
     [SerializeField] private int[] _scoreMultiplier;
@@ -20,21 +21,19 @@ public class Score : MonoCache
     private int _scoreAddedTimes;
     protected override void OnEnabled()
     {
-        for (int i = 0; i < _collector.Length; i++)
-        {
-            _collector[i].OnCollected += AddScore;
-            _collector[i].OnWrong += ResetMultiplier;
-        }
+
+        ControllersHandler.OnAnyCollected += AddScore;
+        ControllersHandler.OnAnyMissed += ResetMultiplier;
+
 
         _spawner.OnFinishSave += SaveScore;
     }
     protected override void OnDisabled()
     {
-        for (int i = 0; i < _collector.Length; i++)
-        {
-            _collector[i].OnCollected -= AddScore;
-            _collector[i].OnWrong -= ResetMultiplier;
-        }
+
+        ControllersHandler.OnAnyCollected -= AddScore;
+        ControllersHandler.OnAnyMissed -= ResetMultiplier;
+
         _spawner.OnFinishSave -= SaveScore;
 
     }
@@ -43,7 +42,7 @@ public class Score : MonoCache
         if (PlayerPrefs.GetInt(name + "_Score", 0) < _score)
             PlayerPrefs.SetInt(name + "_Score", _score);
 
-       // Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
+        // Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
     }
     private void AddScore()
     {

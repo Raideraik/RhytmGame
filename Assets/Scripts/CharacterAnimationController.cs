@@ -5,39 +5,33 @@ using UnityEngine;
 
 public class CharacterAnimationController : MonoCache
 {
-    private CollectorController[] _collectorControllers;
+    //private CollectorController[] _collectorControllers;
+
     private Animator _animator;
     protected override void OnEnabled()
     {
-        for (int i = 0; i < _collectorControllers.Length; i++)
+        if (Screen.autorotateToPortrait != true)
         {
-            _collectorControllers[i].OnWrong += OnWrongNoteCollected;
+            _animator.SetBool("IsGallery", false);
+            ControllersHandler.OnAnyMissed += OnWrongNoteCollected;
+        }
+        else
+        {
+            _animator.SetBool("IsGallery", true);
         }
     }
     protected override void OnDisabled()
     {
-        for (int i = 0; i < _collectorControllers.Length; i++)
+        if (Screen.autorotateToPortrait != true)
         {
-            _collectorControllers[i].OnWrong -= OnWrongNoteCollected;
+            ControllersHandler.OnAnyMissed -= OnWrongNoteCollected;
         }
     }
     private void Awake()
     {
-        _collectorControllers = FindObjectsOfType<CollectorController>();
         _animator = Get<Animator>();
     }
 
-    private void Start()
-    {
-        if (Screen.orientation == ScreenOrientation.Portrait)
-        {
-            _animator.SetBool("IsGallery", true);
-        }
-        else
-        {
-            _animator.SetBool("IsGallery", false);
-        }
-    }
     private void OnWrongNoteCollected()
     {
         _animator.Play("Wrong");

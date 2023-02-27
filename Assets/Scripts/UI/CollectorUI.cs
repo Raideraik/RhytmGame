@@ -7,26 +7,21 @@ using UnityEngine;
 public class CollectorUI : MonoCache
 {
     [SerializeField] private TMP_Text _phraseText;
-    [SerializeField] private CollectorController[] _collector;
+    //[SerializeField] private CollectorController[] _collector;
+    //[SerializeField] private ControllersHandler _controllersHandler;
     [SerializeField] private Animator _phraseAnimator;
 
     [SerializeField] private string[] _goodPhrases;
     [SerializeField] private string[] _badPhrases;
     protected override void OnEnabled()
     {
-        for (int i = 0; i < _collector.Length; i++)
-        {
-            _collector[i].OnCollected += OnCollected;
-            _collector[i].OnWrong += OnWrong;
-        }
+        ControllersHandler.OnAnyCollected += OnCollected;
+        ControllersHandler.OnAnyMissed += OnWrong;
     }
     protected override void OnDisabled()
     {
-        for (int i = 0; i < _collector.Length; i++)
-        {
-            _collector[i].OnCollected -= OnCollected;
-            _collector[i].OnWrong -= OnWrong;
-        }
+        ControllersHandler.OnAnyCollected -= OnCollected;
+        ControllersHandler.OnAnyMissed -= OnWrong;
     }
     private void OnCollected()
     {
