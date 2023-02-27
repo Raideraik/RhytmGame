@@ -14,6 +14,7 @@ public class NoteMover : MonoCache
     private Spawner _spawner;
     private float beatOfThisNote;
     private bool _pointAchieved = false;
+   // private float _speedToRemovePosition = 10f;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class NoteMover : MonoCache
         {
             _pointAchieved = true;
             transform.Translate(_removePos.position.x, 0, 0);
+            //transform.Translate(Vector3.down * Time.deltaTime * _speedToRemovePosition, Space.World);
         }
     }
     public void SetSpawner(Spawner spawner)

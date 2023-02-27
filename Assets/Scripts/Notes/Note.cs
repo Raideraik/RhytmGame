@@ -26,7 +26,7 @@ public class Note : MonoCache
     {
         _spriteRenderer = GetComponent<Image>();
         _mover = GetComponent<NoteMover>();
-       // SetColor();
+        // SetColor();
     }
 
     public void SetColor()
@@ -56,7 +56,7 @@ public class Note : MonoCache
         return _color;
     }
 
-    public void ResetNote() 
+    public void ResetNote()
     {
         _mover.ResetPosition();
         gameObject.SetActive(false);

@@ -41,7 +41,7 @@ public class MainMenuScore : MonoBehaviour
     {
         if (_score >= score)
         {
-            //_score -= score;
+            _score -= score;
             UpdateScore();
             return true;
         }

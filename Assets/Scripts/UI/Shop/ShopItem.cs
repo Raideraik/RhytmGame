@@ -1,23 +1,27 @@
+using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ShopItem : MonoBehaviour
+public class ShopItem : MonoCache
 {
+    public event UnityAction<ShopItem> OnButtonSelect;
+
     [SerializeField] private Button _buyButton;
     [SerializeField] private Image _picture;
     [SerializeField] private TMP_Text _buttonText;
 
     private PlayerSkin _playerSkin;
 
-    private void OnEnable()
+    protected override void OnEnabled()
     {
         _buyButton.onClick.AddListener(TryBuyItem);
     }
 
-    private void OnDisable()
+    protected override void OnDisabled()
     {
         _buyButton.onClick.RemoveListener(TryBuyItem);
     }
@@ -39,9 +43,10 @@ public class ShopItem : MonoBehaviour
     {
         if (IsBuyed())
         {
-            _buttonText.text = "Choosed";
+            SetChoosed();
             PlayerPrefs.SetInt("ChoosedSkin", _playerSkin.GetID());
             AudioEffectsControll.Instance.PlayButtonClip();
+            OnButtonSelect?.Invoke(this);
         }
         else if (!IsBuyed() && MainMenuScore.Instance.TrySell(_playerSkin.GetPrice()))
         {
@@ -68,5 +73,15 @@ public class ShopItem : MonoBehaviour
             _buttonText.text = _playerSkin.GetPrice().ToString();
             return false;
         }
+    }
+
+    public void ResetButton() 
+    {
+        IsBuyed();
+    }
+
+    public void SetChoosed() 
+    {
+        _buttonText.text = "Choosed";
     }
 }
