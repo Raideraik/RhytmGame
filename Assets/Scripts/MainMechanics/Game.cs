@@ -11,52 +11,48 @@ public class Game : MonoCache
     [SerializeField] private GameOverScreen _gameoverScreen;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Transform _characterSpawnPoint;
-
+    [SerializeField] private float _additionalTimeForSpawn;
     private LoadSkin _loadSkin;
 
 
     protected override void OnEnabled()
     {
-        _startScreen.StartButtonClick += StartGame;
+        _startScreen.StartButtonClick += OnStartButtonClick;
         _gameoverScreen.ExitButtonClick += ExitGame;
         _spawner.OnFinish += OnGameOver;
     }
 
     protected override void OnDisabled()
     {
-        _startScreen.StartButtonClick -= StartGame;
+        _startScreen.StartButtonClick -= OnStartButtonClick;
         _gameoverScreen.ExitButtonClick -= ExitGame;
         _spawner.OnFinish -= OnGameOver;
     }
 
-    private void Start()
+    private void Awake()
     {
         Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
-        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+    }
+
+    private void Start()
+    {
         Time.timeScale = 0;
 
         _startScreen.gameObject.SetActive(true);
         _startScreen.OpenStart();
     }
-
-    private void BeginGame()
-    {
-        _startScreen.gameObject.SetActive(false);
-        StartGame();
-        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
-    }
     private void ExitGame()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneFader.Instance.FadeTo(0);
+        // SceneManager.LoadSceneAsync(0);
     }
 
-    private void StartGame()
+    private void OnStartButtonClick()
     {
         _startScreen.gameObject.SetActive(false);
         Time.timeScale = 1;
-        AudioFlow.Instance.StartFlow();
-        _spawner.StartGame();
+        StartCoroutine(StartGame());
     }
 
     private void OnGameOver()
@@ -64,5 +60,16 @@ public class Game : MonoCache
         Time.timeScale = 0;
         _gameoverScreen.gameObject.SetActive(true);
         _gameoverScreen.OpenGameOverScreen();
+    }
+
+    private IEnumerator StartGame()
+    {
+        Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
+        yield return new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
+        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+
+
+        AudioFlow.Instance.StartFlow();
+        _spawner.StartGame();
     }
 }

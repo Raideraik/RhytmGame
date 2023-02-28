@@ -36,7 +36,8 @@ public class ChooseSong : MonoCache
     {
         AudioEffectsControll.Instance.PlayButtonClip();
         PlayerPrefs.SetInt("ChoosedSong", _song.Id);
-        SceneManager.LoadSceneAsync(1);
+        SceneFader.Instance.FadeTo(1);
+        //SceneManager.LoadSceneAsync(1);
     }
 
     private void SetStars()

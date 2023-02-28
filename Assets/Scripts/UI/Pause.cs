@@ -44,6 +44,7 @@ public class Pause : MonoCache
     private void ReturnToMainMenu()
     {
         AudioEffectsControll.Instance.PlayButtonClip();
-        SceneManager.LoadSceneAsync(0);
+        SceneFader.Instance.FadeTo(0);
+        // SceneManager.LoadSceneAsync(0);
     }
 }

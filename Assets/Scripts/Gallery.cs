@@ -18,13 +18,9 @@ public class Gallery : MonoBehaviour
         _backButton.onClick.RemoveListener(ReturnToMainMenu);
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void ReturnToMainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        //SceneManager.LoadSceneAsync(0);
+        SceneFader.Instance.FadeTo(0);
     }
 }

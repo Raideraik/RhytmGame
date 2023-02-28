@@ -36,5 +36,4 @@ public class CharacterAnimationController : MonoCache
     {
         _animator.Play("Wrong");
     }
-
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [CreateAssetMenu(fileName = "Skin", menuName = "CreatePlayerSkin", order = 1)]
 public class PlayerSkin : ScriptableObject
@@ -10,6 +11,7 @@ public class PlayerSkin : ScriptableObject
     [SerializeField] private Sprite _picture;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private bool _isBuyed = false;
+    [SerializeField] private VisualEffect _spawnEffect;
 
     public int GetID()
     {
@@ -27,6 +29,11 @@ public class PlayerSkin : ScriptableObject
     public GameObject GetPrefab()
     {
         return _prefab;
+    }
+
+    public VisualEffect GetSpawnEffect()
+    {
+        return _spawnEffect;
     }
 
     public bool IsBuyed()

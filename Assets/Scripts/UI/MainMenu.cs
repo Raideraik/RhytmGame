@@ -73,7 +73,8 @@ public class MainMenu : MonoCache
 
     private void LoadGallery()
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneFader.Instance.FadeTo(2);
+        //SceneManager.LoadSceneAsync(2);
     }
 
     private void ExitGame()

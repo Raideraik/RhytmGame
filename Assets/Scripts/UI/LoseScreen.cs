@@ -34,11 +34,15 @@ public class LoseScreen : MonoCache
 
     private void RestartLevel()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneFader.Instance.FadeTo(1);
+
+        // SceneManager.LoadSceneAsync(1);
     }
 
     private void ReturnToMainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneFader.Instance.FadeTo(0);
+
+        // SceneManager.LoadSceneAsync(0);
     }
 }
