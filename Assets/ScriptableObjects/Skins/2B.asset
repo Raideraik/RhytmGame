@@ -17,3 +17,4 @@ MonoBehaviour:
   _picture: {fileID: 1858266369, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 1796181684587396371, guid: 154163a926068d9469f61d395e4e63b0, type: 3}
   _isBuyed: 0
+  _spawnEffect: {fileID: 7118838444956810879, guid: ce775ac2209dd444fb952baab8803c73, type: 3}

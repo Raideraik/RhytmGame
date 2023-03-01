@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(CoolnessLevel))]
 public class CoolnesLevelUI : MonoCache

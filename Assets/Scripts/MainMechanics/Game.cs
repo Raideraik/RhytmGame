@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class Game : MonoCache
 {
+    public static event UnityAction OnGameStarted;
+    public static Game Instance { get; private set; }
+
+
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private GameOverScreen _gameoverScreen;
     [SerializeField] private Spawner _spawner;
@@ -32,16 +37,23 @@ public class Game : MonoCache
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogError("There more than one Game!" + transform + " - " + Instance);
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
     }
 
     private void Start()
     {
-        Time.timeScale = 0;
+        StartCoroutine(GameStart());
+        Time.timeScale = 1;
 
-        _startScreen.gameObject.SetActive(true);
-        _startScreen.OpenStart();
     }
     private void ExitGame()
     {
@@ -53,7 +65,11 @@ public class Game : MonoCache
     {
         _startScreen.gameObject.SetActive(false);
         Time.timeScale = 1;
-        StartCoroutine(StartGame());
+
+        OnGameStarted?.Invoke();
+
+        AudioFlow.Instance.StartFlow();
+        _spawner.StartGame();
     }
 
     private void OnGameOver()
@@ -63,15 +79,17 @@ public class Game : MonoCache
         _gameoverScreen.OpenGameOverScreen();
     }
 
-    private IEnumerator StartGame()
+    private IEnumerator GameStart()
     {
-        VisualEffect effect = Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
-        effect.Play();
+        _startScreen.gameObject.SetActive(true);
+        if (_loadSkin.GetChoosedSkin().GetSpawnEffect() != null)
+            Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
+
+
+
         yield return new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
         Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+        _startScreen.OpenStart();
 
-
-        AudioFlow.Instance.StartFlow();
-        _spawner.StartGame();
     }
 }

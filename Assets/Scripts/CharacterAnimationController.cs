@@ -9,7 +9,7 @@ public class CharacterAnimationController : MonoCache
 
     private Animator _animator;
     protected override void OnEnabled()
-    {
+    {/*
         if (Screen.autorotateToPortrait != true)
         {
             _animator.SetBool("IsGallery", false);
@@ -18,14 +18,17 @@ public class CharacterAnimationController : MonoCache
         else
         {
             _animator.SetBool("IsGallery", true);
-        }
+        }*/
+        ControllersHandler.OnAnyMissed += OnWrongNoteCollected;
+        Game.OnGameStarted += OnGameStarted;
     }
     protected override void OnDisabled()
     {
-        if (Screen.autorotateToPortrait != true)
-        {
-            ControllersHandler.OnAnyMissed -= OnWrongNoteCollected;
-        }
+        // if (Screen.autorotateToPortrait != true)
+        // {
+        ControllersHandler.OnAnyMissed -= OnWrongNoteCollected;
+        Game.OnGameStarted -= OnGameStarted;
+        // }
     }
     private void Awake()
     {
@@ -35,5 +38,10 @@ public class CharacterAnimationController : MonoCache
     private void OnWrongNoteCollected()
     {
         _animator.Play("Wrong");
+    }
+
+    private void OnGameStarted()
+    {
+        _animator.SetBool("IsGameStarted", true);
     }
 }

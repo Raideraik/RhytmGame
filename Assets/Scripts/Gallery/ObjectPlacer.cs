@@ -2,32 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+//using UnityEngine.XR.ARFoundation;
+//using UnityEngine.XR.ARSubsystems;
 using NTC.Global.Cache;
 
 
-[RequireComponent(typeof(ARRaycastManager))]
+//[RequireComponent(typeof(ARRaycastManager))]
 public class ObjectPlacer : MonoCache
 {
     [SerializeField] private Transform _objectPlace;
     [SerializeField] private Camera _camera;
     [SerializeField] private GameObject _container;
 
-    private ARRaycastManager _arRaycasyManager;
+    //private ARRaycastManager _arRaycasyManager;
     private GameObject _installedObject;
-    private List<ARRaycastHit> _hits = new List<ARRaycastHit>();
+    //private List<ARRaycastHit> _hits = new List<ARRaycastHit>();
 
     private void Start()
     {
-        _arRaycasyManager = Get<ARRaycastManager>();
+       // _arRaycasyManager = Get<ARRaycastManager>();
         //_container.SetActive(false);
     }
     protected override void Run()
     {
-        UpdatePlacemenetPose();
+        //UpdatePlacemenetPose();
     }
-
+    /*
     private void UpdatePlacemenetPose()
     {
         Vector2 screenCenter = _camera.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
@@ -40,9 +40,9 @@ public class ObjectPlacer : MonoCache
         }
         else if (_arRaycasyManager.Raycast(screenCenter, _hits, TrackableType.PlaneWithinPolygon))
         {
-            SetObjectPosition(_hits[0].pose.position);
+           // SetObjectPosition(_hits[0].pose.position);
         }
-    }
+    }*/
 
     private void SetObjectPosition(Vector3 position)
     {
