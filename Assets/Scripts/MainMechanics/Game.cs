@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class Game : MonoCache
 {
@@ -64,7 +65,8 @@ public class Game : MonoCache
 
     private IEnumerator StartGame()
     {
-        Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
+        VisualEffect effect = Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
+        effect.Play();
         yield return new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
         Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
 
