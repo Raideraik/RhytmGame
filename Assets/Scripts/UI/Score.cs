@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Score : MonoCache
 {
+    public event UnityAction OnMultiplierChanged;
+
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _scoreMultiplierText;
     //[SerializeField] private CollectorController[] _collector;
@@ -54,6 +57,7 @@ public class Score : MonoCache
         if (_scoreAddedTimes >= _scoreNeededToAddTimes[_index] && _index < _scoreNeededToAddTimes.Length - 1)
         {
             _index++;
+            OnMultiplierChanged?.Invoke();
         }
     }
 

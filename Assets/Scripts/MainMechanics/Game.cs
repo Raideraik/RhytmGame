@@ -88,7 +88,8 @@ public class Game : MonoCache
 
 
         yield return new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
-        Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+        GameObject skin = Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
+        skin.GetComponent<CharacterAnimationController>().ChangeToIdle();
         _startScreen.OpenStart();
 
     }

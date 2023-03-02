@@ -10,7 +10,7 @@ public class NoteVisualEffects : MonoCache
     [SerializeField] private ParticleSystem[] _hitEffect;
     //[SerializeField] private CollectorController[] _collectorControllers;
     //[SerializeField] private ControllersHandler _controllersHandler;
-    [SerializeField] private NoteCollector _noteCollector;
+    [SerializeField] private Score _score;
 
     private void Awake()
     {
@@ -25,12 +25,14 @@ public class NoteVisualEffects : MonoCache
 
     protected override void OnEnabled()
     {
-        ControllersHandler.OnAnyCollected += PlayHitEffect;
+        // ControllersHandler.OnAnyCollected += PlayHitEffect;
+        _score.OnMultiplierChanged += PlayHitEffect;
     }
 
     protected override void OnDisabled()
     {
-        ControllersHandler.OnAnyCollected -= PlayHitEffect;
+        _score.OnMultiplierChanged -= PlayHitEffect;
+        //ControllersHandler.OnAnyCollected -= PlayHitEffect;
     }
 
     public void PlayHitEffect()

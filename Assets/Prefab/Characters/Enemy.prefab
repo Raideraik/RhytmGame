@@ -1650,7 +1650,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 11131290da3eff843b162669bdc602bb, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1669,19 +1669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationNames:
-  - Belly
-  - Macarena
-  - Chicken
-  - Gang
-  - Booty
-  - Dancing
-  - Flair
-  - Rumba
-  - Running
-  - Snake
-  - Swing
-  - Twerk
 --- !u!1 &7780947405289839143
 GameObject:
   m_ObjectHideFlags: 0

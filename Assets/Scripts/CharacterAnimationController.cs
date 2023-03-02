@@ -44,4 +44,9 @@ public class CharacterAnimationController : MonoCache
     {
         _animator.SetBool("IsGameStarted", true);
     }
+
+    public void ChangeToIdle()
+    {
+        _animator.SetTrigger("Idle");
+    }
 }
