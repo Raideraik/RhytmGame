@@ -404,3 +404,4 @@ MonoBehaviour:
   _id: 8
   _neededScore: 800
   _songName: Evangelion
+  _neededStarsToUnlockLevel: 30

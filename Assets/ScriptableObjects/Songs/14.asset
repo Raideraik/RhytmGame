@@ -391,3 +391,4 @@ MonoBehaviour:
   _id: 14
   _neededScore: 700
   _songName: Dont Say Lazy
+  _neededStarsToUnlockLevel: 65

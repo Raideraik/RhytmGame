@@ -299,3 +299,4 @@ MonoBehaviour:
   _id: 16
   _neededScore: 600
   _songName: Billie Jean
+  _neededStarsToUnlockLevel: 60

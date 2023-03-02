@@ -244,3 +244,4 @@ MonoBehaviour:
   _id: 15
   _neededScore: 600
   _songName: Smooth criminal
+  _neededStarsToUnlockLevel: 60

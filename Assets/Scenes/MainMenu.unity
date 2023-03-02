@@ -2209,6 +2209,7 @@ GameObject:
   - component: {fileID: 1352159133}
   - component: {fileID: 1352159132}
   - component: {fileID: 1352159136}
+  - component: {fileID: 1352159137}
   m_Layer: 5
   m_Name: StartCanvas
   m_TagString: Untagged
@@ -2332,6 +2333,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
   _container: {fileID: 86156551}
   _template: {fileID: 6779122605032689141, guid: 57f95227e3581c84caf64400907a6e8a, type: 3}
+--- !u!114 &1352159137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352159131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736760ac5a90d0e489aa1c54d2f01e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414081219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,6 +2827,10 @@ PrefabInstance:
     - target: {fileID: 2051624183438090832, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
       propertyPath: m_Name
       value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051624184700851569, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}

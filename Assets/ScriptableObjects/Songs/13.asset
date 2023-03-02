@@ -335,3 +335,4 @@ MonoBehaviour:
   _id: 13
   _neededScore: 900
   _songName: Great Days
+  _neededStarsToUnlockLevel: 70

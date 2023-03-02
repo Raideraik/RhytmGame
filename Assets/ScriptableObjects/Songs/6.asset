@@ -238,3 +238,4 @@ MonoBehaviour:
   _id: 6
   _neededScore: 700
   _songName: Plastic Love
+  _neededStarsToUnlockLevel: 30

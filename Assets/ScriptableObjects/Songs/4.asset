@@ -120,3 +120,4 @@ MonoBehaviour:
   _id: 4
   _neededScore: 220
   _songName: Net igri
+  _neededStarsToUnlockLevel: 10

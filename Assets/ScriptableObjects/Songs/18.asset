@@ -296,3 +296,4 @@ MonoBehaviour:
   _id: 18
   _neededScore: 500
   _songName: Final Countdown
+  _neededStarsToUnlockLevel: 60

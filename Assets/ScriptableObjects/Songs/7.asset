@@ -472,3 +472,4 @@ MonoBehaviour:
   _id: 7
   _neededScore: 900
   _songName: Happy
+  _neededStarsToUnlockLevel: 30

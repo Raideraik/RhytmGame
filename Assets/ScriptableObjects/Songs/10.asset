@@ -253,3 +253,4 @@ MonoBehaviour:
   _id: 10
   _neededScore: 500
   _songName: Lucky
+  _neededStarsToUnlockLevel: 50

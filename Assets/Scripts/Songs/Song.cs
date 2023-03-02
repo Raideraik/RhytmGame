@@ -12,12 +12,14 @@ public class Song : ScriptableObject
     [SerializeField] private int _id;
     [SerializeField] private int _neededScore;
     [SerializeField] private string _songName;
+    [SerializeField] private int _neededStarsToUnlockLevel;
     public float[] Notes => _notes;
     public float Bpm => _bpm;
     public float BeatsShownInAdvance => _beatsShownInAdvance;
     public int NeededScore => _neededScore;
-    public AudioClip Clip => _clip;
     public int Id => _id;
+    public int NeededStars => _neededStarsToUnlockLevel;
+    public AudioClip Clip => _clip;
 
     public string SongName => _songName;
 

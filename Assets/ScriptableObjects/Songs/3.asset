@@ -219,3 +219,4 @@ MonoBehaviour:
   _id: 3
   _neededScore: 450
   _songName: Music Thief
+  _neededStarsToUnlockLevel: 10

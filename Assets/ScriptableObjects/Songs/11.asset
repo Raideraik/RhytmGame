@@ -368,3 +368,4 @@ MonoBehaviour:
   _id: 11
   _neededScore: 800
   _songName: Sugar on Me
+  _neededStarsToUnlockLevel: 50

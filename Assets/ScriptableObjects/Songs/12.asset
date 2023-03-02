@@ -413,3 +413,4 @@ MonoBehaviour:
   _id: 12
   _neededScore: 700
   _songName: God Knows
+  _neededStarsToUnlockLevel: 50

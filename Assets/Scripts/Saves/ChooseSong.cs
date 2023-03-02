@@ -29,14 +29,35 @@ public class ChooseSong : MonoCache
     {
         //_score = PlayerPrefs.GetInt(_song.SongName + "_Score", 0);
         SetStars();
-        _songName.text = _song.SongName;
+        if (IsCanChooseLevel())
+        {
+            _songName.text = _song.SongName;
+        }
+        else
+        {
+            _songName.text = "Need " + (_song.NeededStars - Stars.Instance.GetStars()) + " stars";
+        }
+    }
+
+    private bool IsCanChooseLevel()
+    {
+        if (Stars.Instance.GetStars() >= _song.NeededStars)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void ChooseLevel()
     {
-        AudioEffectsControll.Instance.PlayButtonClip();
-        PlayerPrefs.SetInt("ChoosedSong", _song.Id);
-        SceneFader.Instance.FadeTo(1);
+        if (IsCanChooseLevel())
+        {
+            AudioEffectsControll.Instance.PlayButtonClip();
+            PlayerPrefs.SetInt("ChoosedSong", _song.Id);
+            SceneFader.Instance.FadeTo(1);
+
+        }
         //SceneManager.LoadSceneAsync(1);
     }
 
@@ -78,6 +99,8 @@ public class ChooseSong : MonoCache
                 _scoreStars[i].sprite = _starSprite;
             }
         }
+
+        Stars.Instance.AddStars(stars);
     }
 
     public void SetSong(Song song)
