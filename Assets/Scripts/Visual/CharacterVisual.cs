@@ -1,38 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class CharacterVisual : MonoBehaviour
 {
-    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
-    [SerializeField] private float _speed;
-    [SerializeField] private AnimationCurve _fadeCurve;
+    [SerializeField] private float _fillSpeed;
+    [SerializeField] private Color _targetColor;
+    [SerializeField] private Color _startColor;
+    [SerializeField] private float _targetClip;
+    [SerializeField] private float _startClip;
+    [SerializeField] private float _startFresnelPower;
+    [SerializeField] private float _targetFresnelPower;
 
+
+    [SerializeField] private SkinnedMeshRenderer[] _skinnedMeshRenderer;
     private bool _power;
     private bool _color;
 
+
     private void Start()
     {
-        StartCoroutine(Set());
-    }
-    private IEnumerator Set()
-    {
-
-
-        float time = 1f;
-        float curve;
-
-        while (_speed > 0f)
+        for (int i = 0; i < _skinnedMeshRenderer.Length; i++)
         {
-            _speed -= Time.deltaTime;
-            curve = _fadeCurve.Evaluate(_speed);
+            _skinnedMeshRenderer[i].material.SetFloat("_Clip", _startClip);
+            _skinnedMeshRenderer[i].material.SetFloat("_FresnelPower", _startFresnelPower);
+            _skinnedMeshRenderer[i].material.SetColor("_FresnelColor", _startColor);
+        }
 
-            if (_skinnedMeshRenderer.material.GetFloat("_Clip") > 0)
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < _skinnedMeshRenderer.Length; i++)
+        {
+            if (_skinnedMeshRenderer[i].material.GetFloat("_Clip") > _targetClip)
             {
-                float clip = Mathf.MoveTowards(_skinnedMeshRenderer.material.GetFloat("_Clip"), 0, curve);
-                _skinnedMeshRenderer.material.SetFloat("_Clip", clip);
-                if (_skinnedMeshRenderer.material.GetFloat("_Clip") == 0)
+                float clip = Mathf.MoveTowards(_skinnedMeshRenderer[i].material.GetFloat("_Clip"), _targetClip, Time.deltaTime * _fillSpeed);
+                _skinnedMeshRenderer[i].material.SetFloat("_Clip", clip);
+                if (_skinnedMeshRenderer[i].material.GetFloat("_Clip") == _targetClip)
                 {
                     _power = true;
                 }
@@ -41,9 +46,9 @@ public class CharacterVisual : MonoBehaviour
             if (_power)
             {
 
-                float power = Mathf.MoveTowards(_skinnedMeshRenderer.material.GetFloat("_FresnelPower"), 1, curve);
-                _skinnedMeshRenderer.material.SetFloat("_FresnelPower", power);
-                if (_skinnedMeshRenderer.material.GetFloat("_FresnelPower") == 1)
+                float power = Mathf.MoveTowards(_skinnedMeshRenderer[i].material.GetFloat("_FresnelPower"), _targetFresnelPower, Time.deltaTime * _fillSpeed);
+                _skinnedMeshRenderer[i].material.SetFloat("_FresnelPower", power);
+                if (_skinnedMeshRenderer[i].material.GetFloat("_FresnelPower") == _targetFresnelPower)
                 {
                     _color = true;
 
@@ -52,18 +57,19 @@ public class CharacterVisual : MonoBehaviour
 
             if (_color)
             {
-                Color color = Color.LerpUnclamped(_skinnedMeshRenderer.material.GetColor("_FresnelColor"), Color.black, curve);
-                _skinnedMeshRenderer.material.SetColor("_FresnelColor", color);
-
-
+                //Color color = Color.LerpUnclamped(_skinnedMeshRenderer.material.GetColor("_FresnelColor"), _targetColor, Time.deltaTime * _speed);
+                Color color = Vector4.MoveTowards(_skinnedMeshRenderer[i].material.GetColor("_FresnelColor"), _targetColor, Time.deltaTime * _fillSpeed);
+                _skinnedMeshRenderer[i].material.SetColor("_FresnelColor", color);
             }
-
-            if (_skinnedMeshRenderer.material.GetColor("_FresnelColor") == Color.black)
+            if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
             {
-                yield return 0;
+                enabled = false;
             }
-            //_image.color = new Color(_colorOfFade.r, _colorOfFade.g, _colorOfFade.b, curve);
         }
+
+
+
     }
+
 
 }

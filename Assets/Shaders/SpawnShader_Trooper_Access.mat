@@ -28,7 +28,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses: []
@@ -36,7 +36,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 59c02688a281eab4489653f5172b724d, type: 3}
+        m_Texture: {fileID: 2800000, guid: d028429c512e0a44e9126f8fa11622ac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission:
@@ -67,7 +67,7 @@ Material:
     - _Clip: 0
     - _Cull: 2
     - _DstBlend: 0
-    - _FresnelPower: 1
+    - _FresnelPower: 0
     - _FrsnelPower: 0
     - _Metallic: 0
     - _QueueControl: 0
