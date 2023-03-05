@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Note))]
-public class NoteMover : MonoCache
+public class NoteMover : MonoBehaviour
 {
     [SerializeField] private Note _note;
-    //[SerializeField] private float _speed;
+    [SerializeField] private float _speed;
 
     private Transform _spawnPos;
     private Transform _finishPos;
@@ -15,35 +15,48 @@ public class NoteMover : MonoCache
     private Spawner _spawner;
     private float beatOfThisNote;
     private bool _pointAchieved = false;
-    // private float _speedToRemovePosition = 10f;
+    private float _speedToRemovePosition = 10f;
+
 
     private void Start()
     {
         ResetPosition();
     }
-    protected override void LateRun()
+    private void FixedUpdate()
     {
         ChoosePath();
     }
     private void ChoosePath()
     {
-        if (Vector2.Distance(transform.position, _finishPos.position) > 0.1 && !_pointAchieved)
+
+        if (Vector3.Distance(transform.position, _finishPos.position) > 0.1 && !_pointAchieved)
         {
             //transform.position = Vector3.MoveTowards(transform.position, _finishPos.position, Time.deltaTime * beatOfThisNote);
 
-            transform.position = Vector2.Lerp(
+            //transform.Translate(Vector3.left * 
+            // (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() * Time.deltaTime);
+
+            /*
+            transform.position = Vector3.Lerp(
             _spawnPos.position,
             _finishPos.position,
-            //Time.deltaTime * _speed
-            (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
-               );
+               // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
+               (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
+               );*/
+
+
+            //  float distCovered = (Time.time - startTime) * _speed;
+            // float fracJourney = distCovered / journeyLength;
+            //transform.position = Vector3.Lerp(_spawnPos.position, _finishPos.position, fracJourney);
+
+            transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
 
         }
         else
         {
             _pointAchieved = true;
-            transform.Translate(_removePos.position.x, 0, 0);
-            //transform.Translate(Vector3.down * Time.deltaTime * _speedToRemovePosition, Space.World);
+            // transform.Translate(_removePos.position.x, 0, 0);
+            transform.Translate(Vector3.left * Time.deltaTime * _speedToRemovePosition, Space.World);
         }
     }
     public void SetSpawner(Spawner spawner)
@@ -59,6 +72,7 @@ public class NoteMover : MonoCache
         _spawnPos = spawn;
         _finishPos = finish;
         _removePos = remove;
+
     }
 
     public void ResetPosition()
@@ -66,5 +80,6 @@ public class NoteMover : MonoCache
         _pointAchieved = false;
         transform.position = _spawnPos.position;
         _note.SetColor();
+
     }
 }

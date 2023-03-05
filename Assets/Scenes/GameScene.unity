@@ -36113,7 +36113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startScreen: {fileID: 1804231237}
   _gameoverScreen: {fileID: 1138038864}
-  _spawner: {fileID: 1746150091}
+  _spawner: {fileID: 2131719200}
   _characterSpawnPoint: {fileID: 1883929475}
   _additionalTimeForSpawn: 3
 --- !u!114 &443463997
@@ -36942,7 +36942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &724610258
 Transform:
   m_ObjectHideFlags: 0
@@ -37112,7 +37112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740603342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.36, z: 1}
+  m_LocalPosition: {x: -9, y: 3, z: 1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37282,7 +37282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779010111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.84, z: 1}
+  m_LocalPosition: {x: -7.5, y: 3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37489,7 +37489,7 @@ MonoBehaviour:
   _scoreMultiplierText: {fileID: 54269187}
   _scoreNeededToAddTimes: 080000001100000019000000
   _scoreMultiplier: 010000000200000003000000
-  _spawner: {fileID: 1746150091}
+  _spawner: {fileID: 2131719200}
 --- !u!114 &784601033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37504,7 +37504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxLevel: 20
   _minLevel: 0
-  _deadZone: {fileID: 365811962}
+  _deadZone: {fileID: 740603344}
 --- !u!114 &784601034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38072,7 +38072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082158225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.17, z: 1}
+  m_LocalPosition: {x: 9, y: 3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38112,7 +38112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133476392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.1, z: 1}
+  m_LocalPosition: {x: -6.5, y: 3, z: 1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -38166,7 +38166,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.43
+  m_Radius: 2
 --- !u!212 &1133476397
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38769,8 +38769,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9a9e4d8e67bad48b98aeafdc1d29db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteCollector: {fileID: 990139462}
-  _deadZone: {fileID: 365811962}
+  _noteCollector: {fileID: 1133476394}
+  _deadZone: {fileID: 740603344}
   _button: {fileID: 1199888261}
   _color: 1
   _keyCode: 110
@@ -38844,7 +38844,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 20
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -38901,7 +38901,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213879947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -38961,7 +38961,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213879947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -38987,7 +38987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1225063713
 Transform:
   m_ObjectHideFlags: 0
@@ -40143,8 +40143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9a9e4d8e67bad48b98aeafdc1d29db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteCollector: {fileID: 990139462}
-  _deadZone: {fileID: 365811962}
+  _noteCollector: {fileID: 1133476394}
+  _deadZone: {fileID: 740603344}
   _button: {fileID: 1577801160}
   _color: 3
   _keyCode: 109
@@ -41342,7 +41342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1889396579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41744,8 +41744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9a9e4d8e67bad48b98aeafdc1d29db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteCollector: {fileID: 990139462}
-  _deadZone: {fileID: 365811962}
+  _noteCollector: {fileID: 1133476394}
+  _deadZone: {fileID: 740603344}
   _button: {fileID: 1967562211}
   _color: 0
   _keyCode: 122
@@ -41883,8 +41883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9a9e4d8e67bad48b98aeafdc1d29db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteCollector: {fileID: 990139462}
-  _deadZone: {fileID: 365811962}
+  _noteCollector: {fileID: 1133476394}
+  _deadZone: {fileID: 740603344}
   _button: {fileID: 1982885119}
   _color: 2
   _keyCode: 120

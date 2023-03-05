@@ -14,7 +14,7 @@ public enum Collor
 public class Note : MonoCache
 {
     private Collor _color;
-    private Image _spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private Sprite _redNoteSprite;
     [SerializeField] private Sprite _greenNoteSprite;
@@ -24,7 +24,7 @@ public class Note : MonoCache
     private NoteMover _mover;
     private void Awake()
     {
-        _spriteRenderer = GetComponent<Image>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _mover = GetComponent<NoteMover>();
         // SetColor();
     }
