@@ -7,6 +7,7 @@ using UnityEngine;
 public class NoteMover : MonoCache
 {
     [SerializeField] private Note _note;
+    //[SerializeField] private float _speed;
 
     private Transform _spawnPos;
     private Transform _finishPos;
@@ -14,28 +15,29 @@ public class NoteMover : MonoCache
     private Spawner _spawner;
     private float beatOfThisNote;
     private bool _pointAchieved = false;
-   // private float _speedToRemovePosition = 10f;
+    // private float _speedToRemovePosition = 10f;
 
     private void Start()
     {
         ResetPosition();
     }
-    protected override void Run()
+    protected override void LateRun()
     {
-
         ChoosePath();
-
     }
-
     private void ChoosePath()
     {
         if (Vector2.Distance(transform.position, _finishPos.position) > 0.1 && !_pointAchieved)
         {
+            //transform.position = Vector3.MoveTowards(transform.position, _finishPos.position, Time.deltaTime * beatOfThisNote);
+
             transform.position = Vector2.Lerp(
             _spawnPos.position,
             _finishPos.position,
-          (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()
-        );
+            //Time.deltaTime * _speed
+            (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
+               );
+
         }
         else
         {

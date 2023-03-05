@@ -63,7 +63,7 @@ public class CharacterVisual : MonoBehaviour
             }
             if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
             {
-                enabled = false;
+             //   enabled = false;
             }
         }
 

@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 1006018549072964280}
   - component: {fileID: 6563491088685822146}
   - component: {fileID: 755656920530931024}
+  - component: {fileID: 2348757316008820779}
   m_Layer: 0
   m_Name: CloneTrooper
   m_TagString: Untagged
@@ -141,6 +142,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2348757316008820779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485764403921350658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3449583e5ddbdb0419602e6d53d42045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fillSpeed: 0.5
+  _targetColor: {r: 0, g: 0, b: 0, a: 0}
+  _startColor: {r: 0, g: 1, b: 0.1078887, a: 0}
+  _targetClip: 0
+  _startClip: 1
+  _startFresnelPower: 0
+  _targetFresnelPower: 1
+  _skinnedMeshRenderer:
+  - {fileID: 1990580578711672320}
+  - {fileID: 7530674188342315829}
+  - {fileID: 7075765739016877871}
+  - {fileID: 3195413008324151883}
+  - {fileID: 6351378697506453156}
+  - {fileID: 5970722354443998873}
+  - {fileID: 2451584987400883164}
+  - {fileID: 8237812120908110817}
+  - {fileID: 7458912984421282700}
+  - {fileID: 1656377987772227793}
 --- !u!1 &604471414746418965
 GameObject:
   m_ObjectHideFlags: 0

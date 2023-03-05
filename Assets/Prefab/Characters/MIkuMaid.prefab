@@ -3921,6 +3921,7 @@ GameObject:
   - component: {fileID: 7507585917151719000}
   - component: {fileID: 4526224595525596194}
   - component: {fileID: -4387336137486847433}
+  - component: {fileID: 2729711402115349073}
   m_Layer: 0
   m_Name: MIkuMaid
   m_TagString: Untagged
@@ -3979,6 +3980,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2729711402115349073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168496069867599074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3449583e5ddbdb0419602e6d53d42045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fillSpeed: 0.5
+  _targetColor: {r: 0, g: 0, b: 0, a: 0}
+  _startColor: {r: 0.28835884, g: 0.8950566, b: 0.9433962, a: 0}
+  _targetClip: 0
+  _startClip: 1
+  _startFresnelPower: 0
+  _targetFresnelPower: 1
+  _skinnedMeshRenderer:
+  - {fileID: 8726651729791554785}
+  - {fileID: 3524174257334521986}
 --- !u!1 &7202083738906233358
 GameObject:
   m_ObjectHideFlags: 0

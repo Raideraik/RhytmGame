@@ -73,7 +73,8 @@ MonoBehaviour:
   - 61.50397
   _bpm: 60
   _beatsShownInAdvance: 4
-  _neededScore: 116
   _clip: {fileID: 8300000, guid: 481822cafb6ec2443a1649a7bb560c5b, type: 3}
   _id: 1
+  _neededScore: 116
   _songName: Metronom
+  _neededStarsToUnlockLevel: 0

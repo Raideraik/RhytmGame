@@ -1,6 +1,7 @@
 using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class Pause : MonoCache
     [SerializeField] private Button _pauseButtonClick;
     [SerializeField] private Button _continueButtonClick;
     [SerializeField] private Button _exitButtonClick;
+    [SerializeField] private TMP_Text _timerText;
+    [SerializeField] private float _secondsBeforeContinue;
 
     protected override void OnEnabled()
     {
@@ -37,8 +40,7 @@ public class Pause : MonoCache
     {
         AudioEffectsControll.Instance.PlayButtonClip();
         _pauseMenu.SetActive(false);
-        Time.timeScale = 1;
-        AudioFlow.Instance.ContinueFlow();
+        StartCoroutine(Timer(_secondsBeforeContinue));
     }
 
     private void ReturnToMainMenu()
@@ -46,5 +48,22 @@ public class Pause : MonoCache
         AudioEffectsControll.Instance.PlayButtonClip();
         SceneFader.Instance.FadeTo(0);
         // SceneManager.LoadSceneAsync(0);
+    }
+
+    private IEnumerator Timer(float seconds)
+    {
+        _timerText.gameObject.SetActive(true);
+
+        float totalTime = 0;
+        while (totalTime <= seconds)
+        {
+            seconds -= Time.unscaledDeltaTime;
+            int numb = (int)seconds + 1;
+            _timerText.text = numb.ToString();
+            yield return null;
+        }
+        _timerText.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        AudioFlow.Instance.ContinueFlow();
     }
 }

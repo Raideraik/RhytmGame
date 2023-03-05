@@ -16,5 +16,5 @@ MonoBehaviour:
   _price: 0
   _picture: {fileID: 1547592494, guid: 9ea6d18d354d5f14aa9ddcff86603406, type: 3}
   _prefab: {fileID: 4160919399472919538, guid: 501287429a1ec96488b5f65a9abd9dde, type: 3}
-  _isBuyed: 0
+  _isBuyed: 1
   _spawnEffect: {fileID: 4476956093326504395, guid: 3b32fc9e4d2d0cc409680cf7a141b0ee, type: 3}

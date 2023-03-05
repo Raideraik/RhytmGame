@@ -82,14 +82,14 @@ public class Game : MonoCache
     private IEnumerator GameStart()
     {
         _startScreen.gameObject.SetActive(true);
-        if (_loadSkin.GetChoosedSkin().GetSpawnEffect() != null)
-            Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
+        // if (_loadSkin.GetChoosedSkin().GetSpawnEffect() != null)
+        //  Instantiate(_loadSkin.GetChoosedSkin().GetSpawnEffect(), _characterSpawnPoint);
 
 
 
-        yield return new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
+        yield return null;//new WaitForSeconds(_loadSkin.GetChoosedSkin().GetSpawnEffect().GetFloat("Duration") + _additionalTimeForSpawn);
         GameObject skin = Instantiate(_loadSkin.GetChoosedSkin().GetPrefab(), _characterSpawnPoint);
-        skin.GetComponent<CharacterAnimationController>().ChangeToIdle();
+        //skin.GetComponent<CharacterAnimationController>().ChangeToIdle();
         _startScreen.OpenStart();
 
     }
