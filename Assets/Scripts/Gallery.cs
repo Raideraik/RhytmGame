@@ -18,6 +18,11 @@ public class Gallery : MonoBehaviour
         _backButton.onClick.RemoveListener(ReturnToMainMenu);
     }
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     private void ReturnToMainMenu()
     {
         //SceneManager.LoadSceneAsync(0);

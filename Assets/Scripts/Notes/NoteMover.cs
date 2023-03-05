@@ -31,10 +31,6 @@ public class NoteMover : MonoBehaviour
 
         if (Vector3.Distance(transform.position, _finishPos.position) > 0.1 && !_pointAchieved)
         {
-            //transform.position = Vector3.MoveTowards(transform.position, _finishPos.position, Time.deltaTime * beatOfThisNote);
-
-            //transform.Translate(Vector3.left * 
-            // (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() * Time.deltaTime);
 
             /*
             transform.position = Vector3.Lerp(
@@ -45,9 +41,6 @@ public class NoteMover : MonoBehaviour
                );*/
 
 
-            //  float distCovered = (Time.time - startTime) * _speed;
-            // float fracJourney = distCovered / journeyLength;
-            //transform.position = Vector3.Lerp(_spawnPos.position, _finishPos.position, fracJourney);
 
             transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
 

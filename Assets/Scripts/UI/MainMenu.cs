@@ -7,14 +7,21 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoCache
 {
-    [SerializeField] private Button _startButton, _shopButton, _exitButton, _settingsButton, _galleryButton;
+    [SerializeField] private Button[] _startButton;
+    [SerializeField] private Button _shopButton;
+    [SerializeField] private Button _exitButton;
+    [SerializeField] private Button _settingsButton;
+    [SerializeField] private Button _galleryButton;
     [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen;
 
     [SerializeField] private Button[] _backButtons;
 
     protected override void OnEnabled()
     {
-        _startButton.onClick.AddListener(ShowLevelScreen);
+        for (int i = 0; i < _startButton.Length; i++)
+        {
+            _startButton[i].onClick.AddListener(ShowLevelScreen);
+        }
         _shopButton.onClick.AddListener(ShowShopScreen);
         _settingsButton.onClick.AddListener(ShowSettingsScreen);
         _exitButton.onClick.AddListener(ExitGame);
@@ -30,7 +37,11 @@ public class MainMenu : MonoCache
 
     protected override void OnDisabled()
     {
-        _startButton.onClick.RemoveListener(ShowLevelScreen);
+        for (int i = 0; i < _startButton.Length; i++)
+        {
+            _startButton[i].onClick.RemoveListener(ShowLevelScreen);
+        }
+
         _shopButton.onClick.RemoveListener(ShowShopScreen);
         _settingsButton.onClick.RemoveListener(ShowSettingsScreen);
         _exitButton.onClick.RemoveListener(ExitGame);
@@ -54,6 +65,7 @@ public class MainMenu : MonoCache
     {
         AudioEffectsControll.Instance.PlayButtonClip();
         _buttonsScreen.SetActive(false);
+        _shopScreen.SetActive(false);
         _levelChooseScreen.SetActive(true);
     }
 

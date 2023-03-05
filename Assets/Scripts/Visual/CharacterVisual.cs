@@ -14,6 +14,7 @@ public class CharacterVisual : MonoBehaviour
 
 
     [SerializeField] private SkinnedMeshRenderer[] _skinnedMeshRenderer;
+    [SerializeField] private Material[] _materials;
     private bool _power;
     private bool _color;
 
@@ -42,7 +43,6 @@ public class CharacterVisual : MonoBehaviour
                     _power = true;
                 }
             }
-
             if (_power)
             {
 
@@ -54,22 +54,23 @@ public class CharacterVisual : MonoBehaviour
 
                 }
             }
-
             if (_color)
             {
-                //Color color = Color.LerpUnclamped(_skinnedMeshRenderer.material.GetColor("_FresnelColor"), _targetColor, Time.deltaTime * _speed);
                 Color color = Vector4.MoveTowards(_skinnedMeshRenderer[i].material.GetColor("_FresnelColor"), _targetColor, Time.deltaTime * _fillSpeed);
                 _skinnedMeshRenderer[i].material.SetColor("_FresnelColor", color);
             }
             if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
             {
-             //   enabled = false;
+                for (int j = 0; j < _materials.Length; j++)
+                {
+                    if (_skinnedMeshRenderer[i].material.GetTexture("_Albedo") == _materials[j].mainTexture)
+                    {
+                        _skinnedMeshRenderer[i].material = _materials[j];
+                    }
+                }
+                enabled = false;
             }
         }
-
-
-
     }
-
 
 }

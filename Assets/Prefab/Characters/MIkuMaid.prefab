@@ -3936,10 +3936,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168496069867599074}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6228428952045568905}
   - {fileID: 2171931977503171613}
@@ -4002,6 +4002,9 @@ MonoBehaviour:
   _skinnedMeshRenderer:
   - {fileID: 8726651729791554785}
   - {fileID: 3524174257334521986}
+  _materials:
+  - {fileID: 2100000, guid: 0b6c15179cb266a45a3f43eef543d361, type: 2}
+  - {fileID: 2100000, guid: c48298dcd87dd0049ae674a3191c599a, type: 2}
 --- !u!1 &7202083738906233358
 GameObject:
   m_ObjectHideFlags: 0

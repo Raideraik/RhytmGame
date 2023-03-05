@@ -11,7 +11,6 @@ public class PlayerSkin : ScriptableObject
     [SerializeField] private Sprite _picture;
     [SerializeField] private GameObject _prefab;
     [SerializeField] private bool _isBuyed = false;
-    [SerializeField] private VisualEffect _spawnEffect;
 
     public int GetID()
     {
@@ -29,11 +28,6 @@ public class PlayerSkin : ScriptableObject
     public GameObject GetPrefab()
     {
         return _prefab;
-    }
-
-    public VisualEffect GetSpawnEffect()
-    {
-        return _spawnEffect;
     }
 
     public bool IsBuyed()

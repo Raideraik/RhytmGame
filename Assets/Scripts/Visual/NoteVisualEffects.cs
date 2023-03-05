@@ -7,7 +7,8 @@ public class NoteVisualEffects : MonoCache
 {
     public static NoteVisualEffects Instance { get; private set; }
 
-    [SerializeField] private ParticleSystem[] _hitEffect;
+    [SerializeField] private ParticleSystem[] _multiplayerEffect;
+    [SerializeField] private ParticleSystem _hitEffect;
     //[SerializeField] private CollectorController[] _collectorControllers;
     //[SerializeField] private ControllersHandler _controllersHandler;
     [SerializeField] private Score _score;
@@ -25,21 +26,26 @@ public class NoteVisualEffects : MonoCache
 
     protected override void OnEnabled()
     {
-        // ControllersHandler.OnAnyCollected += PlayHitEffect;
-        _score.OnMultiplierChanged += PlayHitEffect;
+        ControllersHandler.OnAnyCollected += HitEffect;
+        _score.OnMultiplierChanged += MultiplierAdded;
     }
 
     protected override void OnDisabled()
     {
-        _score.OnMultiplierChanged -= PlayHitEffect;
-        //ControllersHandler.OnAnyCollected -= PlayHitEffect;
+        _score.OnMultiplierChanged -= MultiplierAdded;
+        ControllersHandler.OnAnyCollected -= HitEffect;
     }
 
-    public void PlayHitEffect()
+    public void MultiplierAdded()
     {
-        for (int i = 0; i < _hitEffect.Length; i++)
+        for (int i = 0; i < _multiplayerEffect.Length; i++)
         {
-            _hitEffect[i].Play();
+            _multiplayerEffect[i].Play();
         }
+    }
+
+    private void HitEffect()
+    {
+        _hitEffect.Play();
     }
 }
