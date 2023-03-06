@@ -15,11 +15,13 @@ public class Pause : MonoCache
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private float _secondsBeforeContinue;
 
+    private bool _isGameStarted = false;
     protected override void OnEnabled()
     {
         _pauseButtonClick.onClick.AddListener(PauseGame);
         _continueButtonClick.onClick.AddListener(ContinueGame);
         _exitButtonClick.onClick.AddListener(ReturnToMainMenu);
+        Game.OnGameStarted += GameStarted;
     }
 
     protected override void OnDisabled()
@@ -27,6 +29,7 @@ public class Pause : MonoCache
         _pauseButtonClick.onClick.RemoveListener(PauseGame);
         _continueButtonClick.onClick.RemoveListener(ContinueGame);
         _exitButtonClick.onClick.RemoveListener(ReturnToMainMenu);
+        Game.OnGameStarted -= GameStarted;
     }
 
     private void PauseGame()
@@ -48,6 +51,20 @@ public class Pause : MonoCache
         AudioEffectsControll.Instance.PlayButtonClip();
         SceneFader.Instance.FadeTo(0);
         // SceneManager.LoadSceneAsync(0);
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause && _isGameStarted)
+        {
+            PauseGame();
+        }
+
+    }
+
+    private void GameStarted()
+    {
+        _isGameStarted = true;
     }
 
     private IEnumerator Timer(float seconds)

@@ -2128,6 +2128,7 @@ GameObject:
   - component: {fileID: 2575376452751882941}
   - component: {fileID: 8457126685409779911}
   - component: {fileID: 2609600964987133268}
+  - component: {fileID: 2217482079130894698}
   m_Layer: 0
   m_Name: Darky
   m_TagString: Untagged
@@ -2186,6 +2187,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785772123b811f44804e68533f80709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2217482079130894698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951620899052068871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3449583e5ddbdb0419602e6d53d42045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fillSpeed: 0.5
+  _startColor: {r: 0.2901961, g: 0.89411765, b: 0.94509804, a: 0}
+  _materials:
+  - {fileID: 2100000, guid: 7486437180720564b84bf5c2a0c345e2, type: 2}
+  - {fileID: 2100000, guid: 683165fd71293514db9cd1e144b34014, type: 2}
 --- !u!1 &3039212376447807182
 GameObject:
   m_ObjectHideFlags: 0

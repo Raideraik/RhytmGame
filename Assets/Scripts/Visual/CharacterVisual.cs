@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class CharacterVisual : MonoBehaviour
 {
-    [SerializeField] private float _fillSpeed;
-    [SerializeField] private Color _targetColor;
+    [SerializeField] private float _fillSpeed = 0.5f;
     [SerializeField] private Color _startColor;
-    [SerializeField] private float _targetClip;
-    [SerializeField] private float _startClip;
-    [SerializeField] private float _startFresnelPower;
-    [SerializeField] private float _targetFresnelPower;
-
-
-    [SerializeField] private SkinnedMeshRenderer[] _skinnedMeshRenderer;
     [SerializeField] private Material[] _materials;
+
+
+    private SkinnedMeshRenderer[] _skinnedMeshRenderer;
+    private float _startFresnelPower = 0;
+    private float _targetFresnelPower = 1;
+    private float _startClip = 1;
+    private float _targetClip = 0;
+    private Color _targetColor = Color.black;
     private bool _power;
     private bool _color;
 
 
     private void Start()
     {
+        _skinnedMeshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
+
         for (int i = 0; i < _skinnedMeshRenderer.Length; i++)
         {
             _skinnedMeshRenderer[i].material.SetFloat("_Clip", _startClip);
