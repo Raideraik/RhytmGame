@@ -6,7 +6,7 @@ public class CharacterVisual : MonoBehaviour
 {
     [SerializeField] private float _fillSpeed = 0.5f;
     [SerializeField] private Color _startColor;
-    [SerializeField] private Material[] _materials;
+    [SerializeField] private Material[] _materialsToReturn;
 
 
     private SkinnedMeshRenderer[] _skinnedMeshRenderer;
@@ -63,11 +63,11 @@ public class CharacterVisual : MonoBehaviour
             }
             if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
             {
-                for (int j = 0; j < _materials.Length; j++)
+                for (int j = 0; j < _materialsToReturn.Length; j++)
                 {
-                    if (_skinnedMeshRenderer[i].material.GetTexture("_Albedo") == _materials[j].mainTexture)
+                    if (_skinnedMeshRenderer[i].material.mainTexture == _materialsToReturn[j].mainTexture)
                     {
-                        _skinnedMeshRenderer[i].material = _materials[j];
+                        _skinnedMeshRenderer[i].material = _materialsToReturn[j];
                     }
                 }
                 enabled = false;
