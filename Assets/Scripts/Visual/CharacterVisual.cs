@@ -6,9 +6,10 @@ public class CharacterVisual : MonoBehaviour
 {
     [SerializeField] private float _fillSpeed = 0.5f;
     [SerializeField] private Color _startColor;
-    [SerializeField] private Material[] _materialsToReturn;
+    [SerializeField] private Material[] _spawnMaterials;
 
 
+    private List<Material> _oldMaterials = new List<Material>();
     private SkinnedMeshRenderer[] _skinnedMeshRenderer;
     private float _startFresnelPower = 0;
     private float _targetFresnelPower = 1;
@@ -25,6 +26,18 @@ public class CharacterVisual : MonoBehaviour
 
         for (int i = 0; i < _skinnedMeshRenderer.Length; i++)
         {
+            _oldMaterials.Add(_skinnedMeshRenderer[i].material);
+
+            for (int j = 0; j < _spawnMaterials.Length; j++)
+            {
+                if (_skinnedMeshRenderer[i].material.mainTexture == _spawnMaterials[j].mainTexture)
+                {
+                    _skinnedMeshRenderer[i].material = _spawnMaterials[j];
+
+                }
+            }
+
+
             _skinnedMeshRenderer[i].material.SetFloat("_Clip", _startClip);
             _skinnedMeshRenderer[i].material.SetFloat("_FresnelPower", _startFresnelPower);
             _skinnedMeshRenderer[i].material.SetColor("_FresnelColor", _startColor);
@@ -63,13 +76,14 @@ public class CharacterVisual : MonoBehaviour
             }
             if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
             {
-                for (int j = 0; j < _materialsToReturn.Length; j++)
+                for (int j = 0; j < _oldMaterials.Count; j++)
                 {
-                    if (_skinnedMeshRenderer[i].material.mainTexture == _materialsToReturn[j].mainTexture)
+                    if (_skinnedMeshRenderer[i].material.mainTexture == _oldMaterials[j].mainTexture)
                     {
-                        _skinnedMeshRenderer[i].material = _materialsToReturn[j];
+                        _skinnedMeshRenderer[i].material = _oldMaterials[j];
                     }
                 }
+
                 enabled = false;
             }
         }

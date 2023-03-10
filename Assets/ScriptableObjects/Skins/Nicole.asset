@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1f78c1b4da46e48a3e8587acae9b23, type: 3}
+  m_Name: Nicole
+  m_EditorClassIdentifier: 
+  _id: 9
+  _price: 0
+  _picture: {fileID: 21300000, guid: f5e13ff693cdc4248a3f2fc457e0645b, type: 3}
+  _prefab: {fileID: 2890237838809958038, guid: 9fecfbdeedad17b4888ee02be5072ee2, type: 3}
+  _isBuyed: 1

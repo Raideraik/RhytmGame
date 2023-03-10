@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8c9a71e407145419fca369c3897383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _redNoteSprite: {fileID: -1801554167, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
-  _greenNoteSprite: {fileID: 1297301932, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
-  _blueNoteSprite: {fileID: -914055133, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
-  _yellowNoteSprite: {fileID: -1188503062, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
+  _redNoteSprite: {fileID: 21300000, guid: 090df2fe1a77dd3448f69e605e9f75f0, type: 3}
+  _greenNoteSprite: {fileID: 21300000, guid: e26170871893d5e4ab66098d7f334686, type: 3}
+  _blueNoteSprite: {fileID: 21300000, guid: 3493b155f12e1bf439b314f500e2d45c, type: 3}
+  _yellowNoteSprite: {fileID: 21300000, guid: e2bff76cb5c2c5440bbc770db36945fe, type: 3}
 --- !u!114 &957962921919508347
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1f78c1b4da46e48a3e8587acae9b23, type: 3}
   m_Name: MikuMaid
   m_EditorClassIdentifier: 
-  _id: 9
+  _id: 0
   _price: 0
   _picture: {fileID: -275686467, guid: 87750ec5f49781b4c8375ceb4e926002, type: 3}
   _prefab: {fileID: 7168496069867599074, guid: c9587c78ed51d2344bd814405f0026b5, type: 3}
   _isBuyed: 1
-  _spawnEffect: {fileID: 7736792477680683974, guid: df7108365bdc8084fb82637c4400d0f1, type: 3}
