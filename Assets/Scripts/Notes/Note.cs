@@ -13,13 +13,18 @@ public enum Collor
 }
 public class Note : MonoCache
 {
-    private Collor _color;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Material _redNoteMaterial;
+    [SerializeField] private Material _greenNoteMaterial;
+    [SerializeField] private Material _blueNoteMaterial;
+    [SerializeField] private Material _yellowNoteMaterial;
 
     [SerializeField] private Sprite _redNoteSprite;
     [SerializeField] private Sprite _greenNoteSprite;
     [SerializeField] private Sprite _blueNoteSprite;
     [SerializeField] private Sprite _yellowNoteSprite;
+
+    private Collor _color;
+    private SpriteRenderer _spriteRenderer;
 
     private NoteMover _mover;
     private void Awake()
@@ -36,18 +41,22 @@ public class Note : MonoCache
             case 0:
                 _color = Collor.Yellow;
                 _spriteRenderer.sprite = _yellowNoteSprite;
+                _spriteRenderer.material = _yellowNoteMaterial;
                 break;
             case 1:
                 _color = Collor.Red;
                 _spriteRenderer.sprite = _redNoteSprite;
+                _spriteRenderer.material = _redNoteMaterial;
                 break;
             case 2:
                 _color = Collor.Green;
                 _spriteRenderer.sprite = _greenNoteSprite;
+                _spriteRenderer.material = _greenNoteMaterial;
                 break;
             case 3:
                 _color = Collor.Blue;
                 _spriteRenderer.sprite = _blueNoteSprite;
+                _spriteRenderer.material = _blueNoteMaterial;
                 break;
         }
     }

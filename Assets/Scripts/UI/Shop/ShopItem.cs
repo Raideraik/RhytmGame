@@ -50,6 +50,7 @@ public class ShopItem : MonoCache
         }
         else if (!IsBuyed() && MainMenuScore.Instance.TrySell(_playerSkin.GetPrice()))
         {
+            _buyButton.image.color = Color.white;
             _buttonText.text = "Choose";
             _playerSkin.BuySkin();
             PlayerPrefs.SetInt(_playerSkin.GetID().ToString(), 1);
@@ -65,6 +66,7 @@ public class ShopItem : MonoCache
     {
         if (PlayerPrefs.GetInt(_playerSkin.GetID().ToString()) == 1 || _playerSkin.GetPrice() == 0)
         {
+            _buyButton.image.color = Color.white;
             _buttonText.text = "Choose";
             return true;
         }
@@ -75,13 +77,14 @@ public class ShopItem : MonoCache
         }
     }
 
-    public void ResetButton() 
+    public void ResetButton()
     {
         IsBuyed();
     }
 
-    public void SetChoosed() 
+    public void SetChoosed()
     {
         _buttonText.text = "Choosed";
+        _buyButton.image.color = Color.green;
     }
 }
