@@ -11,7 +11,7 @@ public class Stars : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.LogError("There more than one AudioFlow!" + transform + " - " + Instance);
+            Debug.LogError("There more than one Stars!" + transform + " - " + Instance);
             Destroy(gameObject);
             return;
         }
