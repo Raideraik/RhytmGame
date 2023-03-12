@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class NoteVisualEffects : MonoCache
 {
+
     public static NoteVisualEffects Instance { get; private set; }
 
-    [SerializeField] private ParticleSystem[] _multiplayerEffect;
+    [SerializeField] private List<ParticleSystem> _multiplayerEffect;
     [SerializeField] private ParticleSystem _hitEffect;
     //[SerializeField] private CollectorController[] _collectorControllers;
     //[SerializeField] private ControllersHandler _controllersHandler;
@@ -38,7 +39,7 @@ public class NoteVisualEffects : MonoCache
 
     public void MultiplierAdded()
     {
-        for (int i = 0; i < _multiplayerEffect.Length; i++)
+        for (int i = 0; i < _multiplayerEffect.Count; i++)
         {
             _multiplayerEffect[i].Play();
         }
@@ -47,5 +48,10 @@ public class NoteVisualEffects : MonoCache
     private void HitEffect()
     {
         _hitEffect.Play();
+    }
+
+    public void AddEffect(ParticleSystem effect)
+    {
+        _multiplayerEffect.Add(effect);
     }
 }
