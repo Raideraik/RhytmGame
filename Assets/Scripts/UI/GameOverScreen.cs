@@ -12,10 +12,12 @@ public class GameOverScreen : MonoCache
 
     [SerializeField] private Score _score;
     [SerializeField] private Button _exitButton;
-    [SerializeField] private Image _starsEarnedImage;
+    [SerializeField] private Sprite _starEarned;
 
-    [SerializeField] private Sprite[] _stars;
+    [SerializeField] private Image[] _starsEarnedImage;
+    [SerializeField] private GameObject[] _starEffects;
     [SerializeField] private GameObject _screen;
+    [SerializeField] private float _showingTime;
 
     protected override void OnEnabled()
     {
@@ -70,7 +72,30 @@ public class GameOverScreen : MonoCache
             starsEarned = 0;
         }
 
-        _starsEarnedImage.sprite = _stars[starsEarned];
+
+        for (int i = 0; i < _starEffects.Length; i++)
+        {
+            if (i <= starsEarned)
+            {
+                _starEffects[i].SetActive(true);
+
+                StartCoroutine(ShowStars(starsEarned, _showingTime));
+
+            }
+        }
+    }
+
+    private IEnumerator ShowStars(int earnedStars, float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+
+        for (int i = 0; i < _starsEarnedImage.Length; i++)
+        {
+            if (i <= earnedStars)
+                _starsEarnedImage[i].sprite = _starEarned;
+
+        }
+
     }
 
 }

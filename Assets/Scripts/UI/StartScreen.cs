@@ -13,11 +13,13 @@ public class StartScreen : MonoCache
     protected override void OnEnabled()
     {
         _startButton.onClick.AddListener(StartGame);
+        CharacterVisual._onEnded += OpenStart;
     }
 
     protected override void OnDisabled()
     {
         _startButton.onClick.RemoveListener(StartGame);
+        CharacterVisual._onEnded -= OpenStart;
     }
 
     private void StartGame()
