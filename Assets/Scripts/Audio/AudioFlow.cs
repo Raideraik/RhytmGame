@@ -54,10 +54,18 @@ public class AudioFlow : MonoCache
     }
     public void StartFlow()
     {
+        if (_song.IsPrivate)
+        {
+            //Mp3Loader.Instance.LoadAudiox(_song.GetClip());
+        }
+        else
+        {
+            _audioSource.clip = _song.Clip;
+        }
+
         _secPerBeat = 60f / _song.Bpm;
         _dsptimesong = (float)AudioSettings.dspTime;
 
-        _audioSource.clip = _song.Clip;
         _audioSource.Play();
 
     }

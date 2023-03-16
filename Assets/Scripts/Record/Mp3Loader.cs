@@ -7,17 +7,34 @@ using UnityEngine.Networking;
 
 public class Mp3Loader : MonoBehaviour
 {
+    public static Mp3Loader Instance { get; private set; }
+
+
     [SerializeField] private AudioSource _audioSource;
-    //[SerializeField] private AudioClip _audioClip;
 
     [SerializeField] private TMP_InputField _songName;
     [SerializeField] private TMP_Dropdown _songMenu;
 
     [SerializeField] private Song[] _songs;
 
-
-    private AudioClip _audio;
     private string FinalPath;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("There more than one Mp3Loader!" + transform + " - " + Instance);
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
+
+    private void Start()
+    {
+        SetClip(0);
+    }
 
     public void ChooseSong()
     {
@@ -28,44 +45,47 @@ public class Mp3Loader : MonoBehaviour
        {
            if (path == null)
            {
-               // Debug.Log("Operation cancelled");
-               //_errorText.text = path;
            }
            else
            {
                FinalPath = path;
-               //Debug.Log("Picked file: " + FinalPath);
 
-               StartCoroutine(LoadAudio());
+               // StartCoroutine(LoadAudio("file://" + FinalPath, true));
+
+               _songs[_songMenu.value].SetClip("file://" + FinalPath);
+               StartCoroutine(LoadAudio(_songs[_songMenu.value].GetClip()));
+
            }
        }, new string[] { FileType });
     }
 
-    private IEnumerator LoadAudio()
+    private IEnumerator LoadAudio(string path)
     {
-        WWW www = new WWW("file://" + FinalPath);
-        while (!www.isDone)
-            yield return null;
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG))
+        {
+            yield return www.SendWebRequest();
 
-        string filePath = Path.Combine(Application.dataPath, "Audio.mp3");
-
-        Debug.Log(filePath);
-        //File.WriteAllBytes(filePath, www.bytes);
-        _audio = www.GetAudioClip();
-        //StartCoroutine(Wait());
+            if (www.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                AudioClip myClip = DownloadHandlerAudioClip.GetContent(www);
+                _audioSource.clip = myClip;
+            }
+        }
 
     }
-
-    public void PlayMusic()
+    public void SetClip(int clipIndex)
     {
-        _audioSource.clip = _audio;
+        StartCoroutine(LoadAudio(_songs[clipIndex].GetClip()));
+        _songName.text = _songs[clipIndex].SongName;
+        SongRecorder.Instance.SetSong(_songs[clipIndex]);
+    }
 
-        // StartCoroutine(LoadMus());
-
-        _songs[_songMenu.value].SetClip(_audio);
-
-        _songs[_songMenu.value].SetName(_songName.text);
-
-        _audioSource.Play();
+    public void SetName(string name)
+    {
+        _songs[_songMenu.value].SetName(name);
     }
 }
