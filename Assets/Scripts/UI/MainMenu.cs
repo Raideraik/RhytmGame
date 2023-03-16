@@ -12,6 +12,7 @@ public class MainMenu : MonoCache
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _galleryButton;
+    [SerializeField] private Button _recordButton;
     [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen;
 
     [SerializeField] private Button[] _backButtons;
@@ -26,6 +27,7 @@ public class MainMenu : MonoCache
         _settingsButton.onClick.AddListener(ShowSettingsScreen);
         _exitButton.onClick.AddListener(ExitGame);
         _galleryButton.onClick.AddListener(LoadGallery);
+        _recordButton.onClick.AddListener(LoadRecorRoom);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -46,6 +48,7 @@ public class MainMenu : MonoCache
         _settingsButton.onClick.RemoveListener(ShowSettingsScreen);
         _exitButton.onClick.RemoveListener(ExitGame);
         _galleryButton.onClick.RemoveListener(LoadGallery);
+        _recordButton.onClick.RemoveListener(LoadRecorRoom);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -87,6 +90,11 @@ public class MainMenu : MonoCache
     {
         SceneFader.Instance.FadeTo(2);
         //SceneManager.LoadSceneAsync(2);
+    }
+
+    private void LoadRecorRoom() 
+    {
+        SceneFader.Instance.FadeTo(3);
     }
 
     private void ExitGame()

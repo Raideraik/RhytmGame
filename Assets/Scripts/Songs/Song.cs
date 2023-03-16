@@ -6,8 +6,8 @@ using UnityEngine;
 public class Song : ScriptableObject
 {
     [SerializeField] private float[] _notes;
-    [SerializeField] private float _bpm;
-    [SerializeField] private float _beatsShownInAdvance;
+    [SerializeField] private float _bpm = 60f;
+    [SerializeField] private float _beatsShownInAdvance = 3;
     [SerializeField] private AudioClip _clip;
     [SerializeField] private int _id;
     [SerializeField] private int _neededScore;
@@ -26,5 +26,15 @@ public class Song : ScriptableObject
     public void SetNotes(float[] notes)
     {
         _notes = notes;
+    }
+
+    public void SetClip(AudioClip clip) 
+    {
+        _clip = clip;
+    }
+
+    public void SetName(string name) 
+    {
+        _songName = name;
     }
 }
