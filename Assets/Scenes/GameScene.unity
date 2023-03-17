@@ -15813,7 +15813,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 589102803}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25805,6 +25805,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba5e81fe1c3504b4681a26d33de6ec52, type: 2}
   - {fileID: 11400000, guid: 0b3df6e715efe2c4f89c8fe19e994f88, type: 2}
   - {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
+  - {fileID: 11400000, guid: 25c78017c17585840818ed50f4b88730, type: 2}
+  - {fileID: 11400000, guid: c091684b943552c458c920a6ea96ae32, type: 2}
+  - {fileID: 11400000, guid: 7ee37f6db53e681468e3c211433f92a7, type: 2}
+  - {fileID: 11400000, guid: c509f300634259c4993aa76f4118176c, type: 2}
+  - {fileID: 11400000, guid: 420f3841d4c0b4b4bb62e9142dc7d4d4, type: 2}
 --- !u!114 &443463998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25996,6 +26001,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isScreenLandscape: 1
+--- !u!82 &574426632 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3769429494380943545, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
+  m_PrefabInstance: {fileID: 3769429493914787608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &578450737
 GameObject:
   m_ObjectHideFlags: 0
@@ -26285,9 +26295,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 363679356}
   - {fileID: 2069606003}
   - {fileID: 733575949}
+  - {fileID: 363679356}
   m_Father: {fileID: 1995010285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31146,6 +31156,51 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &661072388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661072389}
+  - component: {fileID: 661072390}
+  m_Layer: 0
+  m_Name: MP3Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &661072389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661072388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &661072390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661072388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe83610f881b714c9cad678a703694b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 574426632}
 --- !u!1 &666945405
 GameObject:
   m_ObjectHideFlags: 0
@@ -31639,7 +31694,7 @@ RectTransform:
   - {fileID: 1149960121}
   - {fileID: 345913258833485538}
   m_Father: {fileID: 589102803}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -76280,7 +76335,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 589102803}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -106338,6 +106393,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3769429494380943495, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
+      propertyPath: _mp3Loader
+      value: 
+      objectReference: {fileID: 661072390}
     - target: {fileID: 3769429494380943544, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
       propertyPath: m_RootOrder
       value: 2

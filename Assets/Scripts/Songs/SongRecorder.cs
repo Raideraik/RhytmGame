@@ -2,22 +2,17 @@ using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 
 public class SongRecorder : MonoCache
 {
     public static SongRecorder Instance { get; private set; }
 
-
     [SerializeField] private Song _song;
-    [SerializeField] private TMP_Text _recordText;
     [SerializeField] private bool _devRecording;
+    [SerializeField] private SongChooseToRecordUI _recordUI;
 
     private List<float> _newNote = new List<float>();
-
-
-    private bool _isPlaying = false;
 
     private void Awake()
     {
@@ -30,28 +25,21 @@ public class SongRecorder : MonoCache
         Instance = this;
     }
 
-    private void Start()
+    protected override void OnEnabled()
     {
-        //AudioFlow.Instance.SetSong(_song);
-    }/*
-    protected override void Run()
+        _recordUI.OnPlayButton += PlaySong;
+        _recordUI.OnStopButton += StopSong;
+        _recordUI.OnSaveButton += SaveRecord;
+        _recordUI.OnRecordButton += RecordNote;
+    }
+
+    protected override void OnDisabled()
     {
-        if (!_isPlaying)
-            return;
-
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            _newNote.Add(AudioFlow.Instance.GetSongPosInBeats());
-            _recordText.text = ("Note: " + AudioFlow.Instance.GetSongPosInBeats().ToString());
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _song.SetNotes(_newNote.ToArray());
-            _recordText.text = ("Saved: " + _song.Notes.Length);
-
-            Debug.Log("Saved");
-        }
-    }*/
+        _recordUI.OnPlayButton -= PlaySong;
+        _recordUI.OnStopButton -= StopSong;
+        _recordUI.OnSaveButton -= SaveRecord;
+        _recordUI.OnRecordButton -= RecordNote;
+    }
 
     public void SetSong(Song song)
     {
@@ -59,29 +47,28 @@ public class SongRecorder : MonoCache
         {
             _song = song;
             AudioFlow.Instance.SetSong(_song);
-
         }
     }
 
-    public void StartSong()
+    private void PlaySong()
     {
         AudioFlow.Instance.StartFlow();
     }
-    public void StopSong()
+    private void StopSong()
     {
         AudioFlow.Instance.PauseFlow();
     }
 
-    public void RecordNote()
+    private void RecordNote()
     {
         _newNote.Add(AudioFlow.Instance.GetSongPosInBeats());
-        _recordText.text = ("Note: " + AudioFlow.Instance.GetSongPosInBeats().ToString());
+        //_recordText.text = ("Note: " + AudioFlow.Instance.GetSongPosInBeats().ToString());
     }
 
-    public void SaveRecord()
+    private void SaveRecord()
     {
         _song.SetNotes(_newNote.ToArray());
-        _recordText.text = ("Saved: " + _song.Notes.Length);
+        //_recordText.text = ("Saved: " + _song.Notes.Length);
 
         Debug.Log("Saved");
     }

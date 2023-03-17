@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class AudioFlow : MonoCache
 {
+    public event UnityAction OnSongSeted;
     public static AudioFlow Instance { get; private set; }
 
     private float _songPosition;
@@ -51,14 +52,11 @@ public class AudioFlow : MonoCache
     public void SetSong(Song song)
     {
         _song = song;
+        OnSongSeted?.Invoke();
     }
     public void StartFlow()
     {
-        if (_song.IsPrivate)
-        {
-            //Mp3Loader.Instance.LoadAudiox(_song.GetClip());
-        }
-        else
+        if (!_song.IsPrivate)
         {
             _audioSource.clip = _song.Clip;
         }

@@ -2615,6 +2615,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b3df6e715efe2c4f89c8fe19e994f88, type: 2}
   - {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
   - {fileID: 11400000, guid: 25c78017c17585840818ed50f4b88730, type: 2}
+  - {fileID: 11400000, guid: c091684b943552c458c920a6ea96ae32, type: 2}
+  - {fileID: 11400000, guid: 7ee37f6db53e681468e3c211433f92a7, type: 2}
+  - {fileID: 11400000, guid: c509f300634259c4993aa76f4118176c, type: 2}
+  - {fileID: 11400000, guid: 420f3841d4c0b4b4bb62e9142dc7d4d4, type: 2}
   _container: {fileID: 86156551}
   _template: {fileID: 6779122605032689141, guid: 57f95227e3581c84caf64400907a6e8a, type: 3}
 --- !u!114 &1352159137
@@ -3418,6 +3422,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7493163048271863373, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3769429494380943495, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 161d77aa3a719954eb8f841147befc08, type: 3}
@@ -3458,6 +3466,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d84f196fbd219334187997b646633cbc, type: 2}
   - {fileID: 11400000, guid: b485417a6c323c64888b697b2b200624, type: 2}
   - {fileID: 11400000, guid: 910d7a171868b314d830e30d37767a26, type: 2}
+  - {fileID: 11400000, guid: 7d6ef6c263c76d348b8886d8835c0cb5, type: 2}
+  - {fileID: 11400000, guid: 550d208b26856b848844aa1a505a6054, type: 2}
+  - {fileID: 11400000, guid: ba5e81fe1c3504b4681a26d33de6ec52, type: 2}
+  - {fileID: 11400000, guid: 0b3df6e715efe2c4f89c8fe19e994f88, type: 2}
+  - {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
   _musicSource: {fileID: 1860527983}
 --- !u!1 &1920374491
 GameObject:

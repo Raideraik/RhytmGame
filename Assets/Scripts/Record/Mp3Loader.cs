@@ -7,56 +7,16 @@ using UnityEngine.Networking;
 
 public class Mp3Loader : MonoBehaviour
 {
-    public static Mp3Loader Instance { get; private set; }
-
-
     [SerializeField] private AudioSource _audioSource;
-
-    [SerializeField] private TMP_InputField _songName;
-    [SerializeField] private TMP_Dropdown _songMenu;
-
-    [SerializeField] private Song[] _songs;
-
-    private string FinalPath;
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Debug.LogError("There more than one Mp3Loader!" + transform + " - " + Instance);
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
-
 
     private void Start()
     {
-        SetClip(0);
+        AudioFlow.Instance.OnSongSeted += LoadAudiox;
     }
 
-    public void ChooseSong()
+    private void OnDisable()
     {
-        string FileType = NativeFilePicker.ConvertExtensionToFileType("mp3");
-
-
-        NativeFilePicker.Permission permission = NativeFilePicker.PickFile((path) =>
-       {
-           if (path == null)
-           {
-           }
-           else
-           {
-               FinalPath = path;
-
-               // StartCoroutine(LoadAudio("file://" + FinalPath, true));
-
-               _songs[_songMenu.value].SetClip("file://" + FinalPath);
-               StartCoroutine(LoadAudio(_songs[_songMenu.value].GetClip()));
-
-           }
-       }, new string[] { FileType });
+        AudioFlow.Instance.OnSongSeted -= LoadAudiox;
     }
 
     private IEnumerator LoadAudio(string path)
@@ -71,21 +31,18 @@ public class Mp3Loader : MonoBehaviour
             }
             else
             {
+                Debug.Log(www.result);
                 AudioClip myClip = DownloadHandlerAudioClip.GetContent(www);
                 _audioSource.clip = myClip;
             }
         }
 
     }
-    public void SetClip(int clipIndex)
+
+    public void LoadAudiox()
     {
-        StartCoroutine(LoadAudio(_songs[clipIndex].GetClip()));
-        _songName.text = _songs[clipIndex].SongName;
-        SongRecorder.Instance.SetSong(_songs[clipIndex]);
+        StartCoroutine(LoadAudio(AudioFlow.Instance.GetSong().GetClipAdress()));
     }
 
-    public void SetName(string name)
-    {
-        _songs[_songMenu.value].SetName(name);
-    }
+
 }

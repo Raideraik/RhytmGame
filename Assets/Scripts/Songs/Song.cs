@@ -13,7 +13,7 @@ public class Song : ScriptableObject
     [SerializeField] private int _neededScore;
     [SerializeField] private int _neededStarsToUnlockLevel;
     [SerializeField] private string _songName;
-    [SerializeField] private string _privateClip;
+    [SerializeField] private string _clipAdress;
     [SerializeField] private bool _isPrivate = false;
     public float[] Notes => _notes;
     public float Bpm => _bpm;
@@ -29,20 +29,34 @@ public class Song : ScriptableObject
     {
         _notes = notes;
     }
-
-    public void SetClip(string clip)
+    public void SetBPM(float bpm)
     {
-        _privateClip = clip;
+        _bpm = bpm;
     }
 
-    public void SetName(string name)
+    public void SetBSIA(float BSIA)
+    {
+        _beatsShownInAdvance = BSIA;
+    }
+
+    public void SetClipAdress(string clip)
+    {
+        _clipAdress = clip;
+    }
+
+    public void SetNeededScore(int neeededScore)
+    {
+        _neededScore = neeededScore;
+    }
+
+    public void SetSongName(string name)
     {
         _songName = name;
     }
 
-    public string GetClip()
+    public string GetClipAdress()
     {
-        return _privateClip;
+        return _clipAdress;
     }
 
 }

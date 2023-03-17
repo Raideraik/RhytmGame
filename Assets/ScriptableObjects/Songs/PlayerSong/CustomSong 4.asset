@@ -18,5 +18,7 @@ MonoBehaviour:
   _clip: {fileID: 0}
   _id: 95
   _neededScore: 0
-  _songName: 
   _neededStarsToUnlockLevel: 0
+  _songName: 
+  _privateClip: 
+  _isPrivate: 1

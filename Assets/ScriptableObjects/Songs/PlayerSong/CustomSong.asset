@@ -12,18 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2102bf94cd7ee41a50320953887114, type: 3}
   m_Name: CustomSong
   m_EditorClassIdentifier: 
-  _notes:
-  - 9.109379
-  - 9.536046
-  - 9.728045
-  - 11.797379
-  - 12.394712
+  _notes: []
   _bpm: 60
   _beatsShownInAdvance: 3
   _clip: {fileID: 0}
   _id: 99
   _neededScore: 0
   _neededStarsToUnlockLevel: 0
-  _songName: "\u0444\u044B\u0432\u044F\u0447\u0441\u0441"
-  _privateClip: file://F:/un/ARTEST/Assets/Music/MainMenu.mp3
+  _songName: 
+  _privateClip: 
   _isPrivate: 1
