@@ -21,19 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: fb84b87c33ab0dc48bbe3725d37feaa1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3f758aac2886b3f40889e4a2f7df2cee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 3075a0dd3d9ee4c478623224fb6bfa74, type: 3}
+        m_Texture: {fileID: 2800000, guid: d6afba5e07a418c479a258f815f3bb53, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6cb5a0f464dbb1940815bead70c1f9cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3a76be71eec2c274d8971bc2e4b8c454, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineWidthTexture:
-        m_Texture: {fileID: 2800000, guid: 1857dbc61ef051f40b8ad38af363d091, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85888a2eac0196744b5b93163bdac7b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReceiveShadowTexture:
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadeTexture:
-        m_Texture: {fileID: 2800000, guid: 6ea81c6524944834ca13ebe2c7e52379, type: 3}
+        m_Texture: {fileID: 2800000, guid: 17a0f1a0a5115c5438a9581d0d831e08, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadingGradeTexture:
@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SphereAdd:
-        m_Texture: {fileID: 2800000, guid: 939db9e510956b54b9c53738c6445be1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6890d063dfaadd649a3528803c7d7034, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UvAnimMaskTexture:
@@ -89,7 +89,7 @@ Material:
     - _OutlineCullMode: 1
     - _OutlineLightingMix: 1
     - _OutlineScaledMaxDistance: 1
-    - _OutlineWidth: 0.14354147
+    - _OutlineWidth: 0.13770816
     - _OutlineWidthMode: 1
     - _QueueControl: 0
     - _QueueOffset: 0

@@ -15,7 +15,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses: []
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 8f70ba3f69b3bcd42b97752b95b0a50a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 443f38a345619b9408e616d6a898838f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -31,7 +31,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission:
-        m_Texture: {fileID: 2800000, guid: ce36c85be8cad714d89208661af6d7fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 19776c2d3a539b0469f288d1edeee238, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normals:
-        m_Texture: {fileID: 2800000, guid: 8b9e6c00b22c77849b4cdc79fc60ff96, type: 3}
+        m_Texture: {fileID: 2800000, guid: c247481038c8f844f91df042a75365bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineWidthTexture:
@@ -100,6 +100,7 @@ Material:
     - _CutOff: 0.5
     - _Cutoff: 0.5
     - _DebugMode: 0
+    - _DissolveScale: 40
     - _DstBlend: 0
     - _FresnelPower: 0
     - _IndirectLightIntensity: 0.1
