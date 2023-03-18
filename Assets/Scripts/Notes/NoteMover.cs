@@ -8,12 +8,13 @@ public class NoteMover : MonoBehaviour
 {
     [SerializeField] private Note _note;
     [SerializeField] private float _speed;
+    [SerializeField] private bool _isRecordNote;
 
     private Transform _spawnPos;
     private Transform _finishPos;
-    private Transform _removePos;
-    private Spawner _spawner;
-    private float beatOfThisNote;
+    //private Transform _removePos;
+    //private Spawner _spawner;
+    // private float beatOfThisNote;
     private bool _pointAchieved = false;
     private float _speedToRemovePosition = 10f;
 
@@ -40,32 +41,53 @@ public class NoteMover : MonoBehaviour
                (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
                );*/
 
+            if (!_isRecordNote)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
+            }
+            else
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * _speed, Space.World);
+            }
 
-
-            transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
 
         }
         else
         {
             _pointAchieved = true;
             // transform.Translate(_removePos.position.x, 0, 0);
-            transform.Translate(Vector3.left * Time.deltaTime * _speedToRemovePosition, Space.World);
+            if (!_isRecordNote)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * _speedToRemovePosition, Space.World);
+
+            }
+            else
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * _speedToRemovePosition, Space.World);
+
+            }
         }
     }
-    public void SetSpawner(Spawner spawner)
-    {
-        _spawner = spawner;
-    }
-    public void SetBeatOfThisNote(float beat)
-    {
-        beatOfThisNote = beat;
-    }
-    public void SetPositions(Transform spawn, Transform finish, Transform remove)
+    /*
+     public void SetSpawner(Spawner spawner)
+     {
+         _spawner = spawner;
+     }
+     public void SetBeatOfThisNote(float beat)
+     {
+         beatOfThisNote = beat;
+     }*/
+    public void SetPositions(Transform spawn, Transform finish)//, Transform remove)
     {
         _spawnPos = spawn;
         _finishPos = finish;
-        _removePos = remove;
+        //_removePos = remove;
 
+    }
+
+    public void SetIsRecord(bool isRecord)
+    {
+        _isRecordNote = isRecord;
     }
 
     public void ResetPosition()

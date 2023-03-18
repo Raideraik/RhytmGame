@@ -7,33 +7,47 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: N00_000_00_Body_00_SKIN (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: 5c51691c9b48d03468661dfc5ea2d23e, type: 3}
-  m_ValidKeywords: []
+  m_Name: N00_000_00_Body_00_SKIN (Instance) 1
+  m_Shader: {fileID: -6465566751694194690, guid: 12835decf605f4540bd55e9fb83f8812, type: 3}
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 7494bfc4341302d45a383ce546c3d8ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e59ae0d645c423a448771eda2168e2c9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c4298325f2e4964ea48c7ceb38c64b6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: f8853ebb348e1e542b183d039d0f749f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: d7e8fb4dc0439154bacedd6134b6d63b, type: 3}
+        m_Texture: {fileID: 2800000, guid: f8853ebb348e1e542b183d039d0f749f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6dc9aab3f228d00429c635f6286b97d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7494bfc4341302d45a383ce546c3d8ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normals:
+        m_Texture: {fileID: 2800000, guid: 5c4298325f2e4964ea48c7ceb38c64b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineWidthTexture:
-        m_Texture: {fileID: 2800000, guid: db3b5e07596cc7a4cb522e558e75d9cb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8cef7557982d7a243a8ddde7d284f2ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReceiveShadowTexture:
@@ -45,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadeTexture:
-        m_Texture: {fileID: 2800000, guid: 2fb3b5100261d7e44b49f3b906de3101, type: 3}
+        m_Texture: {fileID: 2800000, guid: df854d117145450498b0a3db43a5343f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadingGradeTexture:
@@ -53,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SphereAdd:
-        m_Texture: {fileID: 2800000, guid: 31aefc7b73a1c964c9a92d10846bc81d, type: 3}
+        m_Texture: {fileID: 2800000, guid: df388d176a4cf574d94797ce272191a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UvAnimMaskTexture:
@@ -74,17 +88,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 1
     - _AlphaToMask: 0
+    - _Blend: 0
     - _BlendMode: 1
     - _BumpScale: 1
+    - _CastShadows: 1
+    - _Clip: 0
+    - _Cull: 2
     - _CullMode: 0
     - _CutOff: 0.5
     - _Cutoff: 0.5
     - _DebugMode: 0
+    - _DissolveScale: 40
     - _DstBlend: 0
+    - _FresnelPower: 0
     - _IndirectLightIntensity: 0.1
     - _LightColorAttenuation: 0
     - _MToonVersion: 39
+    - _Metallic: 0
     - _OutlineColorMode: 0
     - _OutlineCullMode: 1
     - _OutlineLightingMix: 1
@@ -94,22 +116,30 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadowRate: 1
+    - _ReceiveShadows: 1
     - _RimFresnelPower: 100
     - _RimLift: 0.1
     - _RimLightingMix: 0
     - _ShadeShift: -1
     - _ShadeToony: 1
     - _ShadingGradeRate: 1
+    - _Smoothness: 0
     - _SrcBlend: 1
+    - _Surface: 0
     - _ToonyLighting: 1
     - _UvAnimRotation: 0
     - _UvAnimScrollX: 0
     - _UvAnimScrollY: 0
+    - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 3.9999995, g: 3.9999995, b: 3.9999995, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0.2745098, g: 0.090196066, b: 0.12549016, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Specular: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

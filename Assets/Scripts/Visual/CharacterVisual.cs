@@ -85,7 +85,9 @@ public class CharacterVisual : MonoBehaviour
                 Color color = Vector4.MoveTowards(_skinnedMeshRenderer[i].material.GetColor("_FresnelColor"), _targetColor, Time.deltaTime * _fillSpeed);
                 _skinnedMeshRenderer[i].material.SetColor("_FresnelColor", color);
             }
-            if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor)
+            //if (_skinnedMeshRenderer[i].material.GetColor("_FresnelColor") == _targetColor) 
+
+            if (Vector4.Distance(_skinnedMeshRenderer[i].material.GetColor("_FresnelColor"), _targetColor) < 1.1f)
             {
 
                 _ended = true;

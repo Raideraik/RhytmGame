@@ -28,7 +28,6 @@ public class SongRecorder : MonoCache
     protected override void OnEnabled()
     {
         _recordUI.OnPlayButton += PlaySong;
-        _recordUI.OnStopButton += StopSong;
         _recordUI.OnSaveButton += SaveRecord;
         _recordUI.OnRecordButton += RecordNote;
     }
@@ -36,7 +35,6 @@ public class SongRecorder : MonoCache
     protected override void OnDisabled()
     {
         _recordUI.OnPlayButton -= PlaySong;
-        _recordUI.OnStopButton -= StopSong;
         _recordUI.OnSaveButton -= SaveRecord;
         _recordUI.OnRecordButton -= RecordNote;
     }
@@ -53,10 +51,6 @@ public class SongRecorder : MonoCache
     private void PlaySong()
     {
         AudioFlow.Instance.StartFlow();
-    }
-    private void StopSong()
-    {
-        AudioFlow.Instance.PauseFlow();
     }
 
     private void RecordNote()
