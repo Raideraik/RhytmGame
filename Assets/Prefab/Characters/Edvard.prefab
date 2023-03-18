@@ -14502,7 +14502,7 @@ GameObject:
   - component: {fileID: 1119830621}
   - component: {fileID: 1119830620}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14712,7 +14712,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.060247898, b: 1, a: 1}
+      minColor: {r: 0.15557136, g: 0.28073016, b: 0.8962264, a: 1}
       maxColor: {r: 0.23616053, g: 0.7932444, b: 0.8207547, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -19818,7 +19818,64 @@ SkinnedMeshRenderer:
   - {fileID: 6543532458081691807}
   - {fileID: 9164629076924123029}
   - {fileID: 5912143366928112131}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 100
+  - 17.2
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 5897978404860430062}
   m_AABB:
     m_Center: {x: 0.00000008940697, y: 1.8750303, z: 0.015519388}

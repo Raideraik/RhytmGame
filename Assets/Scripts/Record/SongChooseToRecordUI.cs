@@ -12,7 +12,7 @@ public class SongChooseToRecordUI : MonoBehaviour
     public event UnityAction OnSaveButton;
     public event UnityAction OnStopButton;
 
-    [SerializeField] private TMP_InputField _songName, _songBPM, _songBeatShowedInAdvance, _songNeededScore;
+    [SerializeField] private TMP_InputField _songName;
     [SerializeField] private TMP_Dropdown _songMenu;
 
     [SerializeField] private Button _playButton, _chooseSongButton, _recordButton, _saveButton, _stopButton;
@@ -93,30 +93,11 @@ public class SongChooseToRecordUI : MonoBehaviour
     {
         //StartCoroutine(LoadAudio(_songs[clipIndex].GetClip()));
         _songName.text = _songs[clipIndex].SongName;
-        _songBPM.text = _songs[clipIndex].Bpm.ToString();
-        _songNeededScore.text = _songs[clipIndex].NeededScore.ToString();
-        _songBeatShowedInAdvance.text = _songs[clipIndex].BeatsShownInAdvance.ToString();
         SongRecorder.Instance.SetSong(_songs[clipIndex]);
     }
 
     public void SetName(string name)
     {
         _songs[_songMenu.value].SetSongName(name);
-    }
-
-    public void SetBPM(string BPM)
-    {
-        float.TryParse(BPM, out float result);
-        _songs[_songMenu.value].SetBPM(result);
-    }
-    public void SetBSIA(string BSIA)
-    {
-        float.TryParse(BSIA, out float result);
-        _songs[_songMenu.value].SetBSIA(result);
-    }
-    public void SetNeededScore(string neededScore)
-    {
-        int.TryParse(neededScore, out int result);
-        _songs[_songMenu.value].SetNeededScore(result);
     }
 }
