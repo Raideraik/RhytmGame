@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wings
+  m_Name: WingsDemonAdd
   m_Shader: {fileID: -6465566751694194690, guid: 26434d5ae9b3374468e4661844455c19, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -47,7 +47,7 @@ Material:
     - _Cull: 0
     - _DissolveAmount: 1.46
     - _DissolveScale: 7
-    - _DistortionAmount: 0.077
+    - _DistortionAmount: 0.2
     - _DistortionScale: 15
     - _DstBlend: 1
     - _QueueControl: 0

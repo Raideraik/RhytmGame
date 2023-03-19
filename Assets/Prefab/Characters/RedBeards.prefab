@@ -1490,9 +1490,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359830234811797628}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.913, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1990021117807898801}
   - {fileID: 7524590753985419570}
@@ -1510,10 +1510,10 @@ Animator:
   m_GameObject: {fileID: 3359830234811797628}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8a13870d19475c44dbf81d0132e750e5, type: 2}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57c209addb44b394b97b764f681b4cb4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1549,6 +1549,7 @@ MonoBehaviour:
   _spawnMaterials:
   - {fileID: 2100000, guid: d62f8585a5d9a2c4fb1938a541e2d272, type: 2}
   - {fileID: 2100000, guid: ea4428e25ed425449a3e5dc4c2a86160, type: 2}
+  _characterProps: []
 --- !u!1 &3383269545531038396
 GameObject:
   m_ObjectHideFlags: 0

@@ -2719,6 +2719,8 @@ MonoBehaviour:
   _spawnMaterials:
   - {fileID: 2100000, guid: f822dbf077aaec34283cb9b71d84b862, type: 2}
   - {fileID: 2100000, guid: 14d098def23ec314bbd33e105aa4edad, type: 2}
+  _characterProps:
+  - {fileID: 919132147495659683}
 --- !u!1 &4290247369695262171
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,5 +5903,10 @@ PrefabInstance:
 --- !u!4 &543450652038050329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d3188010738b4de448dbe92b4a545639, type: 3}
+  m_PrefabInstance: {fileID: 1695798770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132147495659683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d3188010738b4de448dbe92b4a545639, type: 3}
   m_PrefabInstance: {fileID: 1695798770}
   m_PrefabAsset: {fileID: 0}

@@ -12,6 +12,7 @@ public class CharacterVisual : MonoBehaviour
     [SerializeField] private float _fillSpeed = 0.5f;
     [SerializeField] private Color _startColor;
     [SerializeField] private Material[] _spawnMaterials;
+    [SerializeField] private GameObject[] _characterProps;
 
 
 
@@ -34,7 +35,7 @@ public class CharacterVisual : MonoBehaviour
 
     private void Start()
     {
-
+        ChangeActiveProps(false);
         for (int i = 0; i < _skinnedMeshRenderer.Length; i++)
         {
             _oldMaterials.Add(_skinnedMeshRenderer[i].material);
@@ -109,14 +110,20 @@ public class CharacterVisual : MonoBehaviour
                         }
                     }
                 }
-
-
-
             }
+
+            ChangeActiveProps(true);
             _onEnded?.Invoke();
             enabled = false;
         }
     }
 
+    private void ChangeActiveProps(bool isActive)
+    {
+        for (int i = 0; i < _characterProps.Length; i++)
+        {
+            _characterProps[i].SetActive(isActive);
+        }
+    }
 
 }
