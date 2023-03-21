@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Stars : MonoBehaviour
 {
     public static Stars Instance { get; private set; }
+
+    [SerializeField] private TMP_Text _starsText;
 
     private int _starsCount;
     private void Awake()
@@ -26,5 +29,10 @@ public class Stars : MonoBehaviour
     public int GetStars()
     {
         return _starsCount;
+    }
+
+    public void UpdateStars()
+    {
+        _starsText.text = _starsCount.ToString();
     }
 }

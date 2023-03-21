@@ -28,7 +28,7 @@ public class ChooseSong : MonoCache
     private void Start()
     {
         //_score = PlayerPrefs.GetInt(_song.SongName + "_Score", 0);
-        SetStars();
+        //SetStars();
         if (IsCanChooseLevel())
         {
             _songName.text = _song.SongName;
@@ -61,7 +61,7 @@ public class ChooseSong : MonoCache
         //SceneManager.LoadSceneAsync(1);
     }
 
-    private void SetStars()
+    public void SetStars()
     {
         int stars = 0;
 
@@ -101,6 +101,7 @@ public class ChooseSong : MonoCache
         }
 
         Stars.Instance.AddStars(stars);
+        Stars.Instance.UpdateStars();
     }
 
     public void SetSong(Song song)

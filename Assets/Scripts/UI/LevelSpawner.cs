@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LevelSpawner : MonoCache
 {
+
     [SerializeField] private Song[] _songs;
     [SerializeField] private GameObject _container;
     [SerializeField] private ChooseSong _template;
@@ -15,6 +16,7 @@ public class LevelSpawner : MonoCache
         {
             ChooseSong song = Instantiate(_template, _container.transform);
             song.SetSong(_songs[i]);
+            song.SetStars();
         }
     }
 }
