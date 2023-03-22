@@ -13,7 +13,7 @@ public class MainMenu : MonoCache
     [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _galleryButton;
     [SerializeField] private Button _recordButton;
-    [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen;
+    [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen, _difficultyScreen;
 
     [SerializeField] private Button[] _backButtons;
 
@@ -62,6 +62,7 @@ public class MainMenu : MonoCache
         _levelChooseScreen.SetActive(false);
         _shopScreen.SetActive(false);
         _settingsScreen.SetActive(false);
+        _difficultyScreen.SetActive(false);
     }
 
     private void ShowLevelScreen()
@@ -92,7 +93,7 @@ public class MainMenu : MonoCache
         //SceneManager.LoadSceneAsync(2);
     }
 
-    private void LoadRecorRoom() 
+    private void LoadRecorRoom()
     {
         SceneFader.Instance.FadeTo(3);
     }

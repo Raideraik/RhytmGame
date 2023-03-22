@@ -14,9 +14,9 @@ public class LevelSpawner : MonoCache
     {
         for (int i = 0; i < _songs.Length; i++)
         {
-            ChooseSong song = Instantiate(_template, _container.transform);
-            song.SetSong(_songs[i]);
-            song.SetStars();
+            ChooseSong level = Instantiate(_template, _container.transform);
+            level.SetSong(_songs[i]);
+            level.SetStars();
         }
     }
 }

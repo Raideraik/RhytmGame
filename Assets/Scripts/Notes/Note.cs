@@ -23,6 +23,8 @@ public class Note : MonoCache
     [SerializeField] private Sprite _blueNoteSprite;
     [SerializeField] private Sprite _yellowNoteSprite;
 
+    [SerializeField] private int _levelDifficulty = 4;
+
     private Collor _color;
     private SpriteRenderer _spriteRenderer;
 
@@ -36,7 +38,12 @@ public class Note : MonoCache
 
     public void SetColor()
     {
-        switch (Random.Range(0, 4))
+        if (_levelDifficulty > 4)
+        {
+            _levelDifficulty = 4;
+        }
+
+        switch (Random.Range(0, _levelDifficulty))
         {
             case 0:
                 _color = Collor.Yellow;

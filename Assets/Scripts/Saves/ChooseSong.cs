@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ChooseSong : MonoCache
 {
+    public static event UnityAction OnLevelChoosed;
+
     [SerializeField] private Button _button;
     [SerializeField] private Image[] _scoreStars;
     [SerializeField] private Sprite _starSprite;
@@ -55,7 +57,8 @@ public class ChooseSong : MonoCache
         {
             AudioEffectsControll.Instance.PlayButtonClip();
             PlayerPrefs.SetInt("ChoosedSong", _song.Id);
-            SceneFader.Instance.FadeTo(1);
+            OnLevelChoosed?.Invoke();
+            // SceneFader.Instance.FadeTo(1);
 
         }
         //SceneManager.LoadSceneAsync(1);

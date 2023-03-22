@@ -18,6 +18,7 @@ public class GameOverScreen : MonoCache
     [SerializeField] private GameObject[] _starEffects;
     [SerializeField] private GameObject _screen;
     [SerializeField] private float _showingTime;
+    [SerializeField] private float _subdivider = 1;
 
     protected override void OnEnabled()
     {
@@ -46,7 +47,7 @@ public class GameOverScreen : MonoCache
         float percentage = 0;
         int starsEarned;
 
-        percentage += _score.GetScore();
+        percentage += _score.GetScore() / _subdivider;
         percentage /= AudioFlow.Instance.GetSong().NeededScore;
         percentage *= 100;
         starsEarned = 0;

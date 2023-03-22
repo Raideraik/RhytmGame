@@ -46,8 +46,6 @@ public class LeaderBoard : MonoBehaviour
                 if (name == msg[i].Username)
                 {
                     isAuthorising = false;
-                    Debug.Log(msg[i].Username);
-                    Debug.Log(isAuthorising);
                 }
             }
             OnAuthorize?.Invoke(isAuthorising);
