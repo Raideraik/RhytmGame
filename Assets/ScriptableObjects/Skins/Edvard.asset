@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1f78c1b4da46e48a3e8587acae9b23, type: 3}
+  m_Name: Edvard
+  m_EditorClassIdentifier: 
+  _id: 6
+  _price: 0
+  _picture: {fileID: 21300000, guid: 61d01b3fecfbbc046bceec4b6817f9ef, type: 3}
+  _prefab: {fileID: 233844946677133462, guid: fdfd36e6ddd63c2428dc9cfeb8dc47be, type: 3}
+  _isBuyed: 1
