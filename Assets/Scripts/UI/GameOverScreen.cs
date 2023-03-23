@@ -40,6 +40,8 @@ public class GameOverScreen : MonoCache
     {
         _screen.SetActive(true);
         CountStars();
+
+
     }
 
     private void CountStars()
@@ -96,6 +98,15 @@ public class GameOverScreen : MonoCache
                 _starsEarnedImage[i].sprite = _starEarned;
 
         }
+
+        StartCoroutine(ShowAd());
+    }
+
+    private IEnumerator ShowAd()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+
+        GoogleAdMobController.Instance.ShowInterstitialAd();
 
     }
 
