@@ -22,6 +22,8 @@ public class Score : MonoCache
     private int _index = 0;
     private int _score;
     private int _scoreAddedTimes;
+
+    private string _songName;
     protected override void OnEnabled()
     {
 
@@ -45,7 +47,17 @@ public class Score : MonoCache
         if (PlayerPrefs.GetInt(name + "_Score", 0) < _score)
             PlayerPrefs.SetInt(name + "_Score", _score);
 
+        if (_songName == "")
+            _songName = name;
+
         // Debug.Log(PlayerPrefs.GetInt(name + "_Score", 0));
+    }
+
+    public void RewardPlayer()
+    {
+        _score *= 2;
+
+        SaveScore(_songName);
     }
     private void AddScore()
     {

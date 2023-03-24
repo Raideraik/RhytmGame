@@ -10,6 +10,8 @@ public class GameOverScreen : MonoCache
 {
     public event UnityAction ExitButtonClick;
 
+    [SerializeField] private AdsSkippable _adsInterestial;
+
     [SerializeField] private Score _score;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Sprite _starEarned;
@@ -94,9 +96,15 @@ public class GameOverScreen : MonoCache
         {
             if (i <= earnedStars)
                 _starsEarnedImage[i].sprite = _starEarned;
-
         }
 
+        StartCoroutine(ShowAds());
+    }
+
+    private IEnumerator ShowAds()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        _adsInterestial.ShowAd();
     }
 
 }
