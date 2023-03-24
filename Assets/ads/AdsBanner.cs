@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
-using static UnityEditor.Progress;
 
 public class AdsBanner : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class AdsBanner : MonoBehaviour
         Advertisement.Banner.Show(_androidAdUnitId);
     }
 
-    public void LoadBanner() 
+    public void LoadBanner()
     {
         Advertisement.Banner.Load(_androidAdUnitId);
     }

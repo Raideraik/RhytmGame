@@ -118,6 +118,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: 1b60aedb33b19c9428af4e4f2c3f8650, type: 3}
   _id: 4
-  _neededScore: 220
-  _songName: Net igri
+  _neededScore: 404
   _neededStarsToUnlockLevel: 0
+  _songName: Net igri
+  _clipAdress: 
+  _isPrivate: 0

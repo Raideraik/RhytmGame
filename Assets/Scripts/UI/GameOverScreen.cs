@@ -1,6 +1,7 @@
 using NTC.Global.Cache;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Device;
 using UnityEngine.Events;
@@ -15,6 +16,7 @@ public class GameOverScreen : MonoCache
     [SerializeField] private Score _score;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Sprite _starEarned;
+    [SerializeField] private TMP_Text _scoreText;
 
     [SerializeField] private Image[] _starsEarnedImage;
     [SerializeField] private GameObject[] _starEffects;
@@ -41,7 +43,13 @@ public class GameOverScreen : MonoCache
     public void OpenGameOverScreen()
     {
         _screen.SetActive(true);
+        UpdateScore();
         CountStars();
+    }
+
+    private void UpdateScore()
+    {
+        _scoreText.text = _score.GetScore().ToString();
     }
 
     private void CountStars()

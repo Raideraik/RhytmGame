@@ -166,6 +166,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: 79778709bcb090c408f826fc68588490, type: 3}
   _id: 5
-  _neededScore: 280
-  _songName: Silent Partner
+  _neededScore: 600
   _neededStarsToUnlockLevel: 0
+  _songName: Silent Partner
+  _clipAdress: 
+  _isPrivate: 0

@@ -217,6 +217,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: 58f6ed8b07792924f8ac338988145d60, type: 3}
   _id: 3
-  _neededScore: 450
-  _songName: Music Thief
+  _neededScore: 800
   _neededStarsToUnlockLevel: 0
+  _songName: Music Thief
+  _clipAdress: 
+  _isPrivate: 0

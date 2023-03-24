@@ -75,6 +75,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: bd938c4f08e4a3f46818b217234b30b3, type: 3}
   _id: 2
-  _neededScore: 116
-  _songName: Groovy
+  _neededScore: 232
   _neededStarsToUnlockLevel: 0
+  _songName: Groovy
+  _clipAdress: 
+  _isPrivate: 0

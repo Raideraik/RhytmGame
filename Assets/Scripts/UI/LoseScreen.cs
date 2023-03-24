@@ -35,6 +35,7 @@ public class LoseScreen : MonoCache
 
     private void LoseGame()
     {
+        AudioFlow.Instance.PauseFlow();
         Time.timeScale = 0;
         _losePanel.SetActive(true);
         _isLost = true;

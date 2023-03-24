@@ -434,5 +434,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 3
   _clip: {fileID: 8300000, guid: 0dadb716770ecd5488440df7a7a9fd94, type: 3}
   _id: 0
-  _neededScore: 834
+  _neededScore: 1668
+  _neededStarsToUnlockLevel: 0
   _songName: Beneath the mask
+  _clipAdress: 
+  _isPrivate: 0

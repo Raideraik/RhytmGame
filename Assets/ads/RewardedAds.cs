@@ -83,8 +83,8 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
             // Grant a reward.
             if (_loseScreen.IsLost)
                 _loseScreen.ContinueGame();
-            else
-                _score.RewardPlayer();
+            // else
+            //    _score.RewardPlayer();
 
             // Load another ad:
             Advertisement.Load(_adUnitId, this);

@@ -7732,7 +7732,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895124554, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
       propertyPath: _isRewardable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2051624183438090828, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
       propertyPath: m_Pivot.x

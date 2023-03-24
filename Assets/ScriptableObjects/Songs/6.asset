@@ -236,6 +236,8 @@ MonoBehaviour:
   _beatsShownInAdvance: 5
   _clip: {fileID: 8300000, guid: 153f8539acc1f584c97718a0d465f47b, type: 3}
   _id: 6
-  _neededScore: 700
-  _songName: Plastic Love
+  _neededScore: 876
   _neededStarsToUnlockLevel: 30
+  _songName: Plastic Love
+  _clipAdress: 
+  _isPrivate: 0
