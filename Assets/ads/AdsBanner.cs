@@ -9,7 +9,7 @@ public class AdsBanner : MonoBehaviour
 
     private void Start()
     {
-        Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER); //Positions Banner where you want -
+        Advertisement.Banner.SetPosition(BannerPosition.TOP_LEFT); //Positions Banner where you want -
     }
 
     public void ShowBanner()

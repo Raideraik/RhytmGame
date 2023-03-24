@@ -31,7 +31,7 @@ public class CoolnessLevel : MonoCache
 
     private void Start()
     {
-        _currentLevel = _maxLevel / 2;
+        ResetCoolnessLevel();
     }
 
     private void AddCoolness()
@@ -56,4 +56,10 @@ public class CoolnessLevel : MonoCache
             OnLoseGame?.Invoke();
         }
     }
+
+    public void ResetCoolnessLevel()
+    {
+        _currentLevel = _maxLevel / 2;
+    }
+
 }

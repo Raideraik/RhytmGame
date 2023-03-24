@@ -43,7 +43,7 @@ public class LoseScreen : MonoCache
 
     private void RestartLevel()
     {
-        SceneFader.Instance.FadeTo(1);
+        SceneFader.Instance.FadeTo(SceneManager.GetActiveScene().buildIndex);
 
         // SceneManager.LoadSceneAsync(1);
     }
@@ -60,6 +60,7 @@ public class LoseScreen : MonoCache
         AudioEffectsControll.Instance.PlayButtonClip();
         _losePanel.SetActive(false);
         _isLost = false;
+        _coolnessLevel.ResetCoolnessLevel();
         StartCoroutine(Timer(_secondsBeforeContinue));
     }
 
