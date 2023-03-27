@@ -295,5 +295,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 64ef9e7ba7fa26d4aaeb1e03d52b0b5c, type: 3}
   _id: 18
   _neededScore: 500
+  _neededStarsToUnlockLevel: 0
   _songName: Final Countdown
-  _neededStarsToUnlockLevel: 60
+  _clipAdress: 
+  _isPrivate: 0

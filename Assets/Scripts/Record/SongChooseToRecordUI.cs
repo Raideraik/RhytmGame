@@ -23,23 +23,33 @@ public class SongChooseToRecordUI : MonoBehaviour
     [SerializeField] private Song[] _songs;
     [SerializeField] private Mp3Loader _mp3Loader;
 
+    private SongRecorder _songRecorder;
     private string _finalPath;
     private bool _isFile;
 
+    private void Awake()
+    {
+        _songRecorder = GetComponent<SongRecorder>();
+    }
+
     private void Start()
     {
-        _songTypeScreen.gameObject.SetActive(true);
-
-        _songMenu.options.Clear();
-
-        for (int i = 0; i < _songs.Length; i++)
+        if (!_songRecorder.DevRecording)
         {
-            _songMenu.options.Add(new TMP_Dropdown.OptionData(_songs[i].SongName));
+
+            _songTypeScreen.gameObject.SetActive(true);
+
+            _songMenu.options.Clear();
+
+            for (int i = 0; i < _songs.Length; i++)
+            {
+                _songMenu.options.Add(new TMP_Dropdown.OptionData(_songs[i].SongName));
+            }
+
+            SetClip(0);
+
+            DisableAllUI();
         }
-
-        SetClip(0);
-
-        DisableAllUI();
 
 
     }

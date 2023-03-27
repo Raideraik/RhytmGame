@@ -23,5 +23,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 481822cafb6ec2443a1649a7bb560c5b, type: 3}
   _id: 1
   _neededScore: 5
-  _songName: Metronom
   _neededStarsToUnlockLevel: 0
+  _songName: Metronom
+  _clipAdress: 
+  _isPrivate: 0

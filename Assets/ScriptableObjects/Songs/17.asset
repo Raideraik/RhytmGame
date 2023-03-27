@@ -217,5 +217,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 00d28c6a34889b647b6dcd438350a261, type: 3}
   _id: 17
   _neededScore: 300
+  _neededStarsToUnlockLevel: 0
   _songName: Best Song
-  _neededStarsToUnlockLevel: 60
+  _clipAdress: 
+  _isPrivate: 0

@@ -471,5 +471,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: f4487b729e42037479f1210380464e72, type: 3}
   _id: 7
   _neededScore: 900
+  _neededStarsToUnlockLevel: 0
   _songName: Happy
-  _neededStarsToUnlockLevel: 30
+  _clipAdress: 
+  _isPrivate: 0

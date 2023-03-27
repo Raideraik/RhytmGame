@@ -14,6 +14,7 @@ public class SongRecorder : MonoCache
 
     private List<float> _newNote = new List<float>();
 
+    public bool DevRecording => _devRecording;
     private void Awake()
     {
         if (Instance != null)
@@ -23,6 +24,27 @@ public class SongRecorder : MonoCache
             return;
         }
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if (_devRecording)
+        {
+            AudioFlow.Instance.SetSong(_song);
+        }
+    }
+
+    protected override void Run()
+    {
+        if (_devRecording)
+        {
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                RecordNote();
+                Debug.Log(AudioFlow.Instance.GetSongPosInBeats());
+
+            }
+        }
     }
 
     protected override void OnEnabled()

@@ -2251,7 +2251,64 @@ SkinnedMeshRenderer:
   - {fileID: 6404896102431373003}
   - {fileID: 8949297928361941007}
   - {fileID: 6556160175972553825}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 100
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 4853931433901515529}
   m_AABB:
     m_Center: {x: 0.000000014901161, y: 1.9914083, z: 0.02109529}
@@ -4597,11 +4654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95d9a3f29c5bf7049b3b381a39a2eff4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.791
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95d9a3f29c5bf7049b3b381a39a2eff4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.135
+      value: -0.213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95d9a3f29c5bf7049b3b381a39a2eff4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4635,6 +4692,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc57839524efded42aa24824df8936b1, type: 2}
+    - target: {fileID: -4292154010595695564, guid: 95d9a3f29c5bf7049b3b381a39a2eff4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000002192663
+      objectReference: {fileID: 0}
     - target: {fileID: -2268138116939433651, guid: 95d9a3f29c5bf7049b3b381a39a2eff4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

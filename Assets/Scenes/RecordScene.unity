@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203bc2786f3d3c74591ada9fc9131f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _song: {fileID: 0}
+  _song: {fileID: 11400000, guid: e688f3c0843acc84eb9b880394a54e90, type: 2}
   _devRecording: 0
   _recordUI: {fileID: 423800462}
 --- !u!4 &423800461
