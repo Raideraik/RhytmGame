@@ -46,8 +46,8 @@ public class NoteMover : MonoBehaviour
                 transform.position = Vector3.Lerp(
            _spawnPos.position,
            _finishPos.position,
-              // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
-              (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
+            // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
+            ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()) * Time.deltaTime * _speed
               );  // comment
                 //transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
             }
