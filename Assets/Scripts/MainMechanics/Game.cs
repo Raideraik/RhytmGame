@@ -45,7 +45,6 @@ public class Game : MonoCache
         }
         Instance = this;
 
-        Application.targetFrameRate = 60;
         _loadSkin = Get<LoadSkin>();
     }
 

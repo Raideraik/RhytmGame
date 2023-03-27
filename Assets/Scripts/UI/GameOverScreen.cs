@@ -1,9 +1,8 @@
 using NTC.Global.Cache;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Device;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -58,6 +57,8 @@ public class GameOverScreen : MonoCache
         int starsEarned;
 
         percentage += _score.GetScore() / _subdivider;
+        _score.SaveScore(AudioFlow.Instance.GetSong().SongName, (int)Math.Round(percentage));
+        //PlayerPrefs.SetInt(AudioFlow.Instance.GetSong().SongName + "_Score", (int)Math.Round(percentage));
         percentage /= AudioFlow.Instance.GetSong().NeededScore;
         percentage *= 100;
         starsEarned = 0;

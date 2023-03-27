@@ -40,9 +40,9 @@ public class Spawner : ObjectPool
                 {
                     note.gameObject.SetActive(true);
                     note.SetIsRecord(false);
-                    note.SetPositions(_spawnPosition, _finishPosition);
-                    //note.SetBeatOfThisNote(_song.Notes[_nextIndex]);
-                    //note.SetSpawner(this);
+                    note.SetPositions(_spawnPosition, _finishPosition);// это комментить
+                    note.SetBeatOfThisNote(_song.Notes[_nextIndex]);// это комментить
+                    note.SetSpawner(this);
                     _nextIndex++;
 
                 }

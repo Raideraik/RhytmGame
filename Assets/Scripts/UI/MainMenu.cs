@@ -17,6 +17,11 @@ public class MainMenu : MonoCache
 
     [SerializeField] private Button[] _backButtons;
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     protected override void OnEnabled()
     {
         for (int i = 0; i < _startButton.Length; i++)

@@ -13,8 +13,8 @@ public class NoteMover : MonoBehaviour
     private Transform _spawnPos;
     private Transform _finishPos;
     //private Transform _removePos;
-    //private Spawner _spawner;
-    // private float beatOfThisNote;
+    private Spawner _spawner; // comment
+    private float beatOfThisNote; // comment
     private bool _pointAchieved = false;
     private float _speedToRemovePosition = 10f;
 
@@ -43,7 +43,13 @@ public class NoteMover : MonoBehaviour
 
             if (!_isRecordNote)
             {
-                transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
+                transform.position = Vector3.Lerp(
+           _spawnPos.position,
+           _finishPos.position,
+              // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
+              (_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance() // / Time.deltaTime * _speed
+              );  // comment
+                //transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
             }
             else
             {
@@ -68,15 +74,15 @@ public class NoteMover : MonoBehaviour
             }
         }
     }
-    /*
-     public void SetSpawner(Spawner spawner)
-     {
-         _spawner = spawner;
-     }
-     public void SetBeatOfThisNote(float beat)
-     {
-         beatOfThisNote = beat;
-     }*/
+
+    public void SetSpawner(Spawner spawner)
+    {
+        _spawner = spawner;// comment
+    }
+    public void SetBeatOfThisNote(float beat)
+    {
+        beatOfThisNote = beat;                    // comment
+    }
     public void SetPositions(Transform spawn, Transform finish)//, Transform remove)
     {
         _spawnPos = spawn;

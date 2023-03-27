@@ -31,7 +31,7 @@ public class Score : MonoCache
         ControllersHandler.OnAnyMissed += ResetMultiplier;
 
 
-        _spawner.OnFinishSave += SaveScore;
+       // _spawner.OnFinishSave += SaveScore;
     }
     protected override void OnDisabled()
     {
@@ -39,13 +39,13 @@ public class Score : MonoCache
         ControllersHandler.OnAnyCollected -= AddScore;
         ControllersHandler.OnAnyMissed -= ResetMultiplier;
 
-        _spawner.OnFinishSave -= SaveScore;
+      //  _spawner.OnFinishSave -= SaveScore;
 
     }
-    private void SaveScore(string name)
+    public void SaveScore(string name, int score)
     {
-        if (PlayerPrefs.GetInt(name + "_Score", 0) < _score)
-            PlayerPrefs.SetInt(name + "_Score", _score);
+        if (PlayerPrefs.GetInt(name + "_Score", 0) < score)
+            PlayerPrefs.SetInt(name + "_Score", score);
 
         if (_songName == "")
             _songName = name;
@@ -57,7 +57,7 @@ public class Score : MonoCache
     {
         _score *= 2;
 
-        SaveScore(_songName);
+        //SaveScore(_songName);
     }
     private void AddScore()
     {

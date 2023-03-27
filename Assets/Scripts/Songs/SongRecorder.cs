@@ -73,6 +73,7 @@ public class SongRecorder : MonoCache
     private void PlaySong()
     {
         AudioFlow.Instance.StartFlow();
+        _newNote.Clear();
     }
 
     private void RecordNote()
