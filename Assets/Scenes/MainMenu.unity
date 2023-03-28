@@ -7755,6 +7755,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1550819071, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895124554, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1895124554, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
       propertyPath: _isRewardable
       value: 1

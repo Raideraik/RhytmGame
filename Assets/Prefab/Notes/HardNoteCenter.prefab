@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: _levelDifficulty
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 957962921919508347, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
+      propertyPath: _speed
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
