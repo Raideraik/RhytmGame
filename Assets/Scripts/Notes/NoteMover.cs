@@ -23,7 +23,7 @@ public class NoteMover : MonoBehaviour
     {
         ResetPosition();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         ChoosePath();
     }
@@ -43,14 +43,8 @@ public class NoteMover : MonoBehaviour
 
             if (!_isRecordNote)
             {
-                transform.localPosition = Vector3.Lerp(
-           _spawnPos.localPosition,
-           _finishPos.localPosition,
-            // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
-            ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()) //* Time.deltaTime * _speed
-              );  // comment
-                  // transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
-                  // transform.Translate(Vector3.left * ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()), Space.World);
+                // transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
+                transform.Translate(Vector3.left * _speed * Time.deltaTime, Space.World);
             }
             else
             {
@@ -105,4 +99,4 @@ public class NoteMover : MonoBehaviour
 
     }
 
-  }
+}
