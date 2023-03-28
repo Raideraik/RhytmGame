@@ -43,8 +43,19 @@ public class NoteMover : MonoBehaviour
 
             if (!_isRecordNote)
             {
+                transform.position = Vector2.MoveTowards(
+            transform.position,
+           _finishPos.position,
+              // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
+              _speed * Time.deltaTime // / Time.deltaTime * _speed
+              );
+
+
+
                 // transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
-                transform.Translate(Vector3.left * _speed * Time.deltaTime, Space.World);
+                //transform.Translate(Vector3.left * _speed * Time.deltaTime, Space.World);
+
+
             }
             else
             {
