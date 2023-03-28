@@ -35,7 +35,7 @@ public class AudioFlow : MonoCache
         if (!_isPlaying)
             return;
 
-        _songPosition = (float)(AudioSettings.dspTime - _dsptimesong);
+        _songPosition = (float)(AudioSettings.dspTime - _dsptimesong) ;
         _songPosInBeats = _songPosition / _secPerBeat;
     }
 
