@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Note))]
-public class NoteMover : MonoBehaviour
+public class NoteMover : MonoCache
 {
     [SerializeField] private Note _note;
     [SerializeField] private float _speed;
@@ -23,7 +23,7 @@ public class NoteMover : MonoBehaviour
     {
         ResetPosition();
     }
-    private void Update()
+    protected override void Run()
     {
         ChoosePath();
     }
