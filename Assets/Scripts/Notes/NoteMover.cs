@@ -47,7 +47,7 @@ public class NoteMover : MonoBehaviour
            _spawnPos.localPosition,
            _finishPos.localPosition,
             // (beatOfThisNote * AudioFlow.Instance.GetSongPosInBeats()) / Time.deltaTime
-            ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance())// * Time.deltaTime * _speed
+            ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()) //* Time.deltaTime * _speed
               );  // comment
                   // transform.Translate(Vector3.left * Time.deltaTime * _speed, Space.World);
                   // transform.Translate(Vector3.left * ((_spawner.GetBeatsShownInAdvance() - (beatOfThisNote - AudioFlow.Instance.GetSongPosInBeats())) / _spawner.GetBeatsShownInAdvance()), Space.World);
@@ -104,4 +104,5 @@ public class NoteMover : MonoBehaviour
         _note.SetColor();
 
     }
-}
+
+  }
