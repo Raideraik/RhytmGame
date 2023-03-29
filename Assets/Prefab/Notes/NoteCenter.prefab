@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _note: {fileID: 957962921919508344}
-  _speed: 50
+  _speed: 8.2
   _isRecordNote: 0
 --- !u!50 &957962921919508346
 Rigidbody2D:
