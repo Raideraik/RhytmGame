@@ -2,9 +2,12 @@
 {
     public enum Routes
     {
-        None,
+        Activate,
+        Authorize,
         Get,
+        None,
         Upload,
-        Ping
+        UpdateUsername,
+        DeleteEntry
     }
 }

@@ -37,7 +37,8 @@ public class Pause : MonoCache
         AudioEffectsControll.Instance.PlayButtonClip();
         _pauseMenu.SetActive(true);
         Time.timeScale = 0;
-        AudioFlow.Instance.PauseFlow();
+        if (_isGameStarted)
+            AudioFlow.Instance.PauseFlow();
     }
     private void ContinueGame()
     {

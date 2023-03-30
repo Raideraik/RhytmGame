@@ -47,6 +47,7 @@ public class SceneFader : MonoCache
     }
     private IEnumerator FadeOut(int scene)
     {
+
         float time = 0f;
         float curve;
 
@@ -56,11 +57,14 @@ public class SceneFader : MonoCache
             curve = _fadeCurve.Evaluate(time);
             _canvasGroup.blocksRaycasts = true;
             _canvasGroup.alpha = curve;
+
             // _image.color = new Color(_colorOfFade.r, _colorOfFade.g, _colorOfFade.b, curve);
-            yield return 0;
+
+            yield return null;
         }
 
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadSceneAsync(scene);
+
     }
 
     public void FadeTo(int scene)

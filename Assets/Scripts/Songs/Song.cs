@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "Song", menuName = "CreateSong", order = 1)]
 public class Song : ScriptableObject
@@ -15,13 +16,15 @@ public class Song : ScriptableObject
     [SerializeField] private string _songName;
     [SerializeField] private string _clipAdress;
     [SerializeField] private bool _isPrivate = false;
+    [SerializeField] private VideoClip _songBackground;
     public float[] Notes => _notes;
     public float Bpm => _bpm;
     public float BeatsShownInAdvance => _beatsShownInAdvance;
     public int NeededScore => _neededScore;
     public int Id => _id;
     public int NeededStars => _neededStarsToUnlockLevel;
-    public AudioClip Clip => _clip;
+    public AudioClip SongClip => _clip;
+    public VideoClip SongBackground => _songBackground;
     public bool IsPrivate => _isPrivate;
     public string SongName => _songName;
 

@@ -9,7 +9,7 @@ public class MainMenuMusic : MonoBehaviour
 
     private void Start()
     {
-        _musicSource.clip = _songs[Random.Range(0, _songs.Length)].Clip;
+        _musicSource.clip = _songs[Random.Range(0, _songs.Length)].SongClip;
         _musicSource.Play();
     }
 }

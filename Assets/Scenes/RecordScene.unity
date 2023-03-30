@@ -620,6 +620,7 @@ GameObject:
   - component: {fileID: 225148434}
   - component: {fileID: 225148433}
   - component: {fileID: 225148432}
+  - component: {fileID: 225148437}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -743,6 +744,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
+--- !u!114 &225148437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225148430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7fbc8492e97f54eaf44b661d874cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quality: {fileID: 770932826}
 --- !u!1 &230840544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3172,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1842522580}
     m_Modifications:
+    - target: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 225148437}
+    - target: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetQuality
+      objectReference: {fileID: 0}
     - target: {fileID: 7323477835059100353, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -3321,6 +3343,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &770932826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+  m_PrefabInstance: {fileID: 770932822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &789722555
@@ -6708,7 +6741,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -59.340088
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2051624184700851573, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593860025431443422, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455484540558050108, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1895124554, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+    - {fileID: 2051624183576812128, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+    - {fileID: 1550819072, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
+    - {fileID: 1550819071, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7e2b4e10c905df4e99f32905724b666, type: 3}
 --- !u!1 &1687926867
 GameObject:
@@ -8454,9 +8503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 1856735613}
-  _videoClips:
-  - {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
-  - {fileID: 32900000, guid: 0475fe923a04a7146a8adefcba8f8519, type: 3}
 --- !u!1001 &3769429493914787608
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -158,6 +158,9 @@ public class SongChooseToRecordUI : MonoBehaviour
 
     private void EnableRecordUI()
     {
+        if (_songs[_songMenu.value].GetClipAdress() == "")
+            return;
+
         _playButton.gameObject.SetActive(true);
         _recordButton.gameObject.SetActive(true);
         _saveButton.gameObject.SetActive(true);

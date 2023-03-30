@@ -13,14 +13,14 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 
 
     private AdsSkippable _adsSkippable;
-    private AdsBanner _adsBanner;
+    //private AdsBanner _adsBanner;
     private RewardedAds _rewardedAds;
     private string _gameId;
 
     private void Awake()
     {
         _adsSkippable = GetComponent<AdsSkippable>();
-        _adsBanner = GetComponent<AdsBanner>();
+       // _adsBanner = GetComponent<AdsBanner>();
         if (_isRewardable)
             _rewardedAds = GetComponent<RewardedAds>();
 
@@ -44,8 +44,8 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
-        _adsBanner.LoadBanner();
-        _adsBanner.ShowBanner();
+        //_adsBanner.LoadBanner();
+        //_adsBanner.ShowBanner();
         _adsSkippable.LoadAd();
 
     }

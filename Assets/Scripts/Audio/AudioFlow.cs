@@ -58,7 +58,7 @@ public class AudioFlow : MonoCache
     {
         if (!_song.IsPrivate)
         {
-            _audioSource.clip = _song.Clip;
+            _audioSource.clip = _song.SongClip;
         }
 
         _secPerBeat = 60f / _song.Bpm;

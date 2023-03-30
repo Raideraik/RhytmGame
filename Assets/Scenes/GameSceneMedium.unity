@@ -26233,6 +26233,7 @@ GameObject:
   - component: {fileID: 583415622}
   - component: {fileID: 583415626}
   - component: {fileID: 583415627}
+  - component: {fileID: 583415628}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -26356,6 +26357,19 @@ MonoBehaviour:
   _audioMixer: {fileID: 24100000, guid: 6ea4660564770c7418b005886dfdca60, type: 2}
   _music: {fileID: 1729006318}
   _effects: {fileID: 1729006317}
+--- !u!114 &583415628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583415621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7fbc8492e97f54eaf44b661d874cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quality: {fileID: 1729006319}
 --- !u!1 &589102802
 GameObject:
   m_ObjectHideFlags: 0
@@ -65264,6 +65278,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1886879270}
     m_Modifications:
+    - target: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 583415628}
+    - target: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetQuality
+      objectReference: {fileID: 0}
     - target: {fileID: 7323477835059100353, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -65427,6 +65449,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1729006319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7271679845176344467, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+  m_PrefabInstance: {fileID: 1729006315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1745147794
@@ -77086,9 +77119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 1856735613}
-  _videoClips:
-  - {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
-  - {fileID: 32900000, guid: 0475fe923a04a7146a8adefcba8f8519, type: 3}
 --- !u!1 &2131719198
 GameObject:
   m_ObjectHideFlags: 0

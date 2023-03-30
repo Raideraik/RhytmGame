@@ -7,24 +7,49 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
+using static Dan.ConstantVariables;
+
 namespace Dan.Main
 {
     public class LeaderboardCreatorBehaviour : MonoBehaviour
     {
+        internal void Authorize(Action<string> callback)
+        {
+            if (!string.IsNullOrEmpty(PlayerPrefs.GetString(PlayerPrefsGuidKey, "")))
+            {
+                callback?.Invoke(PlayerPrefs.GetString(PlayerPrefsGuidKey));
+                return;
+            }
+            
+            var request = UnityWebRequest.Get(GetServerURL(Routes.Authorize));
+            StartCoroutine(HandleRequest(request, isSuccessful =>
+            {
+                if (!isSuccessful)
+                {
+                    HandleError(request);
+                    callback?.Invoke(null);
+                    return;
+                }
+
+                var guid = request.downloadHandler.text;
+                PlayerPrefs.SetString(PlayerPrefsGuidKey, guid);
+                callback?.Invoke(guid);
+            }));
+        }
+        
         internal void SendGetRequest(string url, Action<bool> callback = null)
         {
             var request = UnityWebRequest.Get(url);
             StartCoroutine(HandleRequest(request, isSuccessful =>
             {
-                callback?.Invoke(isSuccessful);
-
-                if (isSuccessful)
+                if (!isSuccessful)
                 {
-                    LeaderboardCreator.Log(request.downloadHandler.text);
+                    HandleError(request);
+                    callback?.Invoke(false);
                     return;
                 }
-                
-                HandleError(request);
+                callback?.Invoke(true);
+                LeaderboardCreator.Log("Successfully retrieved leaderboard data!");
             }));
         }
         
@@ -36,6 +61,7 @@ namespace Dan.Main
                 if (!isSuccessful)
                 {
                     HandleError(request);
+                    callback?.Invoke(null);
                     return;
                 }
                 var response = JsonConvert.DeserializeObject<List<Entry>>(request.downloadHandler.text);
@@ -47,13 +73,6 @@ namespace Dan.Main
         internal void SendPostRequest(string url, List<IMultipartFormSection> form, Action<bool> callback = null)
         {
             var request = UnityWebRequest.Post(url, form);
-            callback += isSuccessful =>
-            {
-                if (!isSuccessful)
-                    LeaderboardCreator.LogError("Uploading entry data failed!");
-                else
-                    LeaderboardCreator.Log("Successfully uploaded entry data to leaderboard!");
-            };
             StartCoroutine(HandleRequest(request, callback));
         }
         
@@ -64,16 +83,19 @@ namespace Dan.Main
             if (request.responseCode != 200)
             {
                 onComplete.Invoke(false);
+                request.downloadHandler.Dispose();
+                request.Dispose();
                 yield break;
             }
 
             onComplete.Invoke(true);
+            request.downloadHandler.Dispose();
             request.Dispose();
         }
-
+        
         private static void HandleError(UnityWebRequest request)
         {
-            var message = Enum.GetName(typeof(StatusCode), (StatusCode) request.responseCode).SplitByUppercase();
+            var message = Enum.GetName(typeof(StatusCode), (StatusCode)request.responseCode).SplitByUppercase();
                 
             var downloadHandler = request.downloadHandler;
             var text = downloadHandler.text;
