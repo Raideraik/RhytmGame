@@ -20,5 +20,6 @@ MonoBehaviour:
   _neededScore: 0
   _neededStarsToUnlockLevel: 0
   _songName: Custom3
-  _clipAdress: 
+  _clipAdress: file://F:/un/ARTEST/Assets/Music/HappyUkulele.mp3
   _isPrivate: 1
+  _songBackground: {fileID: 32900000, guid: 3e5d3807fe2572c4f90e4c99fe5fc0d5, type: 3}

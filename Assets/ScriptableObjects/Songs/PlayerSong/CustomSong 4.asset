@@ -22,3 +22,4 @@ MonoBehaviour:
   _songName: Custom5
   _clipAdress: 
   _isPrivate: 1
+  _songBackground: {fileID: 32900000, guid: 3e5d3807fe2572c4f90e4c99fe5fc0d5, type: 3}
