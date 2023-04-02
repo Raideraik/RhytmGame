@@ -77169,7 +77169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 2131719198}
   _capacity: 10
-  _template: {fileID: 957962921919508347, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
+  _template: {fileID: 640756885864254541, guid: 2faf7fa482a52de48be0864708329caf, type: 3}
   _timeBeforeEnd: 10
   _spawnPosition: {fileID: 1082158226}
   _finishPosition: {fileID: 779010112}

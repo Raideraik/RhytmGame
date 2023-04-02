@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 957962921919508327, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
       propertyPath: m_Name
-      value: MediumNoteCenter
+      value: HardNoteCenter
       objectReference: {fileID: 0}
     - target: {fileID: 957962921919508344, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
       propertyPath: _levelDifficulty
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 957962921919508347, guid: ac896ff76b4d80b488ec2b1dc72fa14f, type: 3}
       propertyPath: _speed

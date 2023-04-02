@@ -25,7 +25,7 @@ public class SongChooseToRecordUI : MonoBehaviour
 
     private SongRecorder _songRecorder;
     private string _finalPath;
-    private bool _isFile;
+    private bool _isFile = true;
 
     private void Awake()
     {
@@ -46,9 +46,10 @@ public class SongChooseToRecordUI : MonoBehaviour
                 _songMenu.options.Add(new TMP_Dropdown.OptionData(_songs[i].SongName));
             }
 
+           // DisableAllUI();
+
             SetClip(0);
 
-            DisableAllUI();
         }
 
 
