@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   _price: 0
-  _picture: {fileID: 21300000, guid: b02c5ce99c50caa4e8d125b8a654dd5e, type: 3}
+  _picture: {fileID: -1643827071, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 4205595920011994570, guid: 9c395ed49a84fb947b0ea4769bbd6cc2, type: 3}
   _isBuyed: 1
