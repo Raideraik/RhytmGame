@@ -373,7 +373,7 @@ MonoBehaviour:
   - 285.14127
   - 286.20795
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 4
   _clip: {fileID: 8300000, guid: 8ba0daacdfc66a244a241de901726973, type: 3}
   _id: 0
   _neededScore: 1668
