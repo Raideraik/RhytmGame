@@ -6,9 +6,12 @@ public class KiraQueen : Character
 {
     private void Start()
     {
-        for (int i = 0; i < _effects.Length; i++)
+        if (NoteVisualEffects.Instance != null)
         {
-            NoteVisualEffects.Instance.AddEffect(_effects[i]);
+            for (int i = 0; i < _effects.Length; i++)
+            {
+                NoteVisualEffects.Instance.AddEffect(_effects[i]);
+            }
         }
     }
 }
