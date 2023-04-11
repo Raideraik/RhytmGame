@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: 29
   m_EditorClassIdentifier: 
   _notes:
-  - 1.9413385
-  - 2.6026719
   - 2.282698
   - 2.9013646
   - 3.5413647
@@ -298,7 +296,7 @@ MonoBehaviour:
   - 209.66403
   - 210.45337
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2.1
   _clip: {fileID: 8300000, guid: ce7e5c0bbca5fee48b163204d0b8c81c, type: 3}
   _id: 29
   _neededScore: 900
@@ -306,4 +304,4 @@ MonoBehaviour:
   _songName: Inferno
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  _songBackground: {fileID: 32900000, guid: efaced4d36fa06b40841314b2f3edee5, type: 3}

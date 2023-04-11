@@ -314,7 +314,7 @@ MonoBehaviour:
   - 219.92534
   - 220.71468
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2.1
   _clip: {fileID: 8300000, guid: 4222efe8e8034bb499728d49bdc9aed2, type: 3}
   _id: 33
   _neededScore: 909
@@ -322,4 +322,4 @@ MonoBehaviour:
   _songName: Scandal
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  _songBackground: {fileID: 32900000, guid: efaced4d36fa06b40841314b2f3edee5, type: 3}

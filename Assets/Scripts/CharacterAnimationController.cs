@@ -20,14 +20,17 @@ public class CharacterAnimationController : MonoCache
             _animator.SetBool("IsGallery", true);
         }*/
         ControllersHandler.OnAnyMissed += OnWrongNoteCollected;
-        Game.OnGameStarted += OnGameStarted;
+        Spawner.OnFirstNote += OnGameStarted;
+        Spawner.OnLastNote += ChangeToIdle;
     }
     protected override void OnDisabled()
     {
         // if (Screen.autorotateToPortrait != true)
         // {
         ControllersHandler.OnAnyMissed -= OnWrongNoteCollected;
-        Game.OnGameStarted -= OnGameStarted;
+        Spawner.OnFirstNote -= OnGameStarted;
+        Spawner.OnLastNote -= ChangeToIdle;
+
         // }
     }
     private void Awake()

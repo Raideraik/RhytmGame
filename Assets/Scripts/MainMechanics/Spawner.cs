@@ -7,6 +7,8 @@ public class Spawner : ObjectPool
 {
     public event UnityAction OnFinish;
     public event UnityAction<string> OnFinishSave;
+    public static event UnityAction OnFirstNote;
+    public static event UnityAction OnLastNote;
 
     [SerializeField] private NoteMover _template;
     [SerializeField] private float _timeBeforeEnd;
@@ -45,11 +47,16 @@ public class Spawner : ObjectPool
                     note.SetSpawner(this);
                     _nextIndex++;
 
+                    if (_nextIndex == 1)
+                    {
+                        OnFirstNote?.Invoke();
+                    }
                 }
             }
         }
         else
         {
+            StartCoroutine(OnLastNotePlayed());
             StartCoroutine(OnSongFinish());
         }
     }
@@ -66,6 +73,12 @@ public class Spawner : ObjectPool
         yield return new WaitForSeconds(_timeBeforeEnd);
         OnFinish?.Invoke();
         OnFinishSave?.Invoke(_song.SongName);
+    }
+
+    private IEnumerator OnLastNotePlayed()
+    {
+        yield return new WaitForSeconds(2.5f);
+        OnLastNote?.Invoke();
     }
 
 }

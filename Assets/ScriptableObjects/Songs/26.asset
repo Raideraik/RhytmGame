@@ -266,7 +266,7 @@ MonoBehaviour:
   - 210.36807
   - 212.48009
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2.1
   _clip: {fileID: 8300000, guid: 289013354dc15384f88f89a6b7e6ea6b, type: 3}
   _id: 26
   _neededScore: 600
@@ -274,4 +274,4 @@ MonoBehaviour:
   _songName: puppets
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  _songBackground: {fileID: 32900000, guid: 109d239814579d54a94ad856539bc153, type: 3}

@@ -233,7 +233,7 @@ MonoBehaviour:
   - 208.40538
   - 209.66405
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2.1
   _clip: {fileID: 8300000, guid: 5f09c3fbf4c80204480cb6d9371850aa, type: 3}
   _id: 23
   _neededScore: 700
@@ -241,4 +241,4 @@ MonoBehaviour:
   _songName: Focus
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  _songBackground: {fileID: 32900000, guid: 109d239814579d54a94ad856539bc153, type: 3}

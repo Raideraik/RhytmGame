@@ -374,7 +374,7 @@ MonoBehaviour:
   - 286.20795
   _bpm: 60
   _beatsShownInAdvance: 3
-  _clip: {fileID: 8300000, guid: 0dadb716770ecd5488440df7a7a9fd94, type: 3}
+  _clip: {fileID: 8300000, guid: 8ba0daacdfc66a244a241de901726973, type: 3}
   _id: 0
   _neededScore: 1668
   _neededStarsToUnlockLevel: 0

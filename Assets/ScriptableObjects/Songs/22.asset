@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notes:
   - 1.877303
-  - 2.4319696
   - 3.2639697
   - 4.5866365
   - 5.141303
@@ -185,7 +184,7 @@ MonoBehaviour:
   - 128.63997
   - 130.00531
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: c44902825bc854a49a92b548d219fa38, type: 3}
   _id: 22
   _neededScore: 500
@@ -193,4 +192,4 @@ MonoBehaviour:
   _songName: Pop
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
+  _songBackground: {fileID: 32900000, guid: 109d239814579d54a94ad856539bc153, type: 3}

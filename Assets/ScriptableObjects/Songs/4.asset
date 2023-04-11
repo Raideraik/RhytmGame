@@ -112,8 +112,6 @@ MonoBehaviour:
   - 87.168106
   - 88.04277
   - 88.85344
-  - 89.68544
-  - 90.45344
   _bpm: 60
   _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: 1b60aedb33b19c9428af4e4f2c3f8650, type: 3}

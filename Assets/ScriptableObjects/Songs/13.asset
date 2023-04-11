@@ -330,7 +330,7 @@ MonoBehaviour:
   - 234.75203
   - 236.07469
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2.1
   _clip: {fileID: 8300000, guid: 9a77e253c3351c4419b4d2abfe1cd8a1, type: 3}
   _id: 13
   _neededScore: 900
@@ -338,4 +338,4 @@ MonoBehaviour:
   _songName: Great Days
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: b80604245ab071042829f8929cd64c2f, type: 3}
+  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}

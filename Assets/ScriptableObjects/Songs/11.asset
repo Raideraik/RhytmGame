@@ -363,7 +363,7 @@ MonoBehaviour:
   - 288.5973
   - 289.3013
   _bpm: 60
-  _beatsShownInAdvance: 3
+  _beatsShownInAdvance: 2
   _clip: {fileID: 8300000, guid: 25267247a49f57d4a91d98c1c234ce11, type: 3}
   _id: 11
   _neededScore: 800
@@ -371,4 +371,4 @@ MonoBehaviour:
   _songName: Sugar on Me
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: b80604245ab071042829f8929cd64c2f, type: 3}
+  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}
