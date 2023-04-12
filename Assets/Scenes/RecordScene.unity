@@ -5328,7 +5328,7 @@ GameObject:
   - component: {fileID: 1213879951}
   m_Layer: 0
   m_Name: NonVRCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5387,7 +5387,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5422,7 +5422,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6126,7 +6126,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485106943}
-  - component: {fileID: 1485106945}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -6150,20 +6149,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485106945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485106942}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b49bebb581ad84e983d1bc1287f082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avgFrameRate: 0
-  _text: {fileID: 0}
 --- !u!1 &1503356220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8064,8 +8049,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 87.2
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
