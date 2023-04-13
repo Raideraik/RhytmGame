@@ -12,20 +12,19 @@ public class SongChooseToRecordUI : MonoBehaviour
     public event UnityAction OnRecordButton;
     public event UnityAction OnSaveButton;
 
-    [SerializeField] private TMP_InputField _songName, _songUrl;
+    [SerializeField] private TMP_InputField _songName;
     [SerializeField] private TMP_Dropdown _songMenu;
 
-    [SerializeField] private Button _playButton, _chooseSongButton, _chooseSongUrlButton, _recordButton, _saveButton;
+    [SerializeField] private Button _playButton, _chooseSongButton, _recordButton, _saveButton;
     [SerializeField] private TMP_Text _songLog;
-    [SerializeField] private GameObject _confirmationScreen, _songTypeScreen;
-    [SerializeField] private Button _yesButton, _noButton, _urlTypeButton, _fileTypeButton;
+    [SerializeField] private GameObject _confirmationScreen;
+    [SerializeField] private Button _yesButton, _noButton;
 
     [SerializeField] private Song[] _songs;
     [SerializeField] private Mp3Loader _mp3Loader;
 
     private SongRecorder _songRecorder;
     private string _finalPath;
-    private bool _isFile = true;
 
     private void Awake()
     {
@@ -36,9 +35,6 @@ public class SongChooseToRecordUI : MonoBehaviour
     {
         if (!_songRecorder.DevRecording)
         {
-
-            _songTypeScreen.gameObject.SetActive(true);
-
             _songMenu.options.Clear();
 
             for (int i = 0; i < _songs.Length; i++)
@@ -46,22 +42,15 @@ public class SongChooseToRecordUI : MonoBehaviour
                 _songMenu.options.Add(new TMP_Dropdown.OptionData(_songs[i].SongName));
             }
 
-           // DisableAllUI();
-
+            // DisableAllUI();
             SetClip(0);
-
         }
-
-
     }
 
     private void OnEnable()
     {
-        _fileTypeButton.onClick.AddListener(EnableFileScreen);
-        _urlTypeButton.onClick.AddListener(EnableUrlScreen);
         _playButton.onClick.AddListener(PlayPressed);
         _chooseSongButton.onClick.AddListener(ChooseSong);
-        _chooseSongUrlButton.onClick.AddListener(ChooseSongURL);
         _recordButton.onClick.AddListener(RecordPressed);
         _saveButton.onClick.AddListener(SavePressed);
         _yesButton.onClick.AddListener(YesPressed);
@@ -70,12 +59,8 @@ public class SongChooseToRecordUI : MonoBehaviour
 
     private void OnDisable()
     {
-
-        _fileTypeButton.onClick.RemoveListener(EnableFileScreen);
-        _urlTypeButton.onClick.RemoveListener(EnableUrlScreen);
         _playButton.onClick.RemoveListener(PlayPressed);
         _chooseSongButton.onClick.RemoveListener(ChooseSong);
-        _chooseSongUrlButton.onClick.RemoveListener(ChooseSongURL);
         _recordButton.onClick.RemoveListener(RecordPressed);
         _saveButton.onClick.RemoveListener(SavePressed);
         _yesButton.onClick.RemoveListener(YesPressed);
@@ -100,15 +85,9 @@ public class SongChooseToRecordUI : MonoBehaviour
     }
     private void YesPressed()
     {
-        if (_isFile)
-        {
-            _chooseSongButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            _chooseSongUrlButton.gameObject.SetActive(true);
-            _songUrl.gameObject.SetActive(true);
-        }
+
+        _chooseSongButton.gameObject.SetActive(true);
+
         _confirmationScreen.SetActive(false);
     }
 
@@ -138,23 +117,14 @@ public class SongChooseToRecordUI : MonoBehaviour
 
         EnableRecordUI();
     }
-
-    private void ChooseSongURL()
-    {
-        _songs[_songMenu.value].SetClipAdress(_songUrl.text);
-        _mp3Loader.LoadAudiox();
-    }
-
     private void DisableAllUI()
     {
         _playButton.gameObject.SetActive(false);
         _chooseSongButton.gameObject.SetActive(false);
-        _chooseSongUrlButton.gameObject.SetActive(false);
         _recordButton.gameObject.SetActive(false);
         _saveButton.gameObject.SetActive(false);
         _songName.gameObject.SetActive(false);
         _confirmationScreen.SetActive(false);
-        _songUrl.gameObject.SetActive(false);
     }
 
     private void EnableRecordUI()
@@ -167,18 +137,6 @@ public class SongChooseToRecordUI : MonoBehaviour
         _saveButton.gameObject.SetActive(true);
     }
 
-    private void EnableUrlScreen()
-    {
-        _isFile = false;
-        _songTypeScreen.SetActive(false);
-    }
-
-    private void EnableFileScreen()
-    {
-        _isFile = true;
-
-        _songTypeScreen.SetActive(false);
-    }
 
     public void SetClip(int clipIndex)
     {
@@ -193,15 +151,7 @@ public class SongChooseToRecordUI : MonoBehaviour
         }
         else
         {
-            if (_isFile)
-            {
-                _chooseSongButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                _chooseSongUrlButton.gameObject.SetActive(true);
-                _songUrl.gameObject.SetActive(true);
-            }
+            _chooseSongButton.gameObject.SetActive(true);
         }
     }
 

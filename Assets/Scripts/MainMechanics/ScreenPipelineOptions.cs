@@ -8,7 +8,15 @@ public class ScreenPipelineOptions : MonoBehaviour
     [SerializeField] private bool _isScreenLandscape;
     private void Start()
     {
-
+        if (_isScreenLandscape && Input.deviceOrientation != DeviceOrientation.LandscapeLeft)
+        {
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
+        }
+        else if (!_isScreenLandscape && Input.deviceOrientation == DeviceOrientation.LandscapeLeft)
+        {
+            Screen.orientation = ScreenOrientation.Portrait;
+        }
+        /*
         switch (_isScreenLandscape)
         {
             case true:
@@ -25,6 +33,6 @@ public class ScreenPipelineOptions : MonoBehaviour
                 Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = false;
                 Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = true;
                 break;
-        }
+        }*/
     }
 }
