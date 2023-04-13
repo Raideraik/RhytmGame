@@ -58,7 +58,7 @@ public class Pause : MonoCache
     {
         if (pause && _isGameStarted)
         {
-            PauseGame();
+          //  PauseGame();
         }
 
     }
