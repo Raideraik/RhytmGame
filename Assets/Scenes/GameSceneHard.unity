@@ -26268,6 +26268,7 @@ MonoBehaviour:
   _exitButtonClick: {fileID: 512863944}
   _timerText: {fileID: 1548315573}
   _secondsBeforeContinue: 3
+  _loseScreen: {fileID: 1366200516}
 --- !u!114 &583415627
 MonoBehaviour:
   m_ObjectHideFlags: 0

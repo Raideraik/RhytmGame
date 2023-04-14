@@ -16,7 +16,6 @@ public class LoseScreen : MonoCache
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private float _secondsBeforeContinue;
     private bool _isLost = false;
-
     public bool IsLost => _isLost;
 
     protected override void OnEnabled()

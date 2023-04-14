@@ -14,6 +14,7 @@ public class Pause : MonoCache
     [SerializeField] private Button _exitButtonClick;
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private float _secondsBeforeContinue;
+    [SerializeField] private LoseScreen _loseScreen;
 
     private bool _isGameStarted = false;
     protected override void OnEnabled()
@@ -56,9 +57,9 @@ public class Pause : MonoCache
 
     private void OnApplicationPause(bool pause)
     {
-        if (pause && _isGameStarted)
+        if (pause && _isGameStarted && !_loseScreen.IsLost)
         {
-          //  PauseGame();
+            PauseGame();
         }
 
     }

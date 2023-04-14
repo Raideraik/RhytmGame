@@ -81,10 +81,11 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            if (_loseScreen.IsLost)
-                _loseScreen.ContinueGame();
+            //if (_loseScreen.IsLost)
+            //_loseScreen.ContinueGame();
             // else
             //    _score.RewardPlayer();
+            StartCoroutine(ContinueReward());
 
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
@@ -111,5 +112,12 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
     {
         // Clean up the button listeners:
         //_showAdButton.onClick.RemoveAllListeners();
+    }
+
+    private IEnumerator ContinueReward()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        _loseScreen.ContinueGame();
+
     }
 }
