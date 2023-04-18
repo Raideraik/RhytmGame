@@ -252,7 +252,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 5ab40057bd9d8984f9473b6d6797394b, type: 3}
   _id: 10
   _neededScore: 500
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 12
   _songName: Lucky
   _clipAdress: 
   _isPrivate: 0

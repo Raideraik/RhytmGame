@@ -318,7 +318,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 4222efe8e8034bb499728d49bdc9aed2, type: 3}
   _id: 33
   _neededScore: 909
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 60
   _songName: Scandal
   _clipAdress: 
   _isPrivate: 0

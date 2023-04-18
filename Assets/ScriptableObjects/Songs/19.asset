@@ -80,7 +80,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 789fea8c2b83e1c409eab9f65a827d92, type: 3}
   _id: 19
   _neededScore: 200
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 36
   _songName: Above
   _clipAdress: 
   _isPrivate: 0

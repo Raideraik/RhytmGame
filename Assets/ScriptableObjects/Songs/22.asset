@@ -188,7 +188,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: c44902825bc854a49a92b548d219fa38, type: 3}
   _id: 22
   _neededScore: 500
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 48
   _songName: Pop
   _clipAdress: 
   _isPrivate: 0

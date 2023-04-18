@@ -237,7 +237,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 5f09c3fbf4c80204480cb6d9371850aa, type: 3}
   _id: 23
   _neededScore: 700
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 48
   _songName: Focus
   _clipAdress: 
   _isPrivate: 0

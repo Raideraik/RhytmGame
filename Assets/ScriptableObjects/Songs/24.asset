@@ -270,7 +270,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 2ef3d8c66e108584ca67659c145df38b, type: 3}
   _id: 24
   _neededScore: 800
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 48
   _songName: Jungle
   _clipAdress: 
   _isPrivate: 0

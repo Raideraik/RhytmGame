@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Edvard
   m_EditorClassIdentifier: 
   _id: 6
-  _price: 0
+  _price: 20000
   _picture: {fileID: 553272742, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 233844946677133462, guid: fdfd36e6ddd63c2428dc9cfeb8dc47be, type: 3}
-  _isBuyed: 1
+  _isBuyed: 0

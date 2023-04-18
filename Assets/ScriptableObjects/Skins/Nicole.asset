@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nicole
   m_EditorClassIdentifier: 
   _id: 9
-  _price: 0
+  _price: 1500
   _picture: {fileID: 1405046603, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 2890237838809958038, guid: 9fecfbdeedad17b4888ee02be5072ee2, type: 3}
-  _isBuyed: 1
+  _isBuyed: 0

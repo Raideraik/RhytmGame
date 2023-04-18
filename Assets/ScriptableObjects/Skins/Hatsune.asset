@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hatsune
   m_EditorClassIdentifier: 
   _id: 13
-  _price: 0
+  _price: 15000
   _picture: {fileID: -1580143786, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 4586350210118702557, guid: 75c052294637051478875768491d796f, type: 3}
-  _isBuyed: 1
+  _isBuyed: 0

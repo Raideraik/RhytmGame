@@ -270,7 +270,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 289013354dc15384f88f89a6b7e6ea6b, type: 3}
   _id: 26
   _neededScore: 600
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 48
   _songName: puppets
   _clipAdress: 
   _isPrivate: 0

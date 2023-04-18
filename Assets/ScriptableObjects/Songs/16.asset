@@ -298,8 +298,8 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: d156546be53dd7540821c572953edbd1, type: 3}
   _id: 16
   _neededScore: 600
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 24
   _songName: Billie Jean
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: 0475fe923a04a7146a8adefcba8f8519, type: 3}
+  _songBackground: {fileID: 32900000, guid: c3e2c9c8941414241b1a98c5c7499d4e, type: 3}

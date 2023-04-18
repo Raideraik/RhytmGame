@@ -18,7 +18,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: efa51aaddfea0ee4cac843be8b381c69, type: 3}
   _id: 30
   _neededScore: 0
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 60
   _songName: DancDance
   _clipAdress: 
   _isPrivate: 0

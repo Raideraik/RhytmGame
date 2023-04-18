@@ -274,7 +274,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: f7c3849f78f44d541bc9c4dce60c7b2b, type: 3}
   _id: 20
   _neededScore: 700
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 36
   _songName: Idiot
   _clipAdress: 
   _isPrivate: 0

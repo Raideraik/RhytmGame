@@ -434,7 +434,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: ff4a1f163b6ebdd49888b9165ed3f88d, type: 3}
   _id: 9
   _neededScore: 900
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 12
   _songName: HeadBanger
   _clipAdress: 
   _isPrivate: 0

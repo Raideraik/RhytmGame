@@ -4010,7 +4010,6 @@ MonoBehaviour:
   _scoreText: {fileID: 993222077}
   _songList:
   - {fileID: 11400000, guid: 905966b280975e8418b78336ebb58153, type: 2}
-  - {fileID: 11400000, guid: fa534e7215cb04948896b625fad74b11, type: 2}
   - {fileID: 11400000, guid: b48600efca7a1f546ac8dcd92cded2c6, type: 2}
   - {fileID: 11400000, guid: f8ad197e95547464e8e3d88a3767b42c, type: 2}
   - {fileID: 11400000, guid: af74cd7cdb888c243bb203957e483050, type: 2}
@@ -6023,7 +6022,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _songs:
   - {fileID: 11400000, guid: 905966b280975e8418b78336ebb58153, type: 2}
-  - {fileID: 11400000, guid: fa534e7215cb04948896b625fad74b11, type: 2}
   - {fileID: 11400000, guid: b48600efca7a1f546ac8dcd92cded2c6, type: 2}
   - {fileID: 11400000, guid: f8ad197e95547464e8e3d88a3767b42c, type: 2}
   - {fileID: 11400000, guid: af74cd7cdb888c243bb203957e483050, type: 2}
@@ -8213,14 +8211,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 7
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0
@@ -8492,7 +8490,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _songs:
   - {fileID: 11400000, guid: 905966b280975e8418b78336ebb58153, type: 2}
-  - {fileID: 11400000, guid: fa534e7215cb04948896b625fad74b11, type: 2}
   - {fileID: 11400000, guid: b48600efca7a1f546ac8dcd92cded2c6, type: 2}
   - {fileID: 11400000, guid: f8ad197e95547464e8e3d88a3767b42c, type: 2}
   - {fileID: 11400000, guid: af74cd7cdb888c243bb203957e483050, type: 2}

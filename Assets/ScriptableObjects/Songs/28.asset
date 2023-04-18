@@ -244,7 +244,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 920e6e2b326ec484b9c292c61ee491b2, type: 3}
   _id: 28
   _neededScore: 700
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 60
   _songName: Sugar
   _clipAdress: 
   _isPrivate: 0

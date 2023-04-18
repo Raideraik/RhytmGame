@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Angel
   m_EditorClassIdentifier: 
   _id: 11
-  _price: 0
+  _price: 15000
   _picture: {fileID: -1080263661, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 5215812889718203588, guid: 86570dda7a13b20439f932d1d2887fd8, type: 3}
-  _isBuyed: 1
+  _isBuyed: 0

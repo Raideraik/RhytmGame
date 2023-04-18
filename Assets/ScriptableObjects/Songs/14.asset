@@ -388,7 +388,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: d0d6a4e5989569a47ab04bf4e90ab04a, type: 3}
   _id: 14
   _neededScore: 700
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 24
   _songName: Dont Say Lazy
   _clipAdress: 
   _isPrivate: 0

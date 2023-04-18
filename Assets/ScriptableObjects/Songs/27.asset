@@ -268,8 +268,8 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 652314aef9234364c9e376105382da66, type: 3}
   _id: 27
   _neededScore: 750
-  _neededStarsToUnlockLevel: 0
+  _neededStarsToUnlockLevel: 48
   _songName: Funk
   _clipAdress: 
   _isPrivate: 0
-  _songBackground: {fileID: 32900000, guid: efaced4d36fa06b40841314b2f3edee5, type: 3}
+  _songBackground: {fileID: 32900000, guid: 109d239814579d54a94ad856539bc153, type: 3}

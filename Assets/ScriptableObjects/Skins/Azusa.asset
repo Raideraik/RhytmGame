@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Azusa
   m_EditorClassIdentifier: 
   _id: 2
-  _price: 0
+  _price: 1500
   _picture: {fileID: -1368254264, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 4213684044588791263, guid: 5a85d0a2a3fbcd4499f05553e4a8f2ef, type: 3}
-  _isBuyed: 1
+  _isBuyed: 0
