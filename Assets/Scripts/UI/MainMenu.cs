@@ -13,7 +13,8 @@ public class MainMenu : MonoCache
     [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _galleryButton;
     [SerializeField] private Button _recordButton;
-    [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen, _difficultyScreen;
+    [SerializeField] private Button _infoButton;
+    [SerializeField] private GameObject _buttonsScreen, _levelChooseScreen, _shopScreen, _settingsScreen, _difficultyScreen, _infoScreen;
 
     [SerializeField] private Button[] _backButtons;
 
@@ -33,6 +34,7 @@ public class MainMenu : MonoCache
         _exitButton.onClick.AddListener(ExitGame);
         _galleryButton.onClick.AddListener(LoadGallery);
         _recordButton.onClick.AddListener(LoadRecorRoom);
+        _infoButton.onClick.AddListener(ShowInfo);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -54,6 +56,7 @@ public class MainMenu : MonoCache
         _exitButton.onClick.RemoveListener(ExitGame);
         _galleryButton.onClick.RemoveListener(LoadGallery);
         _recordButton.onClick.RemoveListener(LoadRecorRoom);
+        _infoButton.onClick.RemoveListener(ShowInfo);
 
         for (int i = 0; i < _backButtons.Length; i++)
         {
@@ -68,6 +71,8 @@ public class MainMenu : MonoCache
         _shopScreen.SetActive(false);
         _settingsScreen.SetActive(false);
         _difficultyScreen.SetActive(false);
+        _infoScreen.SetActive(false);
+
     }
 
     private void ShowLevelScreen()
@@ -90,6 +95,11 @@ public class MainMenu : MonoCache
         AudioEffectsControll.Instance.PlayButtonClip();
         _buttonsScreen.SetActive(false);
         _settingsScreen.SetActive(true);
+    }
+
+    private void ShowInfo()
+    {
+        _infoScreen.SetActive(true);
     }
 
     private void LoadGallery()
