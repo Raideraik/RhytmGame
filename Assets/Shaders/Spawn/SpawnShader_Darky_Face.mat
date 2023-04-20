@@ -26,7 +26,7 @@ Material:
   - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
   stringTagMap:
@@ -66,6 +66,7 @@ Material:
     - _CastShadows: 1
     - _Clip: 0
     - _Cull: 2
+    - _DissolveScale: 40
     - _DstBlend: 0
     - _FresnelPower: 1
     - _FrsnelPower: 0
@@ -84,4 +85,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Specular: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
