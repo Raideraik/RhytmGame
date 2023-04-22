@@ -22,6 +22,8 @@ public class GameOverScreen : MonoCache
     [SerializeField] private GameObject _screen;
     [SerializeField] private float _showingTime;
     [SerializeField] private float _subdivider = 1;
+    [SerializeField] private float _multiplier = 2;
+    [SerializeField] private bool _isUltraHard = false;
 
     protected override void OnEnabled()
     {
@@ -42,23 +44,37 @@ public class GameOverScreen : MonoCache
     public void OpenGameOverScreen()
     {
         _screen.SetActive(true);
-        UpdateScore();
+        //UpdateScore();
         CountStars();
     }
 
-    private void UpdateScore()
+    private void UpdateScore(float score)
     {
-        _scoreText.text = _score.GetScore().ToString();
+        if (_isUltraHard)
+            _scoreText.text = "X" + _multiplier.ToString()
+                + "\n" + score.ToString() + "/" + AudioFlow.Instance.GetSong().NeededScore.ToString();
+        else
+            _scoreText.text = "-X" + _subdivider.ToString()
+                + "\n" + score.ToString() + "/" + AudioFlow.Instance.GetSong().NeededScore.ToString();
+
+        //_scoreText.text = score.ToString();
     }
 
     private void CountStars()
     {
+        float score = 0;
         float percentage = 0;
         int starsEarned;
 
-        percentage += _score.GetScore() / _subdivider;
-        _score.SaveScore(AudioFlow.Instance.GetSong().SongName, (int)Math.Round(percentage));
+        if (_isUltraHard)
+            score += _score.GetScore() * _multiplier;
+        else
+            score += _score.GetScore() / _subdivider;
+
+        UpdateScore((int)Math.Round(score));
+        _score.SaveScore(AudioFlow.Instance.GetSong().SongName, (int)Math.Round(score));
         //PlayerPrefs.SetInt(AudioFlow.Instance.GetSong().SongName + "_Score", (int)Math.Round(percentage));
+        percentage += score;
         percentage /= AudioFlow.Instance.GetSong().NeededScore;
         percentage *= 100;
         starsEarned = 0;

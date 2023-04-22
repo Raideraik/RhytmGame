@@ -50,6 +50,9 @@ public class CharacterAnimationController : MonoCache
 
     public void ChangeToIdle()
     {
+        _animator.SetBool("IsGameStarted", false);
         _animator.SetTrigger("Idle");
+        ControllersHandler.OnAnyMissed -= OnWrongNoteCollected;
+
     }
 }

@@ -25787,36 +25787,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _songs:
   - {fileID: 11400000, guid: 905966b280975e8418b78336ebb58153, type: 2}
-  - {fileID: 11400000, guid: fa534e7215cb04948896b625fad74b11, type: 2}
   - {fileID: 11400000, guid: b48600efca7a1f546ac8dcd92cded2c6, type: 2}
   - {fileID: 11400000, guid: f8ad197e95547464e8e3d88a3767b42c, type: 2}
-  - {fileID: 11400000, guid: af74cd7cdb888c243bb203957e483050, type: 2}
   - {fileID: 11400000, guid: 8bb79d2bdea8ecd499dfae8a03b2ca44, type: 2}
-  - {fileID: 11400000, guid: d6942e78f5c3d5743b252a29094ba256, type: 2}
   - {fileID: 11400000, guid: 8cc86e24eae545a41a64af2d4aba0f09, type: 2}
   - {fileID: 11400000, guid: a0b2099c63aea4b45b57c332927c58df, type: 2}
-  - {fileID: 11400000, guid: 5a0951939a111434084766d301f583c7, type: 2}
   - {fileID: 11400000, guid: 31f775f79045a28409e472e81af72061, type: 2}
   - {fileID: 11400000, guid: d84f196fbd219334187997b646633cbc, type: 2}
   - {fileID: 11400000, guid: b485417a6c323c64888b697b2b200624, type: 2}
-  - {fileID: 11400000, guid: 910d7a171868b314d830e30d37767a26, type: 2}
-  - {fileID: 11400000, guid: 7d6ef6c263c76d348b8886d8835c0cb5, type: 2}
   - {fileID: 11400000, guid: 550d208b26856b848844aa1a505a6054, type: 2}
   - {fileID: 11400000, guid: ba5e81fe1c3504b4681a26d33de6ec52, type: 2}
   - {fileID: 11400000, guid: 0b3df6e715efe2c4f89c8fe19e994f88, type: 2}
-  - {fileID: 11400000, guid: d2256173ef684b74b9148e7792ac05cb, type: 2}
   - {fileID: 11400000, guid: e688f3c0843acc84eb9b880394a54e90, type: 2}
   - {fileID: 11400000, guid: ae58601ee0ff657488a21c2d4a09f890, type: 2}
-  - {fileID: 11400000, guid: 4896ee2322ce05b4db3e41112e3f6eb7, type: 2}
   - {fileID: 11400000, guid: 33ddae6e41c32ec4a9acddcaf7ef6b36, type: 2}
   - {fileID: 11400000, guid: 171b74e653142324ea0dfe07a6392a06, type: 2}
   - {fileID: 11400000, guid: fb1ee0782d1a1d04c83bf72c09443a65, type: 2}
-  - {fileID: 11400000, guid: 3984dd20d36172442b1390917d94dcff, type: 2}
   - {fileID: 11400000, guid: cd6894a267f6a2241a47692e4db6ae5e, type: 2}
   - {fileID: 11400000, guid: df63113f3a783994bb5331ba643d9961, type: 2}
   - {fileID: 11400000, guid: 394e37a8457d717478e7228d66d212f4, type: 2}
   - {fileID: 11400000, guid: 09b4661119ddc9948b8abac0e89e36cb, type: 2}
-  - {fileID: 11400000, guid: 5e45d39fb8a0f4a4bb11d458e3630d7e, type: 2}
   - {fileID: 11400000, guid: 25c78017c17585840818ed50f4b88730, type: 2}
   - {fileID: 11400000, guid: c091684b943552c458c920a6ea96ae32, type: 2}
   - {fileID: 11400000, guid: 7ee37f6db53e681468e3c211433f92a7, type: 2}
@@ -48133,7 +48123,9 @@ MonoBehaviour:
   - {fileID: 1237597353}
   _screen: {fileID: 1995010284}
   _showingTime: 2
-  _subdivider: 1
+  _subdivider: 0
+  _multiplier: 1.5
+  _isUltraHard: 1
 --- !u!1 &1149960120
 GameObject:
   m_ObjectHideFlags: 0
@@ -64230,7 +64222,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a52338ac387b7384f8c9793238435da8, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -64294,7 +64286,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1455287475
@@ -65305,6 +65297,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 583415627}
+    - target: {fileID: 7323477835560081058, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
+      propertyPath: m_MinValue
+      value: -60
+      objectReference: {fileID: 0}
     - target: {fileID: 7323477835560081058, guid: 134eb3a9c6085c6458972a4079f542eb, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -77171,7 +77167,7 @@ MonoBehaviour:
   _container: {fileID: 2131719198}
   _capacity: 10
   _template: {fileID: 640756885864254541, guid: 2faf7fa482a52de48be0864708329caf, type: 3}
-  _timeBeforeEnd: 10
+  _timeBeforeEnd: 8
   _spawnPosition: {fileID: 1082158226}
   _finishPosition: {fileID: 779010112}
   _removePosition: {fileID: 740603343}

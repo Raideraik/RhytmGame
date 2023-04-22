@@ -24,17 +24,19 @@ public class MainMenuScore : MonoBehaviour
     }
 
     private void Start()
-    {
+    {/*
         for (int i = 0; i < _songList.Length; i++)
         {
             _score += PlayerPrefs.GetInt(_songList[i].SongName + "_Score");
-        }
+        }*/
+
+        _score = PlayerPrefs.GetInt("AllScore");
         UpdateScore();
     }
     private void UpdateScore()
     {
         _scoreText.text = _score.ToString();
-        PlayerPrefs.SetInt("AllScore", _score);
+        //PlayerPrefs.SetInt("AllScore", _score);
     }
 
     public bool TrySell(int score)
@@ -42,6 +44,7 @@ public class MainMenuScore : MonoBehaviour
         if (_score >= score)
         {
             _score -= score;
+            PlayerPrefs.SetInt("AllScore", _score);
             UpdateScore();
             return true;
         }

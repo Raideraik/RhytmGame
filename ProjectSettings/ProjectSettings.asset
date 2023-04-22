@@ -44,6 +44,8 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 21300000, guid: 1f9ce445fcd4af642b62bc492e1234e8, type: 3}
     duration: 3
+  - logo: {fileID: 21300000, guid: ccef90ee48231884ea214d0419cea4df, type: 3}
+    duration: 4
   - logo: {fileID: 21300000, guid: 7ad54b87a64cf8e4997b9c3cdb10a9a6, type: 3}
     duration: 5
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -255,7 +257,7 @@ PlayerSettings:
   AndroidTargetDevices: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 17a6204c81f80eb499895cc433845f7a, type: 3}
-  AndroidKeystoreName: '{inproject}: DanceDanceDance.keystore'
+  AndroidKeystoreName: E:/UnityProjects/KeyStore/DanceDanceDance.keystore
   AndroidKeyaliasName: raider
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

@@ -88,7 +88,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
             StartCoroutine(ContinueReward());
 
             // Load another ad:
-            Advertisement.Load(_adUnitId, this);
+            //Advertisement.Load(_adUnitId, this);
         }
     }
 

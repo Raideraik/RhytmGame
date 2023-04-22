@@ -10,7 +10,6 @@ using UnityEngine.VFX;
 public class Game : MonoCache
 {
     public static event UnityAction OnGameStarted;
-    public static event UnityAction OnGameEnded;
     public static Game Instance { get; private set; }
 
 
