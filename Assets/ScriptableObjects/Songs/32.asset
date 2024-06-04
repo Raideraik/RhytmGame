@@ -213,7 +213,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 87f9834953bacd4418791e414312d79a, type: 3}
   _id: 32
   _neededScore: 700
-  _neededStarsToUnlockLevel: 60
+  _neededStarsToUnlockLevel: 0
   _songName: Sun Light
   _clipAdress: 
   _isPrivate: 0

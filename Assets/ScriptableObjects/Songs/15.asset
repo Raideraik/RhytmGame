@@ -243,7 +243,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 94b8f1c9176f24f46bb4a612aca9115c, type: 3}
   _id: 15
   _neededScore: 600
-  _neededStarsToUnlockLevel: 24
+  _neededStarsToUnlockLevel: 0
   _songName: Smooth criminal
   _clipAdress: 
   _isPrivate: 0

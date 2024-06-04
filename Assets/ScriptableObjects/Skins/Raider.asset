@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Raider
   m_EditorClassIdentifier: 
   _id: 14
-  _price: 35000
+  _price: 0
   _picture: {fileID: 210620540, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 7971149368982551586, guid: df10e53cd4b0ee64ca0fd9ebdab5ee3b, type: 3}
-  _isBuyed: 0
+  _isBuyed: 1

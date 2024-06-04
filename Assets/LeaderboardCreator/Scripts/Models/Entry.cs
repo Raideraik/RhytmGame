@@ -1,17 +1,17 @@
 ﻿using Dan.Main;
-using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Dan.Models
 {
     [System.Serializable]
     public struct Entry
     {
-        public string Username { get; set; }
-        public int Score { get; set; }
-        public ulong Date { get; set; }
-        public string Extra { get; set; }
-        [JsonProperty] internal string UserGuid { get; set; }
-        [field: System.NonSerialized] public int Rank { get; set; }
+        public string Username;
+        public int Score;
+        public ulong Date;
+        public string Extra;
+        public int Rank;
+        [SerializeField] internal string UserGuid;
         [field: System.NonSerialized] internal string NewUsername { get; set; }
         
         /// <summary>
@@ -28,15 +28,11 @@ namespace Dan.Models
             var rank = Rank;
             var lastDigit = rank % 10;
             var lastTwoDigits = rank % 100;
-            var suffix = "th";
-            
-            if (lastDigit == 1 && lastTwoDigits != 11)
-                suffix = "st";
-            else if (lastDigit == 2 && lastTwoDigits != 12)
-                suffix = "nd";
-            else if (lastDigit == 3 && lastTwoDigits != 13)
-                suffix = "rd";
-            
+
+            var suffix = lastDigit == 1 && lastTwoDigits != 11 ? "st" :
+                lastDigit == 2 && lastTwoDigits != 12 ? "nd" :
+                lastDigit == 3 && lastTwoDigits != 13 ? "rd" : "th";
+
             return $"{rank}{suffix}";
         }
     }

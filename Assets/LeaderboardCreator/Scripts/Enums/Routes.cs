@@ -8,6 +8,7 @@
         None,
         Upload,
         UpdateUsername,
-        DeleteEntry
+        DeleteEntry,
+        GetPersonalEntry
     }
 }

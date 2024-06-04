@@ -221,7 +221,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 85714d924822f0841a34a6f52222d428, type: 3}
   _id: 21
   _neededScore: 750
-  _neededStarsToUnlockLevel: 36
+  _neededStarsToUnlockLevel: 0
   _songName: Levels
   _clipAdress: 
   _isPrivate: 0

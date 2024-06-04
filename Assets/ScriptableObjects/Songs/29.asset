@@ -300,7 +300,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: ce7e5c0bbca5fee48b163204d0b8c81c, type: 3}
   _id: 29
   _neededScore: 900
-  _neededStarsToUnlockLevel: 60
+  _neededStarsToUnlockLevel: 0
   _songName: Inferno
   _clipAdress: 
   _isPrivate: 0

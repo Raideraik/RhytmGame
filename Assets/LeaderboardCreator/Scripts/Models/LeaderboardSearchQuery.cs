@@ -1,4 +1,6 @@
-﻿namespace Dan.Models
+﻿using Dan.Enums;
+
+namespace Dan.Models
 {
     public struct LeaderboardSearchQuery
     {
@@ -6,13 +8,19 @@
         public int Take { get; set; }
         public string Username { get; set; }
         public TimePeriodType TimePeriod { get; set; }
+        
+        private string Query => $"skip={Skip}&take={Take}&username={Username}&timePeriod={(int) TimePeriod}";
+        
+        public string GetQuery() => "?" + Query;
+        
+        public string ChainQuery() => "&" + Query;
 
         public static LeaderboardSearchQuery Default => new LeaderboardSearchQuery
         {
             Skip = 0,
             Take = 0,
             Username = "",
-            TimePeriod = (int) TimePeriodType.AllTime
+            TimePeriod = TimePeriodType.AllTime
         };
         
         public static LeaderboardSearchQuery Paginated(int skip, int take) => 
@@ -40,75 +48,5 @@
             Username = username,
             TimePeriod = timePeriod
         };
-        
-        public Entry[] Filter(Entry[] entries, bool ascendingOrder)
-        {
-            var searchQuery = this;
-            ulong timePeriod = searchQuery.TimePeriod switch
-            {
-                TimePeriodType.Today => 1,
-                TimePeriodType.ThisWeek => 7,
-                TimePeriodType.ThisMonth => 30,
-                TimePeriodType.ThisYear => 365,
-                _ => 0
-            };
-            
-            if (timePeriod != 0)
-            {
-                var timePeriodInSeconds = timePeriod * 24 * 60 * 60;
-                var now = (ulong) System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                var timePeriodAgo = now - timePeriodInSeconds;
-                entries = System.Array.FindAll(entries, entry => entry.Date >= timePeriodAgo);
-            }
-            
-            if (!string.IsNullOrEmpty(Username))
-            {
-                if (ascendingOrder)
-                    System.Array.Reverse(entries);
-                
-                for (int i = 0; i < entries.Length; i++) 
-                    entries[i].Rank = i + 1;
-                
-                var username = Username;
-                entries = System.Array.FindAll(entries, entry => entry.Username.ToLower().Contains(username.ToLower()));
-            }
-            
-            if (Skip == 0 && Take == 0)
-                return entries;
-
-            var skip = Skip;
-            var take = Take;
-
-            if (Take == 0)
-                take = entries.Length;
-            
-            if (skip < 0)
-                skip = 0;
-            
-            if (skip > entries.Length)
-                skip = entries.Length;
-            
-            if (take < 0)
-                take = 0;
-            
-            if (take > entries.Length)
-                take = entries.Length;
-            
-            var length = take - skip;
-            if (length <= 0)
-                return System.Array.Empty<Entry>();
-            
-            var newEntries = new Entry[length];
-            
-            if (ascendingOrder)
-                System.Array.Reverse(entries);
-            
-            System.Array.Copy(entries, skip, newEntries, 0, length);
-
-            for (int i = 0; i < newEntries.Length; i++) 
-                newEntries[i].Rank = skip + i + 1;
-
-            return newEntries;
-        }
     }
 }

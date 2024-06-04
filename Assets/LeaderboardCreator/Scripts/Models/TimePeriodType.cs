@@ -1,11 +1,11 @@
-﻿namespace Dan.Models
+﻿namespace Dan.Enums
 {
     public enum TimePeriodType
     {
-        AllTime,
-        Today,
-        ThisWeek,
-        ThisMonth,
-        ThisYear
+        AllTime = 0,
+        Today = 1,
+        ThisWeek = 7,
+        ThisMonth = 30,
+        ThisYear = 365
     }
 }

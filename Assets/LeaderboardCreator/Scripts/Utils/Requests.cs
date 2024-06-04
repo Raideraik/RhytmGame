@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Dan.Enums;
-using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Dan
 {
-    internal static class Requests
+    internal static partial class Requests
     {
         /// <summary>
         /// Creates a form section and adds the parameters to it.

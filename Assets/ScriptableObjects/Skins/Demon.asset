@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   _id: 4
-  _price: 15000
+  _price: 0
   _picture: {fileID: -2079909737, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 4581095889354359925, guid: 5887e445785ddec4190ecbae62904dda, type: 3}
-  _isBuyed: 0
+  _isBuyed: 1

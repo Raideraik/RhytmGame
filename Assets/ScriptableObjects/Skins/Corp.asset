@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Corp
   m_EditorClassIdentifier: 
   _id: 3
-  _price: 9000
+  _price: 0
   _picture: {fileID: 727336988, guid: 1c6da070e7d24df4e925f09eb18e55ae, type: 3}
   _prefab: {fileID: 9054885792551583628, guid: 95d5b51fd4ae1724b929e513e07aa140, type: 3}
-  _isBuyed: 0
+  _isBuyed: 1

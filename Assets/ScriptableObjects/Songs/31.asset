@@ -185,7 +185,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 8f9197edab75f7a46adb18c7d7861be3, type: 3}
   _id: 31
   _neededScore: 400
-  _neededStarsToUnlockLevel: 60
+  _neededStarsToUnlockLevel: 0
   _songName: Rythm
   _clipAdress: 
   _isPrivate: 0

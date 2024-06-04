@@ -412,7 +412,7 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 62177564a611ee04683c735f5a2ca8d4, type: 3}
   _id: 12
   _neededScore: 700
-  _neededStarsToUnlockLevel: 24
+  _neededStarsToUnlockLevel: 0
   _songName: God Knows
   _clipAdress: 
   _isPrivate: 0
